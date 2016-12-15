@@ -29,8 +29,8 @@ body .conteneur{
     @include breakpoint ($desktop){
         #colonne-2.page-lycee{@include border-L-violet;}
     }
-    
 }
+
 /*######-------- ||| BREAKPOINTS ||| --------######*/
 @include breakpoint ($mobile){
     aside.deco-lycee{
@@ -62,7 +62,6 @@ img{
 a{
     &:hover{}
 }
-
 
 h2 a{}
 h2 a:hover{}

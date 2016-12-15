@@ -2,7 +2,7 @@
 ;Ajouter les regions utiles dans la liste ci apres, idem pour les CSS.
 ;Changer le screenshot du site pour interface admin
 ;
-name = SUSY 2 Template for PF
+name = M.Gasquet with SUSY 2 Template 
 description = Gabarit SCSS /HTML5 pour Drupal 6. Thème RWD utilisant Compass, Susy 2
 version = VERSION
 core = 6.x
@@ -27,7 +27,7 @@ stylesheets[all][] = css/vendor/buttons/buttons.css
 ;stylesheets[all][] = 3rdparty/buttons/css/buttons.css
 ;stylesheets[all][] = 3rdparty/buttons/css/font-awesome-ie7.min.css
 ;stylesheets[all][] = 3rdparty/buttons/css/font-awesome.min.css
-scripts[] = 3rdparty/buttons/js/buttons.js
+;scripts[] = 3rdparty/buttons/js/buttons.js
 
 ;Style pour Flexslider
 stylesheets[all][] = 3rdparty/flexslider/flexslider.css
@@ -93,9 +93,9 @@ regions[centre_partenaire] = Zone centrale page partenaire
 ;regions[PartieDroite3] = Zone Droite 3 HP - Bloc
 
 ;Diaporama vertical Droite
-;regions[PartieGauche1] = Zone Gauche 1 HP - Bloc
-;regions[PartieGauche2] = Zone Gauche 2 HP - Bloc
-;regions[PartieGauche3] = Zone Gauche 3 HP - Bloc
+regions[PartieGauche1] = Zone Gauche 1 HP - Bloc
+regions[PartieGauche2] = Zone Gauche 2 HP - Bloc
+regions[PartieGauche3] = Zone Gauche 3 HP - Bloc
 
 ;Region pour les node.tpl (ajouter dans template.php)
 regions[actuAssociation] = Zone pour RSS issu du site PF - Vue Bloc RSS

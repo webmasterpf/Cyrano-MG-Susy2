@@ -38,7 +38,9 @@ Mettre a jour les images du theme
 Compilation des fichiers scss
 -----------------------------
 dans le terminal :
-user@vm-server1:~$ compass watch /PATH/TO/THEMENAMEFOLDER/
+user@vm-server1:~$ cd/PATH/TO/THEMENAMEFOLDER/
+user@vm-server1:~$ compass watch
+user@vm-server1:~$ bundle exec sass (pour conserver les versions utilisées pour le projet)
 
 Usage des mixins de Susy
 ------------------------

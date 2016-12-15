@@ -1,36 +1,47 @@
-<!-- ______________________ LAYOUT HOMEPAGE PANORAMIQUE C.GRAWITZ_______________________ -->
+<!--     ______________________ LAYOUT HOMEPAGE VERTICAL D_______________________ -->
 <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_header.php');
-?>  
- <!-- ______________________ CONTENU _______________________ -->
+?>
+
+<!--  ______________________ CONTENU _______________________ -->
 
           <?php if ($content_top): ?>
-            <div id="content-top">
+            <div class="content-top">
               <?php print $content_top; ?>
-            </div> <!-- /#content-top -->
+            </div>   <!--  /content-top -->
           <?php endif; ?>
-       
 
-   <!-- ______________________ ZONE DIAPO PANORAMIQUE _______________________ -->
+ 
 
-              <?php if ($DiapoPanoHP): ?>
-                 <div class="HPDiapo"><?php print $DiapoPanoHP; ?></div>
-              <?php endif; ?>
+     <!--        ______________________ PARTIE GAUCHE _______________________ -->
 
+	<div class="HPGauche">
 
-
-<!-- ______________________ PARTIE BAS GAUCHE _______________________ -->
-                 <?php if ($HPBasG): ?>
-                 <div class="HPBasGauche"><?php print $HPBasG; ?></div>
-              <?php endif; ?>
-
-<!-- ______________________ PARTIE BAS DROITE _______________________ -->
-
-        <?php if ($HPBasD): ?>
-     <div class="HPBasDroit"><?php print $HPBasD; ?></div>
+        <?php if ($PartieGauche1): ?>
+     <div class="HPGauche1"><?php print $PartieGauche1; ?></div>
         <?php endif; ?>
-  
+
+     <?php if ($PartieGauche2): ?>
+     <div class="HPGauche2"><?php print $PartieGauche2; ?></div>
+        <?php endif; ?>
+
+     <?php if ($PartieGauche3): ?>
+     <div class="HPGauche3"><?php print $PartieGauche3; ?></div>
+        <?php endif; ?>
+
+   </div> 
+
+    <!--______________________ ZONE DIAPO DROITE_______________________ -->
+
+               <?php if ($DiapoDroiteHP): ?>
+       <div class="HPDiapoVerticalDroite"><?php print $DiapoDroiteHP; ?></div>
+              <?php endif; ?>
+
+	
+<!--    ______________________ FIN LAYOUT PAGE _______________________ -->
+
+
 	<!-- ______________________ CONTENU BAS _______________________ -->
     <?php if ($content_bottom_home): ?>
     <div class="content-bottom-home">
@@ -40,8 +51,7 @@ include ($theme_path.'/includes/inc_header.php');
 
 
     </div><!-- /#content-bottom -->
-
-<?php
+        <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_footer.php');
-?>      
+?>
