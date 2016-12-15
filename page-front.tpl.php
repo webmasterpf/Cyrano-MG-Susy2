@@ -14,7 +14,7 @@ include ($theme_path.'/includes/inc_header.php');
 
  
 
-     <!--        ______________________ PARTIE GAUCHE _______________________ -->
+<!--        ______________________ PARTIE GAUCHE _______________________ -->
 
 	<div class="HPGauche">
 
@@ -32,7 +32,7 @@ include ($theme_path.'/includes/inc_header.php');
 
    </div> 
 
-    <!--______________________ ZONE DIAPO DROITE_______________________ -->
+<!--______________________ ZONE DIAPO DROITE_______________________ -->
 
                <?php if ($DiapoDroiteHP): ?>
        <div class="HPDiapoVerticalDroite"><?php print $DiapoDroiteHP; ?></div>
@@ -42,7 +42,7 @@ include ($theme_path.'/includes/inc_header.php');
 <!--    ______________________ FIN LAYOUT PAGE _______________________ -->
 
 
-	<!-- ______________________ CONTENU BAS _______________________ -->
+<!-- ______________________ CONTENU BAS _______________________ -->
     <?php if ($content_bottom_home): ?>
     <div class="content-bottom-home">
       <?php print $content_bottom_home; ?>

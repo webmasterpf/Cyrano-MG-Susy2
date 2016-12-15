@@ -81,7 +81,7 @@ regions[centre_partenaire] = Zone centrale page partenaire
 ;Diaporama HP selon layout choisi (décommenter pour choisir)
 ;regions[DiapoPanoHP] = Diaporama Panoramique Homepage - Bloc
 ;regions[DiapoGaucheHP] = Diaporama Gauche Homepage - Bloc
-;regions[DiapoDroiteHP] = Diaporama Droite Homepage - Bloc
+regions[DiapoDroiteHP] = Diaporama Droite Homepage - Bloc
 
 ;Diaporama panoramique
 ;regions[HPBasG] = Zone Bas Gauche HP - Bloc
