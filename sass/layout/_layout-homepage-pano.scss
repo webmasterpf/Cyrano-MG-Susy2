@@ -1,0 +1,52 @@
+/*-------------------------------------|
+|                   HOMEPAGE               |
+|     FRONTPAGE  PANORAMIQUE |
+|--------------------------------------*/
+
+  //@include susy-breakpoint ($mobile){}
+  //@include susy-breakpoint ($desktop){}
+  //@include susy-breakpoint ($tablet){}
+
+//Code imbriqué à 100%
+body .conteneur {
+   // background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
+
+    .HPDiapo{}
+    .HPBasGauche{}
+    .HPBasDroit{}
+}
+@include breakpoint($desktop) {/*    //Dimensions pour les pc*/
+
+    .HPDiapo{
+        @include clearfix; 
+        @include span(12 of $desktopcol);
+        //@include full;
+        //span 12 ou full : même résultat
+        &:after{
+                content: " ";
+                display: block;
+                clear: both;}
+        aside.DiapoPanoHP{
+            max-height: 12.7em;//résoudre problème d'espace vide sous le diapo
+        }
+    }
+    .HPBasGauche{
+        @include clearfix; 
+        @include span(break $desktopcol/2 of $desktopcol);
+        //break ajoute le clear:both pour envoyer le bloc à la ligne
+         }
+    .HPBasDroit{
+        //@include clearfix; 
+        @include span( last $desktopcol/2 of $desktopcol);
+        @include pre(0);//gère le margin left
+        
+    }
+}
+
+@include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+
+    .HPDiapo{}
+    .HPBasGauche{@include span(first $tabletcol/2 of $tabletcol);}
+    .HPBasDroit{@include span(last $tabletcol/2 of $tabletcol);}
+
+}

@@ -1,0 +1,190 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|       PAGE LYCEE                     |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #colonne-1.page-lycee {order:1;}
+    #colonne-1.page-lycee span{display: none;}
+    #colonne-2.page-lycee {order:1;}
+    #colonne-3.page-lycee {order:2;}
+    @include breakpoint ($desktop){
+    #colonne-1.page-lycee {order:1;}
+    #colonne-1.page-lycee span{display: initial;}
+    #colonne-2.page-lycee {order:2;}
+    #colonne-3.page-lycee {order:3;}
+    }
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur{
+    @include breakpoint ($desktop){
+        #colonne-2.page-lycee{@include border-L-violet;}
+    }
+    
+}
+/*######-------- ||| BREAKPOINTS ||| --------######*/
+@include breakpoint ($mobile){
+    aside.deco-lycee{
+        display: none;
+    }
+}
+
+/*######-------- ||| STYLE ||| --------######*/
+h1.titre-lycee,h1.title-classes{
+    font-size: em(24px);
+    color: $violet;
+    line-height: 1.0em
+}
+
+/*######-------- COLONNE 1 --------######*/
+#colonne-1.page-lycee{
+    h2{}
+h3{}
+h4{}
+p{}
+ul{}
+img{
+    //@include ombrage(0.3em,0,0,0.1em);
+    display: block;
+    margin: 0 auto;
+    @include adaptable-img;
+}
+
+a{
+    &:hover{}
+}
+
+
+h2 a{}
+h2 a:hover{}
+h3 a{}
+h3 a:hover{}
+h4 a{}
+h4 a:hover{}
+} 
+/*######-------- COLONNE 2 --------######*/
+#colonne-2.page-lycee{
+    h2,h3,h4,p,ul,ol,img{
+        margin: 0;
+    }
+    h2{
+        color: $vert;
+        padding: em(5px);
+    }
+    h3{
+        color: $violet;
+        padding: em(5px);
+    }
+    h4{
+        padding: em(5px);
+        color: $violet;
+    }
+    p{
+        padding: em(5px);
+        line-height: 1.5em;
+            }
+    ul{
+        padding: em(5px);
+            }
+    img{
+        
+    }
+    a{
+        color: $violet;
+        text-decoration: none;
+        padding: em(2px);
+        &:hover{
+            color: white;
+            background: $violet;
+        }
+    }
+    form{margin: 0 6em;}
+    table{
+        margin: 0 auto;
+        //display:table;//casse le système de stacktable js
+        tbody{
+            max-width: 100%;
+
+            tr{
+                border:0;
+            }
+            tr.even{
+                background: $gris-clair;
+            }
+            tr.odd{
+                background: $gris-clair-moyen;
+            }
+            td{}
+        }
+    }
+}
+#colonne-2.page-classes{
+    padding: 0.5em;
+}
+/*######-------- COLONNE 3 --------######*/
+#colonne-3.page-lycee{
+    h2{}
+    h3{}
+    h4{}
+    p{}
+    ul{}
+    img{
+
+    }
+
+    a{
+        &:hover{}
+    }
+
+
+    h2 a{}
+    h2 a:hover{}
+    h3 a{}
+    h3 a:hover{}
+    h4 a{}
+    h4 a:hover{}
+}
+
+#service-tiers{
+    margin: 0 auto;
+    width: 55%;
+    border: 0.15em solid $violet;
+    padding: 0.2em;
+}
+#docs-utiles{
+    margin: 1em auto;
+    width: 40%;
+    background: $gris-clair;
+    text-align: left;
+}
+table.doc-joint-lycee{
+       tr.even, tr.odd {//override suite stacktable.js
+                         background-color: transparent;
+                         border-bottom: none;
+                         padding: 0;
+
+        }
+}
+
+
+/*________ CLASSES DOCUMENTS ________*/
+
+.accordeon-classes{}
+.accordeon-classes a{color: $violet;text-decoration: none;}
+.accordeon-classes a:hover{text-decoration: underline;}
+.accordeon-classes .views-accordion-item .accordion-header-active {
+background: $violet;color: $gris-clair;
+}
+/*________ CONTENU INFOS ADMIN ________*/
+#colonne-2.info-admin{
+    padding: 0.5em;
+}

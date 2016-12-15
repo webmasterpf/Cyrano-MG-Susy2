@@ -1,0 +1,123 @@
+/* Changing Susy default global settings */
+//*Réglage de la grille de Susy2 - approche mobile-first
+$total-columns: 4;             // nombre de colonnes de la grille de base pour mobile
+$column-width: 4.15em;            // largeur de chaque colonnes (px,em,%)
+$gutter-width: 1em;            // taille de la gouttière entre colonnes (px,em,%)
+
+$container-style: magic; // default to magic. Switch to fluid or fixed if desired
+//$container-width: 100%; //seulement si utilisé avec fluid grid
+$susy: (
+  output: isolate,
+  // float | isolate
+  column-width: $column-width, // false | value
+  columns: $total-columns,
+  gutters: $gutter-width / $column-width,
+  gutter-position: after, // before | after | split | inside | inside-static (requires column-width)
+  global-box-sizing: content-box, // content-box | border-box (affects inside/inside-static)
+ 
+  
+  //Style de grille
+  math: if($container-style == magic, fluid, $container-style),
+
+      //Debug - cette map créer une erreur si incluse dans $susy
+ //debug: (
+  //image: show,
+  //color: rgba(#66f, .25),
+  //output: overlay,
+  //toggle: top right
+  //),
+  );
+
+
+ 
+/* Makes border-box properties */
+//@include border-box-sizing;
+
+//Pour eviter le Warning de Sass lors de la compilation
+@mixin box-sizing($value) {
+-moz-box-sizing: $value;
+box-sizing: $value;
+}
+
+//Réglage du nombre de pixel pour changer de breakpoint() mixin 
+// qui simplifie les media-queries.Donner la largeur mini de l'ecran
+$mobile   :  (max-width 799px);//500px
+$tablet   :  (min-width 800px) (max-width 989px);//800px
+
+$desktop  :  990px;// sortie=>> min-width: 990px
+
+// Breakpoint pour les format paysage 
+$mobilelandscape : (min-height 319px) (max-height 765px) (orientation landscape);//pour orientation paysage
+$tabletlandscape: (min-height 767px) (max-width 1024px) (orientation landscape);//pour orientation paysage
+
+//Valeurs de colonnes issues de susyone pour les mixins comme @include span()
+$mobilecol   : 4;
+$mobilecol-landscape: 6;
+$tabletcol   : 8;
+$tabletcol-landcsape : 10;
+$desktopcol  : 12;
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+----- VARIABLES PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+/*-------- Couleurs charte graphique PF ----*/
+$vert : #ADC91F;
+$violet: #911381;
+$orange : #F29400;
+$orange-fonce: #DE603A;
+$bleu-turquoise: #01ABCF;
+$rouge : #E3001C;
+$rose-fushia : #E30078;
+$jaune : #FAEB0C;
+$gris-clair: #ECECED;
+$gris-clair-moyen : #9898a6;
+$gris-anthracite : #606070;
+$gris-clair-typo:#808080;
+$noir: #000000;
+$blanc-casse: #FBFBFB;
+
+// Ici paramétrer les couleurs pour l'annonce défilante
+$color-defilant:$rose-fushia;
+$color-defilant-a:$violet;
+
+// Defaults settings for Zocial Sass plugin
+$zocial-font-size: 1.8em;
+$zocial-font-weight: bold;
+$zocial-icon-font: zocial;
+$zocial-icon-default: "\0020";
+$zocial-text-font: helvetica;
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+----- FONCTIONS PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+
+/* ==============================
+  Mixins custom Prefabriquées
+=================================*/
+// ==========
+// TRANS-PREP
+// -----
+// Gives backface visibility hidden to remove flickering effect on Webkit browsers
+// http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css
+// ==========
+@mixin trans-prep {
+  // backface visibility
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  // Resets perspectives
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}

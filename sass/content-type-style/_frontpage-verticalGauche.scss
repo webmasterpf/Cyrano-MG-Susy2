@@ -1,0 +1,359 @@
+
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*---------------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|     FRONTPAGE  VERTICAL GAUCHE      |
+|                       STYLE                               |
+|---------------------------------------------*/
+
+  //@include susy-breakpoint ($mobile){}
+  //@include susy-breakpoint ($desktop){}
+  //@include susy-breakpoint ($tablet){}
+
+//Code imbriqué à 100%
+body .conteneur
+{
+    //Pas de @include container($total-columns); car deja mis dans layout !!!
+    background:transparent image-url("bg_content_etoile.gif") no-repeat left bottom;
+    .conteneur-flex{
+      
+    }
+    .HPDiapoVerticalGauche{
+       
+         }
+    .HPDiapoVerticalGauche aside.ImgFixeHPG{
+         
+    }
+    .HPDroite{
+       
+    }
+    .HPDroite1{}
+    .HPDroite2{
+        background-size: contain;
+        aside.PartieDroite2 {
+            h3{
+                font-family: $AristaFont;
+                text-align: center;
+                color: $vert;
+                font-size: large;
+                margin: 0 0 em(10px);
+            }
+        }
+    }
+    .HPDroite3{
+        background-size: contain;
+    }
+
+    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+        
+        .HPDiapoVerticalGauche{}
+        .HPDroite{}
+        .HPDroite1{}
+        .HPDroite2{}
+        .HPDroite3{}
+
+    }
+    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
+        //Taille du conteneur du groupe    
+      @include container($desktopcol);
+.conteneur-flex{
+       
+            }
+        .HPDiapoVerticalGauche{
+       padding: 0 0.3em;     
+       
+            
+        }
+        .HPDroite{
+          
+           
+            
+            
+        }
+        .HPDroite1{
+            
+        }
+        .HPDroite2{
+            background-size: initial;
+
+        }
+        .HPDroite3{
+            background-size: initial;
+        }
+    }
+
+}
+
+/********************/
+/*ZONES PAGE ACCUEIL*/
+
+.content-bottom-home {
+    table{width: auto;}
+    a {
+        //@include zocial;
+    }
+    ul{
+         @include horizontal-list;
+        li{}
+    }
+}
+
+/****************/
+.HPDiapoVerticalGauche{
+    iframe{
+        border: 0.2em solid $vert;
+        padding: 0.3em;
+        @include adaptable-img;
+    }
+}
+.HPDroite {
+
+    background: none;
+    color: black;
+    ul li {
+        list-style: square;
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    a img{
+         text-decoration: none;
+            &:hover{ text-decoration: none;
+            border: 0;background: none;}
+        
+    }
+    aside.bloc-bienvenue {
+        h3{
+            color: $violet;
+            font-family: $AristaFont;
+            font-size: xx-large;
+            text-align: center;
+        }
+    }
+}
+.illus_lyceeMetiers{
+    margin: 0 auto;
+    display: block;
+    padding: em(5px);
+}
+.HPDroite1 {
+    p{padding: 0.3em;}
+    a{
+        color: $vert;
+        padding: em(2px);
+        font-size: smaller;
+        &:hover{
+            color: black;
+            background: $vert;
+            text-decoration: none;
+        }
+    }
+       a > img[src$=".gif"]{
+         text-decoration: none;
+            &:hover{ text-decoration: none;
+            border: 0;background: none;}
+        
+    }
+    /*____ INFOS ADMIN ACCUEIL ____*/
+    table.info-admin-hp{
+        margin: em(5px) auto;
+        border: em(1px) solid $violet;padding: em(5px);
+        tr.even, tr.odd {//override suite stacktable.js
+                         background-color: transparent;
+                         border-bottom: none;
+                         padding: 0;
+
+        }
+        td{
+            background: $gris-clair;padding: em(5px);margin: 2px;text-align: center;
+        }
+        a{
+            color: $violet;text-decoration: none;
+            &:hover{text-decoration: underline;
+                    background: transparent;
+            }
+        }
+         
+         .field-content{
+             font-size: smaller;
+         }
+    }
+    #block-views-liste_activites_lycee-block_4 {
+        
+        h3{color: $violet;text-align: center;}
+    }
+    .visuel-calendrier{
+        a{
+            color:transparent;
+            text-decoration:none;
+            &:hover{
+                background: transparent;
+            }
+        }
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+.HPDroite2{
+    background: url("../images/titre_actus_hp.gif") no-repeat top left;
+    margin: 0;
+    padding: em(35px) em(2px) 0;
+
+    ul li{
+
+    }
+    .views-field-title{
+        text-indent: em(15px);
+    }
+    li a{
+        color: $violet;
+        padding: 0;
+        &:hover{
+            color: $rose-fushia;
+            padding: 0;
+        }
+    }
+    /*-----------------------------------------
+    LISTE ACTU
+    -------------------------------------------*/
+    #block-views-liste_activites_accueil-block_1 ul {
+        list-style: none;
+    }
+
+    .view-liste-activites-accueil {
+        ul li{
+            list-style: none inside;
+            background: url("../images/puce-home.gif") no-repeat left em(3px);
+            padding: 0;
+            margin: 0;
+        }
+        .titre a{
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-size: small;
+        }
+    }
+
+    p.view-liste-activites-accueil a{
+        text-decoration: none;
+    }
+}
+
+.HPDroite3{
+    background: url("../images/titre_foyer_hp.gif") no-repeat top left;
+    margin: 0;
+    padding: em(35px) em(2px) 0;
+
+}
+
+/* LISTE JOURNAL PDF */
+.liste-journal{}
+.liste-journal a{
+    text-decoration: none;
+    color: $violet;
+}
+.liste-journal a:hover{
+    text-decoration: underline;
+}
+
+
+/*------------------------------------------
+BLOC POUR ACTU FOYER
+-------------------------------------------*/
+#block-views-liste_actu_foyer-block_1{
+    float: left;
+    width: em(300px);
+    margin: 0 em(2px) 0 0;
+    padding: 0;
+    a{
+        text-decoration: none;
+        color: $violet;
+        &:hover{
+            text-decoration: underline;
+            color: $rouge;
+        }
+    }
+
+    li,  h3{
+        color: $bleu-turquoise;
+    }
+}
+
+/*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE  PANORAMIQUE----*/
+
+//Layout du diaporama dynamique (Views slideshow)
+//Code imbriqué à 100%
+aside.DiapoHP{
+   
+        #transparency{
+         
+           
+        }
+        #contenu-diapo{
+         
+        }
+    img{}
+       @include breakpoint($tablet) {
+        #transparency{}
+        #contenu-diapo{}
+
+    }
+    @include breakpoint($desktop) { 
+       
+       
+        #transparency{}
+        #contenu-diapo{}
+        img{}
+    }
+ 
+}
+
+// Style du diaporama dynamique
+
+/*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE PAS SUR MOBILE----*/
+/* Classe diapo-homepage ajoutée sur le bloc via le module block_class*/
+.conteneur aside.diapo-homepage {
+    display: none;
+    @include breakpoint ($desktop){
+        display: block;
+        #transparency{
+            background:none repeat scroll 0 0 $violet;/*Couleur du fond*/
+            height:em(60px);
+            bottom:em(75px); 
+            left:em(12px);
+            width: 95.5%;
+            position:relative;
+            z-index:15;
+            @include opacity(0.6);
+        }
+        #contenu-diapo {
+
+            position: relative;
+            bottom:10.375em;
+            left: em(10px);
+            color: white;
+            z-index: 20;
+
+            
+            p,h2 {
+                color: white;
+                padding: em(5px);
+                font-family: $AristaFont;
+                line-height: 1.3em;
+                font-size: medium;
+            }
+            a {
+
+                text-decoration: none;
+            }
+        }
+    }
+}

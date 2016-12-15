@@ -1,0 +1,110 @@
+// Importer les fichiers scss partiels (avec _) afin de compiler le
+// fichier css final utile pour le thème
+// Activer compass via 
+// webmaster@vm-server1:~$ compass watch /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
+
+
+
+html {
+ margin: 0;
+ padding: 0;
+}
+
+
+body {	
+    font-family: $FontRaleway;//Typo globale du site
+    color: $gris-clair-typo;
+
+}
+
+ /*------------------------------------------------------*
+  *--------    CSS BLOCS     						 ----*
+  *------------------------------------------------------*/
+
+ 
+ //@include susy-breakpoint ($mobile){}
+  //@include susy-breakpoint ($desktop){}
+  //@include susy-breakpoint ($tablet){}
+  
+// il faut utiliser pour un même bloc et pour chaque breakpoint 
+//soit span pour partitionner un bloc
+//soit max-width: container(); pour utiliser la taille du conteneur parent
+// sinon problèmes dans la grille !
+ 
+/*-- LAYOUT PRINCIPAL --*/
+body .conteneur{
+    //Approche mobile-first,réglage pour mobile
+    @include container($susy);// largeur stricte
+    @debug susy-get(columns);
+    //@include show-grid(overlay); //affiche bouton des colonnes en dev
+    
+    // This is the default clearfix from Compass. You can opt to use other clearfix methods
+  
+    background: transparent;
+    
+    
+        #header{
+             //voir _layout-header.scss
+        }
+        .content-global{
+           //pour breakpoint voir _layout-bp-desktop.scss           
+        }
+        .content-inner{
+           //pour breakpoint voir _layout-bp-desktop.scss           
+            .content-header{
+                
+            }
+        }
+        .content-top{
+            //pour breakpoint voir _layout-bp-desktop.scss
+            img{@include adaptable-img;}
+            .ariane{}
+        }
+        .middle-content{
+            //pour breakpoint voir _layout-bp-desktop.scss
+            
+        }
+        .node-inner{
+            //pour breakpoint voir _layout-bp-desktop.scss
+            
+            
+        }
+        .content-bottom{
+            //pour breakpoint voir _layout-bp-desktop.scss
+        }
+        .content-bottom-home{
+            //pour breakpoint voir _layout-bp-desktop.scss
+        }
+        
+            #left-content{}
+            #right-content{}
+            #footer{
+                display: block;//Avec flexbox sur mobile
+            //pas besoin de mixin car bloc prend toute la largeur
+            @include background-size;
+            //pour breakpoint voir _layout-bp-desktop.scss
+        }
+
+
+
+}//Fin definition du conteneur principal et ses enfants pour mobile
+
+
+
+//classe sur le bloc
+aside.content_top{
+ text-align: center;
+}
+.content-top-node{
+    background-color: #999;
+    margin: 0 auto;
+    padding: em(5px);  
+    @include susy-breakpoint ($mobile){
+        padding: 0.5em 0 0 0 ;
+    }
+            }
+//Images RWD pour nodes
+.node-inner
+{
+    img,iframe,object,embed{@include adaptable-img;}
+    }

@@ -1,0 +1,23 @@
+/*
+Override du style de galerie Bxslider
+*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+.galerie-vdl .bx-wrapper{
+    margin: 0 auto;
+    width: 95%;
+    a{
+      
+    }
+    li{
+        padding: 0;
+    }
+    .bx-viewport{
+        height: auto;
+    }
+    .bx-pager{
+        margin: 0 0.1em;
+    }
+}

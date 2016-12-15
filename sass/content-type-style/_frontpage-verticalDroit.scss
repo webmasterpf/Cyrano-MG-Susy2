@@ -1,0 +1,135 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|     FRONTPAGE  VERTICAL DROIT        |
+|--------------------------------------*/
+
+  //@include susy-breakpoint ($mobile){}
+  //@include susy-breakpoint ($desktop){}
+  //@include susy-breakpoint ($tablet){}
+
+//Code imbriqué à 100%
+body .conteneur {
+    background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
+       
+    
+    .HPGauche{
+        
+        .HPGauche1{}
+        .HPGauche2{}
+        .HPGauche3{}
+    }
+    .HPDiapoVerticalDroite{
+        aside.DiapoDroiteHP {
+            img{@include adaptable-img;}
+        }
+    }
+    
+}
+@include breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    //Taille du conteneur du groupe    
+
+    .HPGauche{
+        @include span(first $desktopcol/2 of $desktopcol);
+        .HPGauche1{}
+        .HPGauche2{}
+        .HPGauche3{}
+    }
+    .HPDiapoVerticalDroite{
+        @include span(last 6 of $desktopcol);
+    }
+}
+  
+    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+        //Taille du conteneur du groupe
+    .HPGauche{
+        @include span(first $tabletcol/2 of $tabletcol);
+        .HPGauche1{}
+        .HPGauche2{}
+        .HPGauche3{}
+    }
+    .HPDiapoVerticalDroite{@include span(last $tabletcol/2 of $tabletcol);} 
+        
+}
+//Pour le dev, code visuel sur les blocs selon le breakpoint
+// à commenter ou supprimer pour la production
+body .conteneur {
+        .HPGauche{
+        .HPGauche1{}
+        .HPGauche2{}
+        .HPGauche3{}
+    }
+    .HPDiapoVerticalDroite{
+        background-color: #66ff33;
+    }
+   
+    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    .HPGauche{
+        background-color: #ffff33;
+        .HPGauche1{background-color: #CFD0D2;}
+        .HPGauche2{background-color: violet;}
+        .HPGauche3{}
+    }
+    .HPDiapoVerticalDroite{background-color: #00A1CB;}
+    }
+   
+    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+    .HPGauche{
+        .HPGauche1{}
+        .HPGauche2{}
+        .HPGauche3{}
+    }
+    .HPDiapoVerticalDroite{background-color: fuchsia;}
+    }
+}
+
+
+/****************/
+.HPGauche1,.HPGauche2,.HPGauche3 {
+
+    background: none;
+    color: black;
+    ul li {
+        list-style: square;
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}
+/*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE ----*/
+
+
+// Style du diaporama dynamique
+
+#transparency{
+
+height:em(65px);
+bottom:5em; 
+left:em(12px);
+position:relative;
+z-index:15;
+width: 95%;
+@include rgba-background($rouge,0.6);/*Couleur et opacité du fond*/
+
+h2 {
+    color: white;
+    padding: em(5px);
+    font-family: $AristaFont;
+    font-size: larger;
+     bottom:0.75em;
+     
+  }
+  a {
+    
+    text-decoration: none;
+  }
+  p{
+      margin-top: 0.2em;
+  }
+}

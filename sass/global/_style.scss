@@ -1,0 +1,70 @@
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+----- STYLES PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+// Styles globaux
+/*------- EFFETS VISUELS GENERIQUES--------------*/
+.ombrage {
+    @include ombrage;
+}
+.ombrage_bas {
+    @include ombrage-bas;
+}
+.table_tr_ombrage_bas{
+    @include table-tr-ombrage-bas;
+}
+.ombrage_bloc {
+    @include ombrage-bloc;
+}
+.ombrage_bas_table_actu{
+    @include ombrage-bas-table-actu;
+}
+
+/**-- style du fil d'ariane --**/
+
+.ariane .breadcrumb {
+    display: none;
+    @include breakpoint ($desktop){
+        display: block;
+        padding: 0 0 0 0.3em;
+        color: $gris-clair-moyen;
+        text-decoration: none;
+//        background: chocolate;//supprimer en PROD
+        a {
+            color: $gris-anthracite;
+            text-decoration: none;
+              font-size: small;
+            &:hover {
+                color: #000;
+                text-decoration: underline;
+            }
+        }
+        span.menu-item-container{
+            color: $gris-anthracite;
+            text-decoration: none;
+              font-size: small;
+              display: initial;
+              text-transform: capitalize;
+              font-weight: normal;
+        }
+    }
+
+}
+/*---- STYLE TABLE GENERIK ----
+Avec des classes odd et even via JS
+js_jquery_new.js
+*/
+table{
+    tbody{
+        tr{
+            border:0;
+            .odd,&:odd{
+                background: $gris-clair;
+                
+            }
+            .even,&:even{
+                background: $gris-clair-moyen;
+            }
+        }
+    }
+
+}

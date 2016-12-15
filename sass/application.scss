@@ -1,0 +1,109 @@
+
+//Import de toutes les feuilles SCSS partielles dédiées.
+//Cette seule feuille est chargée par Drupal
+//Compass va compiler les partiels pour fabriquer cette feuille
+
+// Importer les fichiers scss partiels (avec _) afin de compiler le
+// fichier css final utile pour le thème
+// Activer compass via 
+// webmaster@vm-server1:~$ compass watch /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
+
+//http://www.zell-weekeat.com/susy2-tutorial/
+
+/*---- VERSIONS ----
+--- 2015-03-04 ---
+compass-1.0.3
+sass-3.4.13
+susy-2.2.2
+breakpoint-2.5.0
+---------------------*/
+
+//Reset des propriétés : important pour utiliser Susy 2
+@import "normalize302";
+
+// Import de Compass
+@import "compass";
+
+
+//Import des plugins de Compass
+@import "susy";// utiliser susyone si syntaxe ancienne(Susy v1),sinon susy pour utiliser v2
+//@import 'modular-scale';
+@import "breakpoint"; // Pour utiliser les breakpoint de compass
+@import "sassy-buttons";
+
+// Import des réglages susy pour la grille
+@import "global/variables";
+
+
+// Import des styles et polices Provence Formation
+@import "global/mixins_custom";
+@import "global/typos";
+@import "global/style";
+@import "global/sub-nav";
+@import "global/flex";
+@import "global/_stacktable.scss";
+
+// Import des partiels du layout du thème Drupal
+
+@import "layout/layout";
+@import "layout/layout-nodes";
+@import "layout/layout-nodes-flexbox";
+@import "layout/layout-header";
+@import "layout/layout-footer";
+@import "layout/layout-defilant";
+@import "layout/layout-bandeau";
+@import "layout/layout-off-canvas-susy";
+// Les BREAKPOINTS
+        
+@import "layout/layout-bp-tablet";
+@import "layout/layout-bp-desktop";
+//@import "layout/layout-bp-mobile-landscape";
+
+@import "ui/maintenance";
+@import "ui/search";
+@import "ui/style-backoffice";
+//@import "ui/volet_coulissant_css";
+
+//Import Homepage - choisir quel layout et style utiliser
+@import "layout/layout-diapo-frontpage";
+@import "content-type-style/_frontpage-verticalGauche.scss";
+@import "layout/_layout-vertical-hp-gauche.scss";
+
+
+
+// Import des partiels pour le style des node.tpl
+//@import "content-type-style/node-TYPE";
+@import "content-type-style/views";
+
+@import "content-type-style/page-lycee";
+//@import "content-type-style/contenu-vdl";
+@import "content-type-style/page-pole";
+@import "content-type-style/page-vdl-liste";
+@import "content-type-style/node-vdl-global";
+@import "content-type-style/page-actualites";
+@import "content-type-style/contenu-actualite";
+@import "content-type-style/contenu-vdl";
+@import "content-type-style/contenu-cdi";
+@import "content-type-style/webform-contact";
+@import "content-type-style/fiche-formation";
+@import "content-type-style/_webform.scss";
+@import "content-type-style/_calendrier.scss";
+
+//Content type site 
+
+//@import "content-type-style/fiche-formation-pf";
+
+//developpement
+
+//@import "layout/layout-debug-colour";
+
+//Galeries slideshow views
+@import "galeries/views_slideshow";
+@import "galeries/_bxslider-cyrano.scss";
+@import "galeries/_flexslider-cyrano.scss";
+//@import "galeries/_views_masonry.scss";
+//@import "galeries/_views_mur_image_susy.scss";
+//@import "galeries/_views_wookmark.scss";
+//@import "galeries/_views_salvattore.scss";
+@import "galeries/_views_mur_image_fullcss.scss";
+@import "galeries/_slick.scss";

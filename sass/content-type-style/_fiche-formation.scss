@@ -1,0 +1,118 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM               |
+|               NODE.TPL                      |
+|       FICHE FORMATION               |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+//Consulter js_jquery_new.js pour controler le retrait de la taille des images produites par PHP 
+// inscrite dans le code HTML
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #colonne-1.CLASS_NAME{order:1;}
+    #colonne-2.CLASS_NAME{order:2;}
+    #colonne-3.CLASS_NAME{order:3;}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur {
+    @include breakpoint ($desktop){
+        #colonne-1.fiche-formation{}
+        #colonne-2.fiche-formation{@include border-L-rose;}
+        
+        }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+h1.titre_ficheform{
+    color: $violet;
+}
+#colonne-1.fiche-formation{
+    ul{
+        padding:0;
+        margin:0;
+        
+         li{
+        padding: em(2px);
+        list-style: square inside none;
+        line-height: 1;
+    }
+    }
+    .complement_titre_fiche h3{
+        font-size: small;
+        color: $vert;
+        text-align: right;
+    }
+
+    .programme{
+        font-size: small;
+        a{
+            text-decoration: none;
+            color: $violet;
+            padding: em(2px);
+            font-size: small;
+            &:hover{
+                color: $gris-clair;
+                background: $violet;
+            }
+        }
+    }
+
+    .lien-ficheform{
+        font-size: small;
+        a{
+            text-decoration: none;color: $violet;padding: em(2px);
+            &:hover{
+                color: $gris-clair;
+                  background: $violet;
+            }
+        }
+    }
+
+}
+
+
+#colonne-2.fiche-formation{
+    p{
+        line-height: 1.5em;
+        padding: 0.325em;
+        margin: 0;
+    }
+    h2{
+        font-size: inherit;
+        color: $violet;
+        padding: em(3px);
+    }
+    h3{
+        font-size: small;
+        color: $vert;
+        padding: em(2px);
+    }
+    ul li{
+        padding: em(2px);
+        list-style: square inside none;
+        line-height: 1;
+    }
+    .diapo_fiche{
+        margin: em(5px) 0;
+        padding: 0;
+        
+        img{
+            border: em(1px) solid $vert;
+            padding: em(2px);
+            zoom: 0.97;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+}
+
+.views-field-field-complement-info-formation-value{text-align: center;margin: 0 auto;width: 160px;}

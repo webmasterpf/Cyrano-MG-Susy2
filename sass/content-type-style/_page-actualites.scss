@@ -1,0 +1,203 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|       PAGE ACTUALITE LISTE      |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #colonne-1.page-actualites{order:2;}
+    #colonne-2.page-actualites{order:1;}
+    #colonne-3.page-actualites{order:3;}
+    @include breakpoint ($desktop){
+    #colonne-1.page-actualites{order:1;}
+    #colonne-2.page-actualites{order:2;}
+    #colonne-3.page-actualites{order:3;}
+    }
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur {
+    @include breakpoint ($desktop){
+        #colonne-2.page-actualites{@include border-orange-violet;}
+    }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+h1.titre_page_actualites{
+    margin: em(3px);
+    color: $orange;
+}
+
+#bloc_liste_actus{
+    .views-exposed-form{
+        width: 95%;
+        margin: 0 auto;
+    }
+     .date-views-filter-wrapper{
+        width: auto;
+        min-width: 20%;
+    }
+     span.views-field-name, span.views-field-created, span.views-field-field-date-evenement-value{
+        font-style: italic;
+        font-size: x-small;
+        padding: 0 em(5px);
+        text-align: right;
+
+    }
+     span.date-display-single{
+        font-style: italic;
+        font-size: x-small;
+        padding: 0 em(5px);
+        text-align: right;
+    }
+    .table-liste-actualites{//classe dans la vue
+         ul{
+        list-style: none;
+    }
+    li{
+        list-style: none;
+    }
+     a{
+        text-decoration: none;
+        font-size: medium;
+        font-weight: bold;
+        margin: 0 em(10px);
+        color: $orange;
+      &:hover{
+        color: $violet;
+    }
+    }
+    
+     hr{
+        border-top: 0.2em solid $orange;
+        width: 75%;
+        margin: 0 auto;
+    }
+    }
+}
+
+.table_liste_actualites{
+    padding: em(5px);
+       width: 95%;
+        margin: 0 auto;
+        display: block;
+    tbody{
+        width: 95%;
+        margin: 0 auto;
+    }
+     tr{
+        margin: em(5px) 0;
+        border: 0;
+        background: none;
+    }
+    td{
+        padding: em(3px);
+        width: 95%;
+        margin: 0 auto;
+        display: block;
+    }
+    ul{
+        list-style: none;
+    }
+    li{}
+     a{
+        text-decoration: none;
+        font-size: medium;
+        font-weight: bold;
+        margin: 0 em(10px);
+        color: $orange;
+      &:hover{
+        color: $violet;
+    }
+    }
+    
+     hr{
+        border-top: 0.2em solid $orange;
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+
+/*Bloc liste RP colonne G3*/
+#bloc_liste_rp h3{
+   font-family: $AristaFont;
+   text-align: center;
+   color: $bleu-turquoise;
+   font-size: large;
+   margin: em(5px) 0;
+}
+#bloc_liste_rp p{
+    text-align: center;
+    padding: em(5px);
+}
+.liste-revue-presse_defaut ul{
+    list-style: none;
+    padding: em(5px) 0;
+}
+
+.table_liste_rp{
+    background: transparent url(../images/bg_actu_revuepresse.jpg) no-repeat ;
+    background-size: cover;
+    margin: 0 auto;
+    width: 95%;
+     tbody{
+        background: none;
+        border: 0 none;
+    }
+     tr{
+        background: none;
+        border: 0 none;
+     }
+     td{
+         text-align: center;
+         padding: em(5px);
+         width: 90%;
+         display: block;
+         margin: 0 auto;
+     }
+     a{
+        padding: em(2px);
+        text-decoration: none;
+        color: $gris-anthracite;
+        font-weight: bold;
+        &:hover{
+        background: $gris-clair;
+    }
+    }
+     
+     hr{
+        border-top: 0.2em solid $bleu-turquoise;
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+/*Bloc RSS*/
+/*--------*//* FLUX BLOC ACTU ASSO*/
+#block-aggregator-feed-1 {
+    margin: em(5px) 0;
+    color: $bleu-turquoise;
+    h3{
+        color: $rose-fushia;
+        padding: em(2px);
+    }
+    ul li{
+        list-style-position: inside;
+        list-style-type: square;
+        a{
+            text-decoration: none;
+            color:$bleu-turquoise;
+            &:hover{
+                color: $rose-fushia;
+            }
+        }
+    }
+}

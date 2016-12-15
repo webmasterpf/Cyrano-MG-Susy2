@@ -1,0 +1,82 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|           CONTENU VDL                |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+
+
+.vdl-galerie-image .gallery-slides
+{
+    img{@include adaptable-img;}
+}
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    .titre-flex{order:0;}
+    #bloc-gauche-pole{}
+    #bloc-centre-pole {}
+    #bloc-droit-pole {}
+    @include breakpoint ($desktop){
+        .titre-flex{order:0;max-height: 4em;}
+        #bloc-gauche-pole{order:1;}
+        #bloc-centre-pole {order:2;}
+        #bloc-droit-pole {order:3;}
+    }
+}
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur{
+    @include breakpoint ($desktop){
+        
+    }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+h1.titre_page_pole{
+    text-align: center;
+      font-family: $AristaFont;
+      font-size: x-large;
+      color: $violet;
+}
+/*--------------------------------------
+**** POLE FORMATION REDESIGN 2012 ******
+_________________________________________*/
+
+.bloc-pole{
+    td a,a{text-align: center;
+      color: $violet;text-decoration: none;line-height: 1.6em;padding: em(1px);text-align: center;display: block;
+      &:hover{background:$vert;color: whitesmoke;}
+    }
+    h3{text-align: center;margin:0 0 em(5px) 0;}
+    .views-field-field-complement-info-formation-value{text-align: center;font-style: italic;color: $gris-anthracite; display: block;}
+    table,tbody,tr,td{
+        background: $gris-clair;max-width: 100%;
+          display: block;
+    tbody > tr.odd{
+              background: transparent;
+              border: 0;
+          }
+    tbody >  tr.even{
+              background: transparent;
+              border: 0;
+          }
+    }
+}
+
+
+#industrie table{border:em(3px) solid $orange;padding: em(3px);margin: em(22px) 0 0 0;}
+#restauration table{border:em(3px) solid $vert;padding: em(3px);margin: 0;}
+#services table{border:em(3px) solid $bleu-turquoise;padding: em(3px);}
+#orientation table{border:em(3px) solid $rose-fushia;padding: em(3px);margin: em(22px) 0 0 0;}
+
+#industrie h3{color: $orange;}
+#services h3{color: $bleu-turquoise;}
+#restauration h3{color: $vert;}
+#orientation h3{color: $rose-fushia;}
+#industrie tr,#services tr,#restauration tr,#orientation tr{margin: em(2px) 0;}
+#industrie td,#services td,#restauration td,#orientation td{padding: em(10px) em(5px);display: block;}

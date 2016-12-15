@@ -1,0 +1,49 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// Concerne toutes les pages qui créer du contenu :
+// Sortie, Projet, APE, Entreprise, Innonvations, Intervenant
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|           CONTENU VDL                |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur {
+
+    #colonne-1.contenu-vdl{order:1;}
+    #colonne-2.contenu-vdl{order:2;}
+    #colonne-3.contenu-vdl{order:3;}
+    @include breakpoint ($desktop){
+   
+    }
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur {
+    @include breakpoint ($desktop){
+        #colonne-2.contenu-vdl{
+            @include border-L-vert;
+        }
+        }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+h1.titre-vdl{
+    color: $violet;
+  
+}
+.contenu-vdl{
+    a{
+        color: $violet;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+        
+    }
+    
+}

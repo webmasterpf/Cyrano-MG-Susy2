@@ -1,0 +1,91 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM               |
+|               NODE.TPL                      |
+|       CONTENU ACTUALITES        |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #colonne-1.contenu-actu{order:1;}
+    #colonne-2.contenu-actu{order:2;}
+    #colonne-3.contenu-actu{order:3;}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur {
+    @include breakpoint ($desktop){
+        #colonne-3.contenu-actu{
+            @include border-L-anthracite;
+        }
+        }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+
+h1.titre_actualites_content{
+    color: $orange;
+    font-family: 'Arvo',Trebuchet MS,sans-serif;
+}
+#colonne-1.contenu-actu {
+    h3.docs-actualites{
+        color: $vert;
+        text-align: center;
+    }
+    #bloc-docs-actualites{
+        width: 100%;
+        background: $gris-clair;
+        padding: em(10px);
+        a{
+            text-decoration: none;
+            color: $bleu-turquoise;
+            padding: 4px;
+            &:hover{
+                background: $bleu-turquoise;
+                color: white;
+            }
+        }
+    }
+}
+
+
+#bloc-video-actualites{
+    width: 89%;
+    display: block;
+    border: 0.1em solid $orange;
+    margin: 0 auto;
+    padding: em(2px);
+}
+
+#table-docs-actualites{
+    tbody{
+        border: 0;
+    }
+    tr{
+        border: 0 none;
+    }
+    td{
+        display: inline-block;
+        margin: 0 em(50px);
+    }
+    a{
+        &:hover{}
+    }
+
+} 
+
+#colonne-3.contenu-actu{
+    a{
+        color: $orange-fonce;text-decoration: none;
+      &:hover{
+          background:$orange-fonce;color: $gris-clair;
+      }
+    }
+}
