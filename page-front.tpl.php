@@ -11,7 +11,7 @@ include ($theme_path.'/includes/inc_header.php');
      </div> <!--/#content-top -->
  <?php endif; ?>
  
-<!--     <div class="conteneur-flex">-->
+     <div class="conteneur-flex">
    
         	 
 <!-- ______________________ PARTIE GAUCHE _______________________ -->
@@ -37,8 +37,7 @@ include ($theme_path.'/includes/inc_header.php');
        <div class="HPDiapoVerticalDroite"><?php print $DiapoDroiteHP; ?></div>
               <?php endif; ?>
        
-<!--	</div> -->
-        <!--/conteneur-flex -->
+	</div><!--/conteneur-flex -->
     <!-- ______________________ FIN LAYOUT PAGE _______________________ -->
 
 <!-- ______________________ CONTENU BAS _______________________ -->
