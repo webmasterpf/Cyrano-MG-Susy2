@@ -53,40 +53,9 @@ body .conteneur {
     .HPDiapoVerticalDroite{@include span(last $tabletcol/2 of $tabletcol);} 
         
 }
-//Pour le dev, code visuel sur les blocs selon le breakpoint
-// à commenter ou supprimer pour la production
-body .conteneur {
-        .HPGauche{
-        .HPGauche1{}
-        .HPGauche2{}
-        .HPGauche3{}
-    }
-    .HPDiapoVerticalDroite{
-        background-color: #66ff33;
-    }
-   
-    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    .HPGauche{
-        background-color: #ffff33;
-        .HPGauche1{background-color: #CFD0D2;}
-        .HPGauche2{background-color: violet;}
-        .HPGauche3{}
-    }
-    .HPDiapoVerticalDroite{background-color: #00A1CB;}
-    }
-   
-    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-    .HPGauche{
-        .HPGauche1{}
-        .HPGauche2{}
-        .HPGauche3{}
-    }
-    .HPDiapoVerticalDroite{background-color: fuchsia;}
-    }
-}
 
 
-/****************/
+/******* STYLE IMPORTE THEME ORIGINAL *********/
 .HPGauche1,.HPGauche2,.HPGauche3 {
 
     background: none;
@@ -102,34 +71,107 @@ body .conteneur {
     }
 
 }
+
+.HPGauche1{
+    text-align: center;
+    .PartieGauche1{
+        iframe{
+    margin: 0 auto;
+    border: em(1px) solid $rose-fushia;
+    padding: em(3px);
+}
+    }
+}
+
+.HPGauche2{
+/*    background: url("../images/titre_actus_hp.gif") no-repeat top left;*/
+    margin: 0;
+    padding: em(35px) em(2px) 0;
+}
+
+.HPGauche3{
+/*    background: url("../images/titre_foyer_hp.gif") no-repeat top left;*/
+    margin: 0;
+    padding: em(35px) em(2px) 0;
+.PartieGauche3 p{text-align: center;}
+.PartieGauche3 a{ 
+    color: $gris-anthracite;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    font-size:small;
+    &:hover{
+        color: $rose-fushia;
+    }
+}
+}
+
+/*----------------------
+Liste Actus pour homepage
+-----------------------*/
+.HPGauche1,.HPGauche2{
+    h3.title{
+        text-align: center;
+        font-family: $AristaFont;
+        display: block;
+        font-size: x-large;
+        color: $rose-fushia;
+    }
+    .table-actus-hp, .table-actus-hp2{
+
+        margin: 0 auto;
+        border: 0;
+        thead th{
+            border-bottom: em(3px) solid $rose-fushia;
+        }
+        tbody{
+            border: 0;
+        }
+        tr{
+            margin: em(9px);
+            display: block;
+            border: 0;
+            background: 0;
+        }
+        td{
+            background: 0;
+            border: 0;
+            margin:  0;
+            padding: 0;
+            display: block;
+            border-bottom: em(1px) solid $rose-fushia;
+            &:hover{
+                background: $rose-fushia;
+            }
+        }
+        p{}
+        a{
+            color: $gris-anthracite;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+             font-size: small;
+            &:hover{
+                text-decoration: underline;
+                color: white;
+            }
+        }
+        span.date-display-single{
+            text-align: right;
+            float: right;
+            font-style: italic;
+        }
+    }
+}
+
+.HPGauche2 {
+    .view-empty{text-align: center;}
+}
+
+
 /*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE ----*/
 
-
 // Style du diaporama dynamique
-
-#transparency{
-
-height:em(65px);
-bottom:5em; 
-left:em(12px);
-position:relative;
-z-index:15;
-width: 95%;
-@include rgba-background($rouge,0.6);/*Couleur et opacité du fond*/
-
-h2 {
-    color: white;
-    padding: em(5px);
-    font-family: $AristaFont;
-    font-size: larger;
-     bottom:0.75em;
-     
-  }
-  a {
-    
-    text-decoration: none;
-  }
-  p{
-      margin-top: 0.2em;
-  }
-}
+// voir fichier layout/layout-dipao-frontpage.scss
