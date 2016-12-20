@@ -67,14 +67,14 @@ regions[search_box] = Zone recherche - Bloc
 regions[bandeau1] = Bandeau haut de page
 
 ;Homepage pour site Provence Formation
-regions[annonceImg] = Image pour annonce - Bloc
-regions[blocLycee] = Acces Lycees - Bloc
-regions[Anim] = Animation Flash - Bloc
-regions[DiapoHP] = Diaporama Homepage - Bloc
+;regions[annonceImg] = Image pour annonce - Bloc
+;regions[blocLycee] = Acces Lycees - Bloc
+;regions[Anim] = Animation Flash - Bloc
+;regions[DiapoHP] = Diaporama Homepage - Bloc
 
 ;Regions customs pour site Provence Formation
-regions[centralBloc] = Zone pour bloc central - View Bloc
-regions[centre_partenaire] = Zone centrale page partenaire
+;regions[centralBloc] = Zone pour bloc central - View Bloc
+;regions[centre_partenaire] = Zone centrale page partenaire
 
 
 

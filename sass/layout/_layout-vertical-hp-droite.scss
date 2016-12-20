@@ -12,8 +12,7 @@
   //@include breakpoint ($tablet){}
 
 //Code imbriqué à 100%
-body .conteneur
-{
+body .conteneur {
     //Pas de @include container($total-columns); car deja mis dans layout !!!
     background:transparent image-url("bg_content_etoile.gif") no-repeat left bottom;
     .conteneur-flex{
@@ -66,19 +65,11 @@ body .conteneur
        //Affichage des blocs en ligne
         @include flex-flow(row nowrap);
            
-        .HPDiapoVerticalDroite{
-             //@include span(6 of $desktopcol first);
-              @include flex(1 0 span(6 of $desktopcol last));
-            @include order(2);
-            padding: 0;
-            
-        }
+        
         .HPGauche{
             //@include span(6 of $desktopcol);
-        
-               @include flex(1 0 span(6 of $desktopcol first));
-             @include order(1);
-            
+            @include flex(1 0 span(6 of $desktopcol first));
+            @include order(1);
         }
         .HPGauche1{
             
@@ -89,6 +80,13 @@ body .conteneur
         }
         .HPGauche3{
 
+        }
+        .HPDiapoVerticalDroite{
+             //@include span(6 of $desktopcol first);
+              @include flex(1 0 span(6 of $desktopcol last));
+            @include order(2);
+            padding: 0;
+            
         }
     }
      }
