@@ -909,7 +909,7 @@ aside.navStatic select {
     margin: 0.25em;
     border: 0;
     font-family: "Arista", Trebuchet MS, sans-serif;
-    color: #01ABCF;
+    color: #911381;
     text-decoration: none;
     display: block;
     font-size: x-large;
@@ -917,7 +917,7 @@ aside.navStatic select {
   }
   /* line 46, ../sass/global/_sub-nav.scss */
   aside.navStatic ul.horizontal-nav li a:hover {
-    color: #9898a6;
+    color: #E30078;
   }
   /* line 49, ../sass/global/_sub-nav.scss */
   aside.navStatic ul.horizontal-nav li a img {
@@ -3067,7 +3067,7 @@ aside .annonce-container .annonce {
   padding: 0;
   font-size: 1em;
   line-height: 1.5em;
-  border: 0.125em solid #E30078;
+  border: 0.0625em solid #E30078;
 }
 /* line 51, ../sass/layout/_layout-defilant.scss */
 aside.annonce-container .annonce a,
@@ -3137,8 +3137,9 @@ aside .annonce-container .annonce img {
   aside.annonce-container,
   aside .annonce-container .annonce {
     max-width: 60.8em;
+    min-height: 8em;
   }
-  /* line 78, ../sass/layout/_layout-defilant.scss */
+  /* line 79, ../sass/layout/_layout-defilant.scss */
   aside.annonce-container .annonce .views_slideshow_cycle_teaser_section, aside.annonce-container .annonce .views_slideshow_cycle_teaser_section,
   aside.annonce-container .annonce .views_slideshow_cycle_slide, aside.annonce-container .annonce .views_slideshow_slide,
   aside.annonce-container .views_slideshow_cycle_teaser_section,
@@ -4135,6 +4136,170 @@ body .conteneur-flex .HPDiapoVerticalDroite aside.DiapoDroiteHP img {
   }
 }
 
+/*------------------------------------------|
+|       CONTENU CUSTOM NODE.TPL    |
+|     FRONTPAGE  VERTICAL DROITE   |
+|-----------------------------------------*/
+/* line 15, ../sass/layout/_layout-vertical-hp-droite.scss */
+body .conteneur {
+  background: transparent url('../images/bg_content_etoile.gif?1481798830') no-repeat left bottom;
+}
+/* line 18, ../sass/layout/_layout-vertical-hp-droite.scss */
+body .conteneur .conteneur-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  display: -ms-flexbox;
+  -webkit-flex-flow: column wrap;
+  -moz-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-flex: 1 0 100%;
+  -moz-box-flex: 1 0 100%;
+  -webkit-flex: 1 0 100%;
+  -moz-flex: 1 0 100%;
+  -ms-flex: 1 0 100%;
+  flex: 1 0 100%;
+  margin-top: 1em 0 0 0;
+}
+/* line 27, ../sass/layout/_layout-vertical-hp-droite.scss */
+body .conteneur .conteneur-flex .HPDiapoVerticalDroite {
+  padding: 0.3em;
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  -moz-order: 2;
+  -ms-order: 2;
+  order: 2;
+}
+/* line 33, ../sass/layout/_layout-vertical-hp-droite.scss */
+body .conteneur .conteneur-flex .HPDiapoVerticalDroite img {
+  max-width: 100%;
+  height: auto;
+}
+@-moz-document url-prefix() {
+  /* line 31, ../sass/global/_mixins_custom.scss */
+  body .conteneur .conteneur-flex .HPDiapoVerticalDroite img img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* line 35, ../sass/layout/_layout-vertical-hp-droite.scss */
+body .conteneur .conteneur-flex .HPDiapoVerticalDroite aside.ImgFixeHPG img {
+  border: 0.1em solid #911381;
+  padding: 0.1em;
+}
+/* line 40, ../sass/layout/_layout-vertical-hp-droite.scss */
+body .conteneur .conteneur-flex .HPGauche {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  -moz-order: 1;
+  -ms-order: 1;
+  order: 1;
+  padding: 0 0 4em 0;
+}
+/* line 44, ../sass/layout/_layout-vertical-hp-droite.scss */
+body .conteneur .conteneur-flex .HPGauche img {
+  max-width: 100%;
+  height: auto;
+}
+@-moz-document url-prefix() {
+  /* line 31, ../sass/global/_mixins_custom.scss */
+  body .conteneur .conteneur-flex .HPGauche img img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 800px) and (max-width: 989px) {
+  /* line 15, ../sass/layout/_layout-vertical-hp-droite.scss */
+  body .conteneur {
+    /*     //Dimensions pour les tablettes*/
+    max-width: 40.2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 12, ../../../../../../../../.gem/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+  body .conteneur:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  /* line 54, ../sass/layout/_layout-vertical-hp-droite.scss */
+  body .conteneur .HPDiapoVerticalDroite {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 55, ../sass/layout/_layout-vertical-hp-droite.scss */
+  body .conteneur .HPGauche {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: -100%;
+  }
+}
+@media (min-width: 990px) {
+  /* line 15, ../sass/layout/_layout-vertical-hp-droite.scss */
+  body .conteneur {
+    /*    //Dimensions pour les pc*/
+    max-width: 60.8em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 12, ../../../../../../../../.gem/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+  body .conteneur:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  /* line 64, ../sass/layout/_layout-vertical-hp-droite.scss */
+  body .conteneur .conteneur-flex {
+    -webkit-flex-flow: row nowrap;
+    -moz-flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+  }
+  /* line 69, ../sass/layout/_layout-vertical-hp-droite.scss */
+  body .conteneur .conteneur-flex .HPGauche {
+    -webkit-box-flex: 1 0 49.17763%;
+    -moz-box-flex: 1 0 49.17763%;
+    -webkit-flex: 1 0 49.17763%;
+    -moz-flex: 1 0 49.17763%;
+    -ms-flex: 1 0 49.17763%;
+    flex: 1 0 49.17763%;
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    -moz-order: 1;
+    -ms-order: 1;
+    order: 1;
+  }
+  /* line 84, ../sass/layout/_layout-vertical-hp-droite.scss */
+  body .conteneur .conteneur-flex .HPDiapoVerticalDroite {
+    -webkit-box-flex: 1 0 49.17763%;
+    -moz-box-flex: 1 0 49.17763%;
+    -webkit-flex: 1 0 49.17763%;
+    -moz-flex: 1 0 49.17763%;
+    -ms-flex: 1 0 49.17763%;
+    flex: 1 0 49.17763%;
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    -moz-order: 2;
+    -ms-order: 2;
+    order: 2;
+    padding: 0;
+  }
+}
+
 /*-------------------------------------|
 |       CONTENU CUSTOM NODE.TPL        |
 |     FRONTPAGE  VERTICAL DROIT        |
@@ -4323,44 +4488,6 @@ Liste Actus pour homepage
 }
 
 /*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE ----*/
-/*-------------------------------------|
-|       STYLE DES VIEWS                |
-|par AJOUT ou OVERRIDE des classes/IDs |
-|--------------------------------------*/
-/* line 10, ../sass/content-type-style/_views.scss */
-.vue-diapo-hp-img {
-  clear: both;
-}
-/* line 13, ../sass/content-type-style/_views.scss */
-.vue-diapo-hp-img img {
-  max-width: 100%;
-  height: auto;
-}
-@-moz-document url-prefix() {
-  /* line 31, ../sass/global/_mixins_custom.scss */
-  .vue-diapo-hp-img img img {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-/* line 22, ../sass/content-type-style/_views.scss */
-.view-diaporama-homepage {
-  height: auto;
-  margin: 0 auto;
-  position: inherit;
-}
-
-/* line 28, ../sass/content-type-style/_views.scss */
-#views_slideshow_singleframe_main_diaporama_homepage-block_1 {
-  padding: 0;
-}
-
-/* line 31, ../sass/content-type-style/_views.scss */
-#views_slideshow_singleframe_teaser_section_diaporama_homepage-block_1 {
-  position: relative;
-  z-index: 1;
-}
-
 /*-------------------------------------|
 |       CONTENU CUSTOM NODE.TPL        |
 |       PAGE LYCEE                     |
