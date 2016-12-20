@@ -3061,6 +3061,7 @@ aside.annonce-container .views_slideshow_cycle_main, aside.annonce-container div
 aside.annonce-container .annonce,
 aside.annonce-container,
 aside .annonce-container .annonce {
+  min-height: 5em;
   color: #E30078;
   font-weight: bold;
   margin: 0;
@@ -3069,7 +3070,15 @@ aside .annonce-container .annonce {
   line-height: 1.5em;
   border: 0.0625em solid #E30078;
 }
-/* line 51, ../sass/layout/_layout-defilant.scss */
+@media (min-width: 990px) {
+  /* line 39, ../sass/layout/_layout-defilant.scss */
+  aside.annonce-container .annonce,
+  aside.annonce-container,
+  aside .annonce-container .annonce {
+    min-height: 8em;
+  }
+}
+/* line 54, ../sass/layout/_layout-defilant.scss */
 aside.annonce-container .annonce a,
 aside.annonce-container a,
 aside .annonce-container .annonce a {
@@ -3078,13 +3087,13 @@ aside .annonce-container .annonce a {
   font-weight: bold;
   text-transform: capitalize;
 }
-/* line 56, ../sass/layout/_layout-defilant.scss */
+/* line 59, ../sass/layout/_layout-defilant.scss */
 aside.annonce-container .annonce a:hover,
 aside.annonce-container a:hover,
 aside .annonce-container .annonce a:hover {
   text-decoration: underline;
 }
-/* line 60, ../sass/layout/_layout-defilant.scss */
+/* line 63, ../sass/layout/_layout-defilant.scss */
 aside.annonce-container .annonce p, aside.annonce-container .annonce h2, aside.annonce-container .annonce h2 a,
 aside.annonce-container p,
 aside.annonce-container h2,
@@ -3095,19 +3104,19 @@ aside .annonce-container .annonce h2 a {
   margin: 0;
   padding: 0;
 }
-/* line 64, ../sass/layout/_layout-defilant.scss */
+/* line 67, ../sass/layout/_layout-defilant.scss */
 aside.annonce-container .annonce h3,
 aside.annonce-container h3,
 aside .annonce-container .annonce h3 {
   color: #E30078;
 }
-/* line 67, ../sass/layout/_layout-defilant.scss */
+/* line 70, ../sass/layout/_layout-defilant.scss */
 aside.annonce-container .annonce p,
 aside.annonce-container p,
 aside .annonce-container .annonce p {
   font-size: large;
 }
-/* line 70, ../sass/layout/_layout-defilant.scss */
+/* line 73, ../sass/layout/_layout-defilant.scss */
 aside.annonce-container .annonce img,
 aside.annonce-container img,
 aside .annonce-container .annonce img {
@@ -3137,9 +3146,8 @@ aside .annonce-container .annonce img {
   aside.annonce-container,
   aside .annonce-container .annonce {
     max-width: 60.8em;
-    min-height: 8em;
   }
-  /* line 79, ../sass/layout/_layout-defilant.scss */
+  /* line 81, ../sass/layout/_layout-defilant.scss */
   aside.annonce-container .annonce .views_slideshow_cycle_teaser_section, aside.annonce-container .annonce .views_slideshow_cycle_teaser_section,
   aside.annonce-container .annonce .views_slideshow_cycle_slide, aside.annonce-container .annonce .views_slideshow_slide,
   aside.annonce-container .views_slideshow_cycle_teaser_section,
@@ -4304,11 +4312,33 @@ body .conteneur .conteneur-flex .HPGauche img {
 |       CONTENU CUSTOM NODE.TPL        |
 |     FRONTPAGE  VERTICAL DROIT        |
 |--------------------------------------*/
-/* line 14, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/*-------------STYLE POUR CONTENU HOMEPAGE -----------------*/
+/* line 15, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 body .conteneur {
   background: transparent image-url "bg_content_etoile.gif" no-repeat left bottom;
 }
-/* line 26, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 20, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+body .conteneur .HPGauche iframe {
+  display: block;
+  margin: 0 auto;
+  border: 0.0625em solid #E30078;
+  padding: 0.1875em;
+}
+@media (max-width: 799px) {
+  /* line 20, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+  body .conteneur .HPGauche iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  @-moz-document url-prefix() {
+    /* line 31, ../sass/global/_mixins_custom.scss */
+    body .conteneur .HPGauche iframe img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+/* line 36, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 body .conteneur .HPDiapoVerticalDroite aside.DiapoDroiteHP img {
   max-width: 100%;
   height: auto;
@@ -4322,88 +4352,52 @@ body .conteneur .HPDiapoVerticalDroite aside.DiapoDroiteHP img {
 }
 @media (min-width: 990px) {
   /*    //Dimensions pour les pc*/
-  /* line 34, ../sass/content-type-style/_frontpage-verticalDroit.scss */
-  .HPGauche {
-    width: 49.17763%;
-    float: left;
-    margin-left: 0;
-    margin-right: -100%;
-  }
-
-  /* line 40, ../sass/content-type-style/_frontpage-verticalDroit.scss */
-  .HPDiapoVerticalDroite {
-    width: 49.17763%;
-    float: left;
-    margin-left: 50.82237%;
-    margin-right: -100%;
-  }
 }
 @media (min-width: 800px) and (max-width: 989px) {
   /*     //Dimensions pour les tablettes*/
-  /* line 47, ../sass/content-type-style/_frontpage-verticalDroit.scss */
-  .HPGauche {
-    width: 48.75622%;
-    float: left;
-    margin-left: 0;
-    margin-right: -100%;
-  }
-
-  /* line 53, ../sass/content-type-style/_frontpage-verticalDroit.scss */
-  .HPDiapoVerticalDroite {
-    width: 48.75622%;
-    float: left;
-    margin-left: 51.24378%;
-    margin-right: -100%;
-  }
 }
 /******* STYLE IMPORTE THEME ORIGINAL *********/
-/* line 59, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 71, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1, .HPGauche2, .HPGauche3 {
   background: none;
   color: black;
 }
-/* line 63, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 75, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 ul li, .HPGauche2 ul li, .HPGauche3 ul li {
   list-style: square;
 }
-/* line 66, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 78, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 a, .HPGauche2 a, .HPGauche3 a {
   text-decoration: none;
 }
-/* line 68, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 80, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 a:hover, .HPGauche2 a:hover, .HPGauche3 a:hover {
   text-decoration: underline;
 }
 
-/* line 75, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 87, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 {
   text-align: center;
 }
-/* line 78, ../sass/content-type-style/_frontpage-verticalDroit.scss */
-.HPGauche1 .PartieGauche1 iframe {
-  margin: 0 auto;
-  border: 0.0625em solid #E30078;
-  padding: 0.1875em;
-}
 
-/* line 86, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 96, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche2 {
   /*    background: url("../images/titre_actus_hp.gif") no-repeat top left;*/
   margin: 0;
   padding: 2.1875em 0.125em 0;
 }
 
-/* line 92, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 102, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche3 {
   /*    background: url("../images/titre_foyer_hp.gif") no-repeat top left;*/
   margin: 0;
   padding: 2.1875em 0.125em 0;
 }
-/* line 96, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 106, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche3 .PartieGauche3 p {
   text-align: center;
 }
-/* line 97, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 107, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche3 .PartieGauche3 a {
   color: #606070;
   text-decoration: none;
@@ -4412,7 +4406,7 @@ body .conteneur .HPDiapoVerticalDroite aside.DiapoDroiteHP img {
   display: block;
   font-size: small;
 }
-/* line 104, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 114, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche3 .PartieGauche3 a:hover {
   color: #E30078;
 }
@@ -4420,7 +4414,7 @@ body .conteneur .HPDiapoVerticalDroite aside.DiapoDroiteHP img {
 /*----------------------
 Liste Actus pour homepage
 -----------------------*/
-/* line 114, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 124, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 h3.title, .HPGauche2 h3.title {
   text-align: center;
   font-family: "Arista", Trebuchet MS, sans-serif;
@@ -4428,27 +4422,27 @@ Liste Actus pour homepage
   font-size: x-large;
   color: #E30078;
 }
-/* line 121, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 131, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 .table-actus-hp, .HPGauche1 .table-actus-hp2, .HPGauche2 .table-actus-hp, .HPGauche2 .table-actus-hp2 {
   margin: 0 auto;
   border: 0;
 }
-/* line 125, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 135, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 .table-actus-hp thead th, .HPGauche1 .table-actus-hp2 thead th, .HPGauche2 .table-actus-hp thead th, .HPGauche2 .table-actus-hp2 thead th {
   border-bottom: 0.1875em solid #E30078;
 }
-/* line 128, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 138, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 .table-actus-hp tbody, .HPGauche1 .table-actus-hp2 tbody, .HPGauche2 .table-actus-hp tbody, .HPGauche2 .table-actus-hp2 tbody {
   border: 0;
 }
-/* line 131, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 141, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 .table-actus-hp tr, .HPGauche1 .table-actus-hp2 tr, .HPGauche2 .table-actus-hp tr, .HPGauche2 .table-actus-hp2 tr {
   margin: 0.5625em;
   display: block;
   border: 0;
   background: 0;
 }
-/* line 137, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 147, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 .table-actus-hp td, .HPGauche1 .table-actus-hp2 td, .HPGauche2 .table-actus-hp td, .HPGauche2 .table-actus-hp2 td {
   background: 0;
   border: 0;
@@ -4457,11 +4451,11 @@ Liste Actus pour homepage
   display: block;
   border-bottom: 0.0625em solid #E30078;
 }
-/* line 144, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 154, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 .table-actus-hp td:hover, .HPGauche1 .table-actus-hp2 td:hover, .HPGauche2 .table-actus-hp td:hover, .HPGauche2 .table-actus-hp2 td:hover {
   background: #E30078;
 }
-/* line 149, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 159, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 .table-actus-hp a, .HPGauche1 .table-actus-hp2 a, .HPGauche2 .table-actus-hp a, .HPGauche2 .table-actus-hp2 a {
   color: #606070;
   text-decoration: none;
@@ -4470,19 +4464,19 @@ Liste Actus pour homepage
   display: block;
   font-size: small;
 }
-/* line 156, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 166, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 .table-actus-hp a:hover, .HPGauche1 .table-actus-hp2 a:hover, .HPGauche2 .table-actus-hp a:hover, .HPGauche2 .table-actus-hp2 a:hover {
   text-decoration: underline;
   color: white;
 }
-/* line 161, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 171, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche1 .table-actus-hp span.date-display-single, .HPGauche1 .table-actus-hp2 span.date-display-single, .HPGauche2 .table-actus-hp span.date-display-single, .HPGauche2 .table-actus-hp2 span.date-display-single {
   text-align: right;
   float: right;
   font-style: italic;
 }
 
-/* line 170, ../sass/content-type-style/_frontpage-verticalDroit.scss */
+/* line 180, ../sass/content-type-style/_frontpage-verticalDroit.scss */
 .HPGauche2 .view-empty {
   text-align: center;
 }
