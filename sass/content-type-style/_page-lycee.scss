@@ -77,22 +77,22 @@ h4 a:hover{}
     }
     h2{
         color: $vert;
-        padding: em(em(5px));
+        padding: em(5px);
     }
     h3{
         color: $violet;
-        padding: em(em(5px));
+        padding: em(5px);
     }
     h4{
-        padding: em(em(5px));
+        padding: em(5px);
         color: $violet;
     }
     p{
-        padding: em(em(5px));
+        padding: em(5px);
         line-height: 1.5em;
             }
     ul{
-        padding: em(em(5px));
+        padding: em(5px);
             }
     img{
         
@@ -100,7 +100,7 @@ h4 a:hover{}
     a{
         color: $violet;
         text-decoration: none;
-        padding: em(em(2px));
+        padding: em(2px);
         &:hover{
             color: white;
             background: $violet;

@@ -4631,51 +4631,88 @@ h1.titre-lycee, h1.title-classes {
 }
 
 /*######-------- COLONNE 3 --------######*/
-/* line 156, ../sass/content-type-style/_page-lycee.scss */
-#service-tiers {
-  margin: 0 auto;
-  width: 55%;
-  border: 0.15em solid #911381;
-  padding: 0.2em;
+/*________  STYLES IMPORTES ANCIEN THEME  ____________*/
+/* line 158, ../sass/content-type-style/_page-lycee.scss */
+#colonne-1.page-lycee #diapo_lycee img {
+  border: 0.3em solid #911381;
+  margin: 0.625em 0 0;
 }
 
-/* line 162, ../sass/content-type-style/_page-lycee.scss */
-#docs-utiles {
-  margin: 1em auto;
-  width: 40%;
-  background: #ECECED;
-  text-align: left;
+/* line 166, ../sass/content-type-style/_page-lycee.scss */
+#colonne-2.page-lycee a {
+  color: #E30078;
+  padding: 0 0.125em;
 }
-
 /* line 169, ../sass/content-type-style/_page-lycee.scss */
-table.doc-joint-lycee tr.even, table.doc-joint-lycee tr.odd {
-  background-color: transparent;
-  border-bottom: none;
-  padding: 0;
-}
-
-/*________ CLASSES DOCUMENTS ________*/
-/* line 181, ../sass/content-type-style/_page-lycee.scss */
-.accordeon-classes a {
-  color: #911381;
+#colonne-2.page-lycee a:hover {
+  background: #E30078;
+  color: white;
   text-decoration: none;
 }
-
-/* line 182, ../sass/content-type-style/_page-lycee.scss */
-.accordeon-classes a:hover {
-  text-decoration: underline;
+/* line 176, ../sass/content-type-style/_page-lycee.scss */
+#colonne-2.page-lycee strong {
+  color: #E30078;
 }
-
+/* line 179, ../sass/content-type-style/_page-lycee.scss */
+#colonne-2.page-lycee p, #colonne-2.page-lycee ul {
+  padding: 0.1875em;
+}
 /* line 183, ../sass/content-type-style/_page-lycee.scss */
-.accordeon-classes .views-accordion-item .accordion-header-active {
-  background: #911381;
-  color: #ECECED;
+#colonne-2.page-lycee li {
+  list-style-position: inside;
+  text-indent: 0.3125em;
+}
+/* line 187, ../sass/content-type-style/_page-lycee.scss */
+#colonne-2.page-lycee .video_lycee {
+  border: 0.125em solid #911381;
+  height: auto;
+  margin: 0 auto;
 }
 
-/*________ CONTENU INFOS ADMIN ________*/
-/* line 187, ../sass/content-type-style/_page-lycee.scss */
-#colonne-2.info-admin {
-  padding: 0.5em;
+/* line 198, ../sass/content-type-style/_page-lycee.scss */
+#colonne-3.page-lycee #docs_lycee h3 {
+  font-family: "Arista", Trebuchet MS, sans-serif;
+  text-align: center;
+  color: #911381;
+  padding: 0.3125em 0;
+  font-size: larger;
+  margin: 0 0 0.3125em 0;
+}
+/* line 206, ../sass/content-type-style/_page-lycee.scss */
+#colonne-3.page-lycee #docs_lycee table {
+  display: block;
+  border: 0.1875em solid #9898a6;
+  background: #ECECED;
+  position: relative;
+  -moz-box-shadow: 2px 2px 5px #aaa;
+  -webkit-box-shadow: 2px 2px 5px #aaa;
+  box-shadow: 2px 2px 5px #555;
+  behavior: url(/sites/all/libraries/PIE/PIE.htc);
+}
+/* line 216, ../sass/content-type-style/_page-lycee.scss */
+#colonne-3.page-lycee #docs_lycee tbody {
+  display: block;
+  padding: 0.625em 0.3125em;
+  text-align: center;
+  border: 0;
+}
+/* line 222, ../sass/content-type-style/_page-lycee.scss */
+#colonne-3.page-lycee #docs_lycee td a {
+  display: block;
+  color: #606070;
+  text-decoration: none;
+  font-size: x-small;
+}
+/* line 227, ../sass/content-type-style/_page-lycee.scss */
+#colonne-3.page-lycee #docs_lycee td a:hover {
+  background: #E30078;
+  border-radius: 10px;
+  behavior: url(/sites/all/libraries/PIE/PIE.htc);
+  position: relative;
+}
+/* line 234, ../sass/content-type-style/_page-lycee.scss */
+#colonne-3.page-lycee #docs_lycee .filefield-icon {
+  display: none;
 }
 
 /*-------------------------------------|

@@ -35,7 +35,7 @@
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
             
                 <?php if ($node->field_video_lycee[0]['view']): ?>
-            <div id="video_lycee">
+            <div class="video_lycee">
                     <?php  print $node->field_video_lycee[0]['view']  ?>
             </div>
             <?php endif;?>
