@@ -1,10 +1,10 @@
+ <!-- ______________________ LAYOUT PAGE LYCEE OVERRIDE PAR NODE.TPL CUSTOM _______________________ -->
 <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_header.php');
-?>
- <!-- ______________________ LAYOUT PAGE LYCEE OVERRIDE PAR NODE.TPL CUSTOM _______________________ -->
-  <!-- ______________________ CONTENU _______________________ -->
-      <div id="contentPage">
+?>  
+ <!-- ______________________ CONTENU _______________________ -->
+      
   
           <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top): ?>
@@ -30,7 +30,7 @@ include ($theme_path.'/includes/inc_header.php');
        <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
 
 
-        <div id="content-inner-page-lycee">
+        <div id="content-inner">
 
           <?php if ($mission || $messages || $help || $tabs): ?>
             <div id="content-header">
@@ -50,7 +50,7 @@ include ($theme_path.'/includes/inc_header.php');
             </div> <!-- /#content-header -->
           <?php endif; ?>
 		  <!-- ______________________ CONTENU CENTRAL _______________________ -->
-          <div id="middle-content-page-lycee">
+          <div id="middle-content">
 
             <?php print $content; ?>
               <?php print $feed_icons; ?>
@@ -70,17 +70,13 @@ include ($theme_path.'/includes/inc_header.php');
           </div> <!-- /navigation -->
         <?php endif; ?>
 
-
-
-
-    	 <br clear="all"/>
          <!-- ______________________ CONTENU BAS _______________________ -->
 <?php if ($content_bottom): ?>
             <div id="content-bottom">
               <?php print $content_bottom; ?>
             </div><!-- /#content-bottom -->
           <?php endif; ?>
-	 </div> <!-- /contentPage -->
+	
 <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_footer.php');
