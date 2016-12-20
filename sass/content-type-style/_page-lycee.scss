@@ -152,38 +152,4 @@ h4 a:hover{}
     h4 a{}
     h4 a:hover{}
 }
-
-#service-tiers{
-    margin: 0 auto;
-    width: 55%;
-    border: 0.15em solid $violet;
-    padding: 0.2em;
-}
-#docs-utiles{
-    margin: 1em auto;
-    width: 40%;
-    background: $gris-clair;
-    text-align: left;
-}
-table.doc-joint-lycee{
-       tr.even, tr.odd {//override suite stacktable.js
-                         background-color: transparent;
-                         border-bottom: none;
-                         padding: 0;
-
-        }
-}
-
-
-/*________ CLASSES DOCUMENTS ________*/
-
-.accordeon-classes{}
-.accordeon-classes a{color: $violet;text-decoration: none;}
-.accordeon-classes a:hover{text-decoration: underline;}
-.accordeon-classes .views-accordion-item .accordion-header-active {
-background: $violet;color: $gris-clair;
-}
-/*________ CONTENU INFOS ADMIN ________*/
-#colonne-2.info-admin{
-    padding: 0.5em;
-}
+/*________  STYLES IMPORTES ANCIEN THEME  ____________*/

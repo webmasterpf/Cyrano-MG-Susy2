@@ -23,9 +23,6 @@ include ($theme_path.'/includes/inc_header.php');
             <?php endif; ?>
   
   
-  
-
-
 
        <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
 
@@ -55,8 +52,6 @@ include ($theme_path.'/includes/inc_header.php');
             <?php print $content; ?>
               <?php print $feed_icons; ?>
           </div> <!-- /#content-area -->
-
-
 
 
 
