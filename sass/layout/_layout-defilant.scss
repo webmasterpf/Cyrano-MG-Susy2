@@ -41,7 +41,7 @@ aside.annonce-container,
 aside .annonce-container .annonce
 {
     // max-width: container();
-   
+   min-height: 5em;//empeche superposition
     color: $color-defilant;
     font-weight: bold;
     margin: 0;
@@ -49,7 +49,7 @@ aside .annonce-container .annonce
     @include adjust-font-size-to(16px);
     border: em(1px) solid $rose-fushia;    
     @include breakpoint ($desktop){
-        min-height: 8em;//empeche de sortir du flux
+        min-height: 8em;//empeche superposition
        }
     a {
         color: $color-defilant-a;

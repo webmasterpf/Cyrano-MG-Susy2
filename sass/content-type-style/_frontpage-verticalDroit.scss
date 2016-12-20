@@ -11,12 +11,22 @@
   //@include susy-breakpoint ($tablet){}
 
 //Code imbriqué à 100%
+/*-------------STYLE POUR CONTENU HOMEPAGE -----------------*/
 body .conteneur {
     background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
        
     
     .HPGauche{
-        
+           iframe{
+            display: block;
+            margin: 0 auto;
+            border: em(1px) solid $rose-fushia;
+            padding: em(3px);
+            @include breakpoint ($mobile){
+                @include adaptable-img;
+            }
+            
+        }
         .HPGauche1{}
         .HPGauche2{}
         .HPGauche3{}
@@ -32,25 +42,27 @@ body .conteneur {
     //Taille du conteneur du groupe    
 
     .HPGauche{
-        @include span(first $desktopcol/2 of $desktopcol);
+      
         .HPGauche1{}
         .HPGauche2{}
         .HPGauche3{}
     }
     .HPDiapoVerticalDroite{
-        @include span(last 6 of $desktopcol);
+        
     }
 }
   
     @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
         //Taille du conteneur du groupe
     .HPGauche{
-        @include span(first $tabletcol/2 of $tabletcol);
+       
         .HPGauche1{}
         .HPGauche2{}
         .HPGauche3{}
     }
-    .HPDiapoVerticalDroite{@include span(last $tabletcol/2 of $tabletcol);} 
+    .HPDiapoVerticalDroite{
+        
+    } 
         
 }
 
@@ -76,9 +88,7 @@ body .conteneur {
     text-align: center;
     .PartieGauche1{
         iframe{
-    margin: 0 auto;
-    border: em(1px) solid $rose-fushia;
-    padding: em(3px);
+    
 }
     }
 }
