@@ -34,10 +34,11 @@ var COMPATIBILITY = [
 // Tâche "build" = SASS + autoprefixer + CSScomb + beautify (source -> destination)
 gulp.task('sasscompil', function () {
   return gulp.src(source)
-
     .pipe(plugins.sass({
         bundleExec: true,
-        outputStyle: 'compressed',
+        outputStyle: 'expanded',
+//        sourceComments: 'none',
+        sourceMap: 'sass',
         includePaths: PATHS.gems,
         
     })
@@ -46,9 +47,6 @@ gulp.task('sasscompil', function () {
         //Avec fonction anti-crash sur erreurs
             .on('error', onError)
             )
-     
-//    .pipe(plugins.csscomb())
-//    .pipe(plugins.cssbeautify({indent: '  '}))
             .pipe(plugins.autoprefixer
                     (
                             {
@@ -84,6 +82,39 @@ gulp.task('drush:cc', function () {
 //    }));
 });
 
+//**** TACHES DE PRODUCTION ****//
+gulp.task('sasscompilprod', function () {
+  return gulp.src(source)
+
+    .pipe(plugins.sass({
+        bundleExec: true,
+        outputStyle: 'compressed',
+//        sourceComments: 'none',
+//        sourceMap: 'sass',
+        includePaths: PATHS.gems
+        
+    })
+//            .on('error', plugins.sass.logError)
+        //    .on('error', console.error.bind(console, 'SASS Error :'))
+        //Avec fonction anti-crash sur erreurs
+            .on('error', onError)
+            )
+            .pipe(plugins.autoprefixer
+                    (
+                            {
+                                browsers: COMPATIBILITY,
+                                cascade: false
+                            }
+                    ))
+    .pipe(gulp.dest(destination + ''))
+    .pipe(plugins.size())
+    .pipe(plugins.notify({
+      title: "SASS Compilé",
+      message: "Les fichiers SCSS Production sont compilés dans le dossier CSS",
+      onLast: true
+    }));
+});
+
 //// Tâche "watch" = je surveille *scss
 gulp.task('watch', function() {
   // Watch - surveiller.scss files
@@ -91,8 +122,13 @@ gulp.task('watch', function() {
   //Surveiller les images pour les sprites
 });
 //
+//Compilation fichier de Production
+gulp.task('prod', ['sasscompilprod']);
+//
 //// Tâche par défaut
 gulp.task('default', ['watch']);
+
+
 
 
 //Debug des plugins chargés : liste les plugins chargés
