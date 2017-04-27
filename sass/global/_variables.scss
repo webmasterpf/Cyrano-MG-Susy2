@@ -28,8 +28,6 @@ $susy: (
   //),
   );
 
-
- 
 /* Makes border-box properties */
 //@include border-box-sizing;
 
@@ -58,7 +56,6 @@ $tabletcol-landcsape : 10;
 $desktopcol  : 12;
 
 /*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
-
 ----- VARIABLES PROVENCE FORMATION -----
 ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
 
@@ -102,22 +99,4 @@ $zocial-text-font: helvetica;
 /* ==============================
   Mixins custom Prefabriquées
 =================================*/
-// ==========
-// TRANS-PREP
-// -----
-// Gives backface visibility hidden to remove flickering effect on Webkit browsers
-// http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css
-// ==========
-@mixin trans-prep {
-  // backface visibility
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-
-  // Resets perspectives
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -ms-perspective: 1000;
-  perspective: 1000;
-}
+//voir fichier mixins_custom

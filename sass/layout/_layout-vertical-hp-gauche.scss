@@ -15,7 +15,7 @@
 body .conteneur
 {
     //Pas de @include container($total-columns); car deja mis dans layout !!!
-    background:transparent image-url("bg_content_etoile.gif") no-repeat left bottom;
+    background:transparent url("../images/bg_content_etoile.gif") no-repeat left bottom;
     .conteneur-flex{
         
         //Flexbox initialisation du conteneur

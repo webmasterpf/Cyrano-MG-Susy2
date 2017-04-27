@@ -90,7 +90,6 @@ body .conteneur .HPDiapo{
 
 
 /*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE  VERTICAL DROITE----*/
-body .conteneur .HPDiapoVerticalDroite,
 body .conteneur-flex .HPDiapoVerticalDroite{
     aside.DiapoDroiteHP{
    
@@ -124,23 +123,22 @@ body .conteneur .HPDiapo .field-content{
     
 }
 
-body .conteneur .HPDiapoVerticalDroite,
 body .conteneur-flex .HPDiapoVerticalDroite{
     // display: none; //decommenter pour ne pas afficher sur mobile
    @include breakpoint(($mobile,$desktop,$tablet)){ //commenter pour ne pas afficher sur mobile
-   //@include breakpoint (($desktop,$tablet)){
+   //@include breakpoint ($desktop){
         aside.DiapoDroiteHP{
              max-height: 31em;//résoudre problème d'espace vide sous le diapo
         }
         display: block;
         #transparency{
             height:em(60px);
-            bottom:em(76px); 
-            left:em(12px);
-            width: 96%;
+            bottom:em(69px); 
+            left:em(19px);
+            width: 93%;
             position:relative;
             z-index:15;
-            @include rgba-background($rose-fushia,0.6);/*Couleur et opacité du fond*/
+            @include rgba-background($gris-clair-moyen,0.6);/*Couleur et opacité du fond*/
         }
         #contenu-diapo {
 

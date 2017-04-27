@@ -30,7 +30,7 @@
 </div>
 <!--______________COLONNE 2________________ -->
          
-        <div id="colonne-2" class="col2_layout_200_590_200 webform">
+        <div id="colonne-2" class="col2_layout_200_590_200">
 
      <?php if ($submitted) { ?>
     <span class="submitted"><?php print $submitted?></span>
@@ -46,13 +46,6 @@
     <tr>
     <td><?php print $node->content['webform']['#value']; ?></td>
     </tr>
-      <tr>
-    <td><?php if ($node->field_apres_form[0]['view']): ?>
-            <div id="texte-sous-formulaire">
-                    <?php  print $node->field_apres_form[0]['view']  ?>
-            </div>
-            <?php endif;?></td>
-    </tr>         
     </table>
   </div>
 
@@ -72,10 +65,13 @@
 
 
     <div class="content">
-   <?php
-              global $theme_path;
-              include ($theme_path.'/includes/inc_gasquet_actus.php');
-              ?>
+
+        <br clear="all"/>
+           <?php if ($node->field_vue_actus_lycee[0]['view']): ?>
+        <div id="bloc-actu-lycee">
+           <?php  print $node->field_vue_actus_lycee[0]['view'] /*Vue actus du lycée*/ ?>
+        </div>
+           <?php endif;?>
     </div>
 
     <?php if ($terms): ?>

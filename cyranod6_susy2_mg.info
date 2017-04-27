@@ -3,7 +3,7 @@
 ;Changer le screenshot du site pour interface admin
 ;
 name = M.Gasquet with SUSY 2 Template 
-description = Gabarit SCSS /HTML5 pour Drupal 6. Thème RWD utilisant Compass, Susy 2
+description = Gabarit SCSS /HTML5 pour Drupal 6. Thème RWD utilisant Susy 2, GULP, Sans Compass
 version = VERSION
 core = 6.x
 engine = phptemplate
@@ -99,16 +99,17 @@ regions[PartieGauche3] = Zone Gauche 3 HP - Bloc
 
 ;Region pour les node.tpl (ajouter dans template.php)
 regions[actuAssociation] = Zone pour RSS issu du site PF - Vue Bloc RSS
-regions[node_col_1] = Bloc pour colonne 1
-regions[node_col_2] = Bloc pour colonne 2
-regions[node_col_3] = Bloc pour colonne 3
-regions[node_col_4] = Bloc pour colonne 4
-regions[node_col_5] = Bloc pour colonne 5
+regions[node_col_1] = Région pour colonne 1
+regions[node_col_2] = Région pour colonne 2
+regions[node_col_3] = Région pour colonne 3
+regions[node_col_4] = Région pour colonne 4
+regions[node_col_5] = Région pour colonne 5
 
 ;Region pour page poles formation (ajouter dans template.php)
-regions[pole_bloc_G] = Bloc pour pole Gauche
-regions[pole_bloc_C] = Bloc pour pole Centre
-regions[pole_bloc_D] = Bloc pour pole Droit
+regions[pole_col1] = Pôle formation - Colonne 1
+regions[pole_col2] = Pôle formation - Colonne 2
+regions[pole_col3] = Pôle formation - Colonne 3
+regions[pole_col4] = Pôle formation - Colonne 4
 
 regions[content_top] = Content top
 regions[content_top_node] = Content top node
@@ -119,14 +120,17 @@ regions[right] = Colonne Droite
 regions[content_bottom] = Content bottom
 regions[content_bottom_home] = Content bottom homepage
 regions[footer_block] = Footer
+
 ;Regions pour la page actu
 regions[revue_presse] = Zone pour les revues de presse - Vue bloc
 regions[sortie_action] = Zone pour les sorties/actions - Vue bloc
 regions[actuAssociation] = Zone pour RSS issu du site PF - Vue Bloc RSS
 regions[projets] = Zone pour les projets - Vue Bloc
 regions[intervenants] = Zone pour les Intervenants - Vue Bloc
+
 ;Region pour formulaire
 regions[formulaire] = Formulaire (centre) - Webform Bloc
+
 ;Region pour slideshow
 regions[frontpageSlideshow] = Zone Frontpage Slideshow
 

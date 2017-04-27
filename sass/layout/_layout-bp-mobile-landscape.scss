@@ -38,7 +38,7 @@ body .conteneur{
         #right-content{}
         #footer{
             //max-width: container($mobilecol-landscape);
-            @include background-size(auto);
+            @include background-size();;
         }
 
     }

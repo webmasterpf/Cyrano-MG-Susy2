@@ -22,9 +22,9 @@ body {
   *------------------------------------------------------*/
 
  
- //@include susy-breakpoint ($mobile){}
-  //@include susy-breakpoint ($desktop){}
-  //@include susy-breakpoint ($tablet){}
+ //@include breakpoint ($mobile){}
+  //@include breakpoint ($desktop){}
+  //@include breakpoint ($tablet){}
   
 // il faut utiliser pour un même bloc et pour chaque breakpoint 
 //soit span pour partitionner un bloc
@@ -80,8 +80,8 @@ body .conteneur{
             #right-content{}
             #footer{
                 display: block;//Avec flexbox sur mobile
-            //pas besoin de mixin car bloc prend toute la largeur
-            @include background-size;
+            //remplacement de mixin Compass
+            @include background-size();
             //pour breakpoint voir _layout-bp-desktop.scss
         }
 
@@ -99,7 +99,7 @@ aside.content_top{
     background-color: #999;
     margin: 0 auto;
     padding: em(5px);  
-    @include susy-breakpoint ($mobile){
+    @include breakpoint ($mobile){
         padding: 0.5em 0 0 0 ;
     }
             }

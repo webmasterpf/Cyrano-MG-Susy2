@@ -6,10 +6,10 @@
 http://www.developerdrive.com/2015/02/control-vertical-rhythm-using-sass-and-compass/
 */
 
-// Vertical rhythm pour la taille de typo selon compass
-$base-font-size:16px;
+// Vertical rhythm pour la taille de typo selon compass (déprécié 2016)
+/*$base-font-size:16px;
 $base-line-height: 24px;
-@include establish-baseline;
+@include establish-baseline;*/
 
 // Create em() for setting font-sizes in pixels.
 @function em($target, $context: $base-font-size) {
@@ -98,11 +98,11 @@ h6, .h6 {
 .conteneur{
     p{
         //@include leader();//ajoute un margin ou padding top
-        @include adjust-font-size-to(10px);//calcule un  line-height selon le rythme vertical
+        @include normalize-font-size(10px);//calcule un  line-height selon le rythme vertical
        //margin-bottom: rhythm(1, 12px);//calcule un margin-bottom selon le rythme vertical
         
     }
-    #header{@include adjust-font-size-to(12px);}
+    #header{@include normalize-font-size(12px);}
     .content-global{}
     #left-content{}
     .content-inner{
@@ -116,9 +116,9 @@ h6, .h6 {
         }
     }
     #right-content{}
-    #footer{@include adjust-font-size-to(10px);
+    #footer{@include normalize-font-size(10px);
             p{
-                @include trailer();
+                //@include trailer();
                 font-size: x-small;
                 padding: 0.3em;
                 line-height: 1.4em;
@@ -127,6 +127,6 @@ h6, .h6 {
 }
 .HPBasGauche, .HPBasDroit {
         p{
-        @include adjust-font-size-to(12px);
+        @include normalize-font-size(12px);
     }
 }

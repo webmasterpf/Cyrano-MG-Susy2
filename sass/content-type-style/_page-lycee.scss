@@ -29,8 +29,8 @@ body .conteneur{
     @include breakpoint ($desktop){
         #colonne-2.page-lycee{@include border-L-violet;}
     }
+    
 }
-
 /*######-------- ||| BREAKPOINTS ||| --------######*/
 @include breakpoint ($mobile){
     aside.deco-lycee{
@@ -62,6 +62,7 @@ img{
 a{
     &:hover{}
 }
+
 
 h2 a{}
 h2 a:hover{}
@@ -152,91 +153,38 @@ h4 a:hover{}
     h4 a{}
     h4 a:hover{}
 }
-/*________  STYLES IMPORTES ANCIEN THEME  ____________*/
-#colonne-1.page-lycee{
-    #diapo_lycee{
-        img{
-            border: 0.3em solid $violet;
-            margin: em(10px) 0 0;
-        }
-    }
 
+#service-tiers{
+    margin: 0 auto;
+    width: 55%;
+    border: 0.15em solid $violet;
+    padding: 0.2em;
 }
-#colonne-2.page-lycee{
-    a{
-        color: $rose-fushia;
-        padding: 0 em(2px);
-        &:hover{
-            background: $rose-fushia;
-            color: white;
-            text-decoration: none;
-        }
-    }
-
-    strong{
-        color: $rose-fushia;
-    }
-    p, ul{
-        padding: em(3px);
-
-    }
-    li{
-        list-style-position: inside;
-        text-indent: em(5px);
-    }
-    .video_lycee{
-        border: em(2px) solid $violet;
-
-        height: auto;
-        margin: 0 auto;
-
-    }
-
+#docs-utiles{
+    margin: 1em auto;
+    width: 40%;
+    background: $gris-clair;
+    text-align: left;
 }
-#colonne-3.page-lycee{
-    #docs_lycee{
-        h3{
-            font-family:$AristaFont;
-            text-align: center;
-            color: $violet;
-            padding: em(5px) 0;
-            font-size: larger;
-            margin: 0 0 em(5px) 0;
-        }
-        table{
-            
-            display: block;
-            border: em(3px) solid $gris-clair-moyen;
-            background: $gris-clair;
-            position: relative;
-            
-            @include ombrage-bas-table-actu;
-            @include PIE;
-        }
-        tbody{
-            display: block;
-            padding: em(10px) em(5px);
-            text-align: center;
-            border: 0;
-        }
-        td a{
-            display: block;
-            color: $gris-anthracite;
-            text-decoration: none;
-            font-size:x-small;
-            &:hover{
-                background: $rose-fushia;
-                border-radius: 10px;
-                @include PIE;
-                position: relative;
-            }
-        }
-        .filefield-icon{
-            display: none;
-        }
-    }
+table.doc-joint-lycee{
+       tr.even, tr.odd {//override suite stacktable.js
+                         background-color: transparent;
+                         border-bottom: none;
+                         padding: 0;
 
-    tr{}
-    td{}
+        }
+}
 
+
+/*________ CLASSES DOCUMENTS ________*/
+
+.accordeon-classes{}
+.accordeon-classes a{color: $violet;text-decoration: none;}
+.accordeon-classes a:hover{text-decoration: underline;}
+.accordeon-classes .views-accordion-item .accordion-header-active {
+background: $violet;color: $gris-clair;
+}
+/*________ CONTENU INFOS ADMIN ________*/
+#colonne-2.info-admin{
+    padding: 0.5em;
 }

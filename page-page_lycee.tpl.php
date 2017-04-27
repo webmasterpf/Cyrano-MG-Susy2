@@ -1,15 +1,16 @@
- <!-- ______________________ LAYOUT PAGE LYCEE OVERRIDE PAR NODE.TPL CUSTOM _______________________ -->
+ <!-- ______________________ LAYOUT PAGE MODELE OVERRIDE PAR NODE.TPL CUSTOM _______________________ -->
 <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_header.php');
 ?>  
- <!-- ______________________ CONTENU _______________________ -->
-      
-  
-          <!-- ______________________ CONTENT TOP _______________________ -->
+
+       <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
+
+        <div class="content-inner">
+              <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top): ?>
             <div id="content-top">
-	<span id="ariane"> <?php print $breadcrumb; ?></span>
+	<span class="ariane"> <?php print $breadcrumb; ?></span>
 
               <?php print $content_top; ?>
             </div> <!-- /#content-top -->
@@ -21,16 +22,9 @@ include ($theme_path.'/includes/inc_header.php');
 	              <?php print $content_top_node; ?>
             </div> <!-- /#content-top-node -->
             <?php endif; ?>
-  
-  
-
-       <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
-
-
-        <div id="content-inner">
 
           <?php if ($mission || $messages || $help || $tabs): ?>
-            <div id="content-header">
+            <div class="content-header">
 
               <?php if ($mission): ?>
                 <div id="mission"><?php print $mission; ?></div>
@@ -47,13 +41,11 @@ include ($theme_path.'/includes/inc_header.php');
             </div> <!-- /#content-header -->
           <?php endif; ?>
 		  <!-- ______________________ CONTENU CENTRAL _______________________ -->
-          <div id="middle-content">
+             <article class="middle-content">
 
             <?php print $content; ?>
               <?php print $feed_icons; ?>
-          </div> <!-- /#content-area -->
-
-
+                  </article> <!-- /#content-area -->
 
       </div> <!-- /content-inner /content -->
 
@@ -67,7 +59,7 @@ include ($theme_path.'/includes/inc_header.php');
 
          <!-- ______________________ CONTENU BAS _______________________ -->
 <?php if ($content_bottom): ?>
-            <div id="content-bottom">
+            <div class="content-bottom">
               <?php print $content_bottom; ?>
             </div><!-- /#content-bottom -->
           <?php endif; ?>
@@ -75,4 +67,4 @@ include ($theme_path.'/includes/inc_header.php');
 <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_footer.php');
-?>     
+?>          

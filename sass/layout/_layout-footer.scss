@@ -3,14 +3,14 @@
 |--------------------------------------*/
 
 //Breakpoints
-// @include susy-breakpoint ($mobile){}
-// @include susy-breakpoint ($desktop){}
-// @include susy-breakpoint ($tablet){}
+// @include breakpoint ($mobile){}
+// @include breakpoint ($desktop){}
+// @include breakpoint ($tablet){}
 
  body .conteneur #footer{
     padding:0;
     color: $gris-clair-moyen;//Changer couleur selon besoin
-    background: transparent image-url('bg_footer.jpg') no-repeat scroll right bottom;
+    background: transparent url("../images/bg_footer.jpg") no-repeat scroll right bottom;
   
     aside{
 
@@ -31,7 +31,7 @@
         @include background-size();
     }
     @include breakpoint ($desktop){
-        @include background-size(auto);
+        @include background-size();;
 
 
     }

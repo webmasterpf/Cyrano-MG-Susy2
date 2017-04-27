@@ -4,7 +4,22 @@ ABOUT THEME
 -----------
 
 Thème RWD pour les sites de l'Association développés sous Drupal 6.
-Thème développé avec Sass - Compass - Susy 2
+Thème développé avec Sass - Susy 2. Version 2017 sans utilisation de Compass.
+Utilisation de Gulp
+
+REMPLACEMENT DE COMPASS
+----------------------------------
+Installation de Gulp
+:/var/www/drupal-6/sites/all/themes/dossier_projet$ npm init
+:/var/www/drupal-6/sites/all/themes/dossier_projet$ npm install gulp --save-dev
+
+Plugin pour Gulp (permet de charger tous les plugins)
+:/var/www/drupal-6/sites/all/themes/dossier_projet$ npm install gulp-load-plugins --save-dev
+
+Plugin pour Sass:
+npm install --save-dev gulp-sass  gulp-autoprefixer gulp-size
+
+https://github.com/at-import/breakpoint
 
 REGLAGES A FAIRE
 ----------------
@@ -27,6 +42,7 @@ include ($theme_path.'/chemin/vers/fichier.php');
 ?>
 </pre>
 
+-- INUTILE --
 Vérifier les réglages dans le fichier config.rb
 Pour le thème en production, inutile d'envoyer sur le serveur les dossiers sass, fichier config.rb
 
@@ -37,10 +53,14 @@ Mettre a jour les images du theme
 
 Compilation des fichiers scss
 -----------------------------
-dans le terminal :
-user@vm-server1:~$ cd/PATH/TO/THEMENAMEFOLDER/
-user@vm-server1:~$ compass watch
-user@vm-server1:~$ bundle exec compass watch (pour conserver les versions utilisées pour le projet)
+dans le terminal (sur serveur Linux) :
+user@vm-server1:~$ compass watch /PATH/TO/THEMENAMEFOLDER/
+pour utiliser Bundler
+user@vm-server1:~$ bundle install (avant lancer 1ere compilation)
+puis
+user@vm-server1:~$ bundle exec compass compile
+sous windows,avec appli comme 
+http://scout-app.io/
 
 Usage des mixins de Susy
 ------------------------
@@ -90,9 +110,9 @@ Compass Recipes : mixin css3
  Breakpoints pour SUSY
 ----------------------------------
 <pre>
- @include susy-breakpoint ($mobile){}
- @include susy-breakpoint ($desktop){}
- @include susy-breakpoint ($tablet){}
+ @include breakpoint ($mobile){}
+ @include breakpoint ($desktop){}
+ @include breakpoint ($tablet){}
 </pre>
 
 Diaporama homepage surimpression

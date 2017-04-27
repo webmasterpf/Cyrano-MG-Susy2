@@ -48,7 +48,7 @@ body .conteneur{
         #right-content{}
         #footer{
             @include break;
-            @include background-size(auto);
+            @include background-size();;
             &:before{
                 content: " ";
                 display: block;
@@ -99,29 +99,5 @@ body .conteneur{
     }
     .twitter-share-button,.fb_iframe_widget,#___plusone_0,.IN-widget{
         padding: 0 0.3em;
-    }
-}
-/*********************************
-----------------------------------
----- RESEAUX SOCIAUX Zocial ------
----------------------------------*/
-
-
-.zocial{
-    //@include zocial;
-}
-.social-button{@include sassy-button-gradient("glass", #e86a43);}
-
-/********************/
-/*ZONES PAGE ACCUEIL*/
-
-.content-bottom-home {
-    table{width: auto;}
-    a {
-        //@include zocial;
-    }
-    ul{
-         @include horizontal-list;
-        li{}
     }
 }
