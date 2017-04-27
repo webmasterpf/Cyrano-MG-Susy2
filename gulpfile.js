@@ -58,7 +58,7 @@ gulp.task('sasscompil', function () {
                             }
                     ))
     .pipe(plugins.sourcemaps.write(destination+''))                    
-    .pipe(gulp.dest(destination + ''))
+    .pipe(gulp.dest(destination + 'app.map'))
     .pipe(plugins.size())
     .pipe(plugins.notify({
       title: "SASS Compilé",
