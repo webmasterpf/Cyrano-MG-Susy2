@@ -12,7 +12,7 @@
 
 //Code imbriqué à 100%
 body .conteneur {
-    background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
+    background:transparent url("../images/bg_content_etoile.gif") no-repeat left bottom;
        
     
     .HPGauche{
@@ -122,14 +122,13 @@ h2 {
     padding: em(5px);
     font-family: $AristaFont;
     font-size: larger;
-     bottom:0.75em;
-     
-  }
-  a {
-    
+    bottom:0.75em;
+
+}
+a {
     text-decoration: none;
-  }
-  p{
-      margin-top: 0.2em;
-  }
+}
+p{
+    margin-top: 0.2em;
+}
 }

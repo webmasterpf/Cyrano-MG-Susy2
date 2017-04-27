@@ -20,7 +20,7 @@ breakpoint-2.7.0
 ---------------------*/
 
 //Reset des propriétés : important pour utiliser Susy 2
-@import "vendor/normalize6";
+@import "vendor/_normalize6.scss";
 
 // Import de Compass (framework abandonné en 2016)
 //voir mixins_custom pour les remplacements des mixins Compass
@@ -41,7 +41,7 @@ breakpoint-2.7.0
 
 // Import des styles et polices Provence Formation
 @import "global/mixins_custom";
-@import "global/typos";
+@import "global/_typos.scss";
 @import "global/style";
 @import "global/flex";
 @import "global/_stacktable.scss";
@@ -70,9 +70,13 @@ breakpoint-2.7.0
 
 //Import Homepage - choisir quel layout et style utiliser
 @import "layout/layout-diapo-frontpage.scss";
-@import "content-type-style/_frontpage-verticalGauche.scss";
-@import "layout/_layout-vertical-hp-gauche.scss";
 
+@import "layout/_layout-vertical-hp-droite.scss";
+//@import "layout/_layout-vertical-hp-gauche.scss";
+
+
+//@import "content-type-style/_frontpage-verticalGauche.scss";
+@import "content-type-style/_frontpage-verticalDroit.scss";
 
 
 // Import des partiels pour le style des node.tpl
@@ -95,7 +99,7 @@ breakpoint-2.7.0
 
 //Content type site 
 
-@import "content-type-style/fiche-formation-pf";
+/*@import "content-type-style/fiche-formation-pf";*/
 
 //developpement
 

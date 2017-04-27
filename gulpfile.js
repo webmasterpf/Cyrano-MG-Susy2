@@ -57,29 +57,37 @@ gulp.task('sasscompil', function () {
                             }
                     ))
     .pipe(gulp.dest(destination + ''))
-    .pipe(plugins.size());
+    .pipe(plugins.size())
+    .pipe(plugins.notify({
+      title: "SASS Compilé",
+      message: "Les fichiers SCSS sont compilés dans le dossier CSS",
+      onLast: true
+    }));
 });
 
-// Tâche "minify" = minification CSS (destination -> destination)
-//gulp.task('minify', function () {
-//  return gulp.src(destination + '/assets/css/*.css')
-//    .pipe(plugins.csso())
-//    .pipe(plugins.rename({
-//      suffix: '.min'
-//    }))
-//    .pipe(gulp.dest(destination + '/assets/css/'));
-//});
+/**
+ * Defines a task that triggers a Drush cache clear (css-js).
+ */
+gulp.task('drush:cc', function () {
+//  if (!config.drush.enabled) {
+//    return;
+//  }
 //
-//// Tâche "build"
-//gulp.task('build', ['sasscompil']);
-//
-//// Tâche "prod" = Build + minify
-//gulp.task('prod', ['build',  'minify']);
-//
+//  return gulp.src('', {read: false})
+//    .pipe(shell([
+//      config.drush.alias.css_js
+//    ]))
+//    .pipe(plugins.notify({
+//      title: "Caches cleared",
+//      message: "Drupal CSS/JS caches cleared.",
+//      onLast: true
+//    }));
+});
+
 //// Tâche "watch" = je surveille *scss
 gulp.task('watch', function() {
   // Watch - surveiller.scss files
-  gulp.watch(source, ['sasscompil']);
+  gulp.watch(source, ['sasscompil','drush:cc' ]);
   //Surveiller les images pour les sprites
 });
 //

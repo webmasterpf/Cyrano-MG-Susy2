@@ -76,7 +76,7 @@ body .conteneur
         .HPGauche{
             //@include span(6 of $desktopcol);
         
-               @include flex(1 0 span(6 of $desktopcol first));
+             @include flex(1 0 span(6 of $desktopcol first));
              @include order(1);
             
         }
