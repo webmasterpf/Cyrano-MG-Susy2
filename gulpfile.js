@@ -33,21 +33,20 @@ var COMPATIBILITY = [
 ];
 // Tâche "build" = SASS + autoprefixer + CSScomb + beautify (source -> destination)
 gulp.task('sasscompil', function () {
-  return gulp.src(source)
-    .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.sass({
-        bundleExec: true,
-        outputStyle: 'compressed',
-        
-        includePaths: PATHS.gems,
-        
-    })
+    return gulp.src(source)
+            .pipe(plugins.sourcemaps.init())
+            .pipe(plugins.sass({
+                bundleExec: true,
+                outputStyle: 'compressed',
+                includePaths: PATHS.gems
+
+            })
 //            .on('error', plugins.sass.logError)
-        //    .on('error', console.error.bind(console, 'SASS Error :'))
-        //Avec fonction anti-crash sur erreurs
-            .on('error', onError)
-            )
-     
+                    //    .on('error', console.error.bind(console, 'SASS Error :'))
+                    //Avec fonction anti-crash sur erreurs
+                    .on('error', onError)
+                    )
+
 //    .pipe(plugins.csscomb())
 //    .pipe(plugins.cssbeautify({indent: '  '}))
             .pipe(plugins.autoprefixer
@@ -57,14 +56,14 @@ gulp.task('sasscompil', function () {
                                 cascade: false
                             }
                     ))
-    .pipe(plugins.sourcemaps.write(destination+''))                    
-    .pipe(gulp.dest(destination + 'app.map'))
-    .pipe(plugins.size())
-    .pipe(plugins.notify({
-      title: "SASS Compilé",
-      message: "Les fichiers SCSS sont compilés dans le dossier CSS",
-      onLast: true
-    }));
+            .pipe(plugins.sourcemaps.write(destination))
+            .pipe(gulp.dest(destination))
+            .pipe(plugins.size())
+            .pipe(plugins.notify({
+                title: "SASS Compilé",
+                message: "Les fichiers SCSS sont compilés dans le dossier CSS",
+                onLast: true
+            }));
 });
 
 /**

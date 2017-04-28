@@ -1,12 +1,10 @@
 /*
 Pour le dev, code visuel sur les blocs selon le breakpoint
 à commenter ou supprimer pour la production
-
 */
 
 body .conteneur{
     //Approche mobile-first,réglage pour mobile
-
 
     #header{}
     .content-global{}
@@ -136,14 +134,14 @@ body .conteneur {
 body .conteneur {
 
     .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background: orangered;}
-    .HPDroite{}
+    .HPDroite,.HPGauche{background: #00ff66;}
     .HPDroite1,.HPGauche1{background: sienna;}
     .HPDroite2,.HPGauche2{background: thistle;}
     .HPDroite3,.HPGauche3{background: #00c9fe;}
 
     @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-        .HPDiapoVerticalGauche{background: rosybrown;}
-        .HPDroite{}
+        .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background: rosybrown;}
+        .HPDroite,.HPGauche{background: #486900;}
         .HPDroite1,.HPGauche1{background: gold;}
         .HPDroite2,.HPGauche2{background: bisque;}
         .HPDroite3,.HPGauche3{background: #00CC99;}
@@ -159,7 +157,7 @@ body .conteneur {
 }
 //Pour le dev, code visuel sur les blocs selon le breakpoint : HP Diapo Panoramique
 // à commenter ou supprimer pour la production
-body .conteneur {
+body .conteneur{
         
     .HPDiapo{background:gold;}
     .HPBasGauche{background: #C8D215;}
@@ -178,6 +176,7 @@ body .conteneur {
         .HPBasDroit{background: red;}
     }
 }
+
 /*//////////////////////\\\\\\\\\\\\\\\\\\\\\\
 ********** COULEUR LAYOUT NODE.TPL OVERRIDE **********
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
@@ -193,7 +192,6 @@ body .conteneur{
     }
 
 }
-
 
 /*//////////////// 3 COLONNES \\\\\\\\\\\\\\\\*/
 body .conteneur{

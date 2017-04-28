@@ -1,4 +1,3 @@
-
 // Regroupe le style pour le contenu des node.tpl custom
 // créer des fichiers _node-TYPE.scss et les importer dans application.scss
 
@@ -35,8 +34,7 @@ body .conteneur
      aside.ImgFixeHPG{
             img{border: 0.1em solid $violet;padding: 0.1em;}     
                 }
-    }
-   
+    }   
                 
     .HPDroite{
         //Flexbox ordre des blocs 
@@ -62,35 +60,35 @@ body .conteneur
     @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
         //Taille du conteneur du groupe    
       @include container($desktopcol);
-.conteneur-flex{
-       //Affichage des blocs en ligne
-        @include flex-flow(row nowrap);
-           
-        .HPDiapoVerticalGauche{
-             //@include span(6 of $desktopcol first);
-             @include flex(1 0 span(6 of $desktopcol first));
-             @include order(1);
-            
-        }
-        .HPDroite{
-            //@include span(6 of $desktopcol);
-            @include flex(1 0 span(6 of $desktopcol last));
-            @include order(2);
-            padding: 0;
-            
-        }
-        .HPDroite1{
-            
-        }
-        .HPDroite2{
-            
+      .conteneur-flex{
+          //Affichage des blocs en ligne
+          @include flex-flow(row nowrap);
 
-        }
-        .HPDroite3{
+          .HPDiapoVerticalGauche{
+              //@include span(6 of $desktopcol first);
+              @include flex(1 0 span(6 of $desktopcol first));
+              @include order(1);
 
-        }
+          }
+          .HPDroite{
+              //@include span(6 of $desktopcol);
+              @include flex(1 0 span(6 of $desktopcol last));
+              @include order(2);
+              padding: 0;
+
+          }
+          .HPDroite1{
+
+          }
+          .HPDroite2{
+
+
+          }
+          .HPDroite3{
+
+          }
+      }
     }
-     }
 
 }
 
