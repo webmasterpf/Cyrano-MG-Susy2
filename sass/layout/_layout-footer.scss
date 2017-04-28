@@ -11,11 +11,11 @@
     padding:0;
     color: $gris-clair-moyen;//Changer couleur selon besoin
     background: transparent url("../images/bg_footer.jpg") no-repeat scroll right bottom;
-  
-    aside{
+      aside{
 
     }
     p{
+        //Pour outrepasser la taille de texte de § selon le breakpoint voir fichier _layout-bp-desktop.scss
         font-size: small;
     }
     a {

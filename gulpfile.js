@@ -70,20 +70,22 @@ gulp.task('sasscompil', function () {
  * Defines a task that triggers a Drush cache clear (css-js).
  */
 gulp.task('drush:cc', function () {
-//  if (!config.drush.enabled) {
-//    return;
-//  }
-//
-//  return gulp.src('', {read: false})
-//    .pipe(shell([
-//      config.drush.alias.css_js
-//    ]))
+  
+//  return gulp.src(source)
+//    .pipe(plugins.shell([
+//      'drush @vmdevd6mg cc all'
+//    ])) 
 //    .pipe(plugins.notify({
 //      title: "Caches cleared",
-//      message: "Drupal CSS/JS caches cleared.",
+//      message: "Drush Drupal CSS/JS caches cleared.",
 //      onLast: true
 //    }));
 });
+
+// Run drush to clear the theme registry.
+gulp.task('drush', plugins.shell.task([
+   'drush @vmdevd6mg cc all'
+]));
 
 //// Tâche "watch" = je surveille *scss
 gulp.task('watch', function() {
