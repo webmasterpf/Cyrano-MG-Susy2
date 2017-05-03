@@ -1,24 +1,11 @@
 // Importer les fichiers scss partiels (avec _) afin de compiler le
 // fichier css final utile pour le thème
 
-
-
-html {
- margin: 0;
- padding: 0;
-}
-
-
-body {	
-    font-family: $FontRaleway;//Typo globale du site
-    color: $gris-clair-typo;
-
-}
+//Déplacement des valeurs pour le body à cause de problèmes de compilation
 
  /*------------------------------------------------------*
   *--------    CSS BLOCS     	 ----*
   *------------------------------------------------------*/
-
  
  //@include breakpoint ($mobile){}
   //@include breakpoint ($desktop){}

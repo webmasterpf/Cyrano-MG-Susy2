@@ -89,6 +89,7 @@ var displayError = function(error) {
     console.error(errorString);
 }
 
+
 // #############################
 // Tâches à accomplir - Tasks
 // #############################
@@ -141,15 +142,15 @@ gulp.task('sasscompil', function () {
  */
 gulp.task('drush:cc', function () {
   
-//  return gulp.src(basePaths.src)
-//    .pipe(plugins.shell([
-//      'drush @vmdevd6mg cc all'
-//    ])) 
-//    .pipe(plugins.notify({
-//      title: "Caches cleared",
-//      message: "Drush Drupal CSS/JS caches cleared.",
-//      onLast: true
-//    }));
+  return gulp.src(basePaths.src)
+    .pipe(plugins.shell([
+      'drush @vmdevd6mg cc all'
+    ])) 
+    .pipe(plugins.notify({
+      title: "Caches cleared",
+      message: "Drush Drupal CSS/JS caches cleared.",
+      onLast: true
+    }));
 });
 
 // Run drush to clear the theme registry.
@@ -163,6 +164,7 @@ gulp.task('watch', function() {
   gulp.watch(basePaths.src, ['sasscompil','drush:cc' ])
   // Also when there is a change, display what file was changed, only showing the path after the 'sass folder'
     .on('change', function(evt) {
+        
         console.log(
             '[watcher] File ' + evt.path.replace(/.*(?=sass)/,'') + ' was ' + evt.type + ', compiling...'
         );

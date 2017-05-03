@@ -35,7 +35,7 @@ body .conteneur
             img{border: 0.1em solid $violet;padding: 0.1em;}     
                 }
     }   
-                
+              
     .HPDroite{
         //Flexbox ordre des blocs 
              @include order(1);

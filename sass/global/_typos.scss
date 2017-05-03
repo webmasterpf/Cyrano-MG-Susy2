@@ -17,6 +17,20 @@ $base-line-height: 24px;
 @return $target / $context + 0em;
 }*/
 
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
  /*------- TYPOS CUSTOM ---------------*/
 @font-face {
     font-family : "Arista";
@@ -91,3 +105,17 @@ $FontRaleway : 'Raleway',Trebuchet MS, Verdana, sans-serif;
 /*====================================|
 ==             OVERRIDE TYPEY SETTINGS           ==|
 =====================================*/
+/*====================================|
+==             VALEURS PAR DEFAUT             ==|
+=====================================*/
+html {
+ margin: 0;
+ padding: 0;
+}
+
+
+body {	
+    font-family: $FontRaleway;//Typo globale du site
+    color: $gris-clair-typo;
+
+}

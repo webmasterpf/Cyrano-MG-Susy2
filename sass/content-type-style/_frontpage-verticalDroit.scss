@@ -40,7 +40,7 @@ body .conteneur {
         @include span(last 6 of $desktopcol);
     }
 }
-  
+
     @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
         //Taille du conteneur du groupe
     .HPGauche{

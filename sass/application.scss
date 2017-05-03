@@ -1,11 +1,12 @@
 //Import de toutes les feuilles SCSS partielles dédiées.
 //Cette seule feuille est chargée par Drupal
-//Compass va compiler les partiels pour fabriquer cette feuille
+//Gulp va compiler les fichiers scss en un seul fichier css
 
 // Importer les fichiers scss partiels (avec _) afin de compiler le
 // fichier css final utile pour le thème
-// Activer compass via 
-// webmaster@vm-server1:~$ compass watch /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
+// Utiliser Gulp 
+// webmaster@vm-server1:~$ cd /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
+// webmaster@vm-server1:/var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/ $ gulp
 
 //http://www.zell-weekeat.com/susy2-tutorial/
 
@@ -29,7 +30,7 @@ breakpoint-2.7.0
 
 //Import des plugins de Sass (sans compass) via des Gems
 @import "susy";// utiliser susyone si syntaxe ancienne(Susy v1),sinon susy pour utiliser v2
-//@import 'modular-scale';
+
 //@import "sassy-buttons";
 @import "breakpoint";
 
@@ -37,13 +38,13 @@ breakpoint-2.7.0
 @import 'typey';
 
 // Import des réglages susy pour la grille
-@import "global/variables";
+@import "global/_variables.scss";
 
 // Import des styles et polices Provence Formation
-@import "global/mixins_custom";
+@import "global/_mixins_custom.scss";
 @import "global/_typos.scss";
-@import "global/style";
-@import "global/flex";
+@import "global/_style.scss";
+@import "global/_flex.scss";
 @import "global/_stacktable.scss";
 /*@import "global/sub-nav";*/
 
