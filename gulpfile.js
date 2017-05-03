@@ -2,47 +2,47 @@
 var options = {};
 
 // #############################
-// Edit these paths and options.
+// Réglages des différents chemins
 // #############################
 
-var importOnce = require('node-sass-import-once'),
-  path = require('path');
-  
-// The root paths are used to construct all the other paths in this
-// configuration. The "project" root path is where this gulpfile.js is located.
-// While Zen distributes this in the theme root folder, you can also put this
-// (and the package.json) in your project's root folder and edit the paths
-// accordingly.
-options.rootPath = {
-  project     : __dirname + '/',
-  styleGuide  : __dirname + '/styleguide/',
-  theme       : __dirname + '/'
+var basePaths = {
+    src: './sass/**/*.scss', // dossier de travail à surveiller
+    dest:  './css/', // dossier à livrer
+    node_modules: 'node_modules/',
+    gems:'/home/webmaster/vendor/bundle/gems/'
 };
 
-options.theme = {
-  root  : options.rootPath.theme,
-  css   : options.rootPath.theme + 'css/',
-  sass  : options.rootPath.theme + 'sass/',
-  js    : options.rootPath.theme + 'js/'
+var paths = {
+    images: {
+        src: basePaths.src + 'images/',
+        dest: basePaths.dest + 'images/min/'
+    },
+    scripts: {
+        src: basePaths.src + 'js/',
+        dest: basePaths.dest + 'js/min/'
+    },
+    styles: {
+        src: basePaths.src + 'sass/',
+        dest: basePaths.dest + 'css/min/'
+    },
+    sprite: {
+        src: basePaths.src + 'sprite/*'
+    }
 };
-
-// Set the URL used to access the Drupal website under development. This will
-// allow Browser Sync to serve the website and update CSS changes on the fly.
-options.drupalURL = '';
-// options.drupalURL = 'http://localhost';
 
 
 
 //Variable pour les gems (à adapter selon environnement)
 // File paths to various assets are defined here.
-var PATHS = {
+var assetsPath = {
   gems: [
-    '/home/webmaster/vendor/bundle/gems/susy-2.2.2/sass',
-    '/home/webmaster/vendor/bundle/gems/breakpoint-2.7.1/stylesheets',
-    '/home/webmaster/vendor/bundle/gems/'
+    basePaths.gems + 'susy-2.2.2/sass',
+    basePaths.gems + 'breakpoint-2.7.1/stylesheets',
+    
+    basePaths.node_modules +  'typey/stylesheets'
   ],
    node_modules: [
-    options.rootPath.project + 'node_modules/typey/stylesheets'
+       //Ajoutés avec les gems pour simplifier     
        
   ],
   javascript: [
@@ -58,25 +58,51 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
 
-// Variables de chemins des fichiers à compiler/surveiller
-var source = './sass/**/*.scss'; // dossier de travail
-//var source = './sass/**/application.scss'; // dossier de travail
-var destination = './css/'; // dossier à livrer
-
 // Autoprefixer : Navigateurs à cibler pour le préfixage CSS
-var COMPATIBILITY = [
-  'last 2 versions',
-  'ie >= 9',
-  'Android >= 2.3'
+var AUTOPREFIXER_BROWSERS = [
+
+'> 1%',
+'ie >= 8',
+'ie_mob >= 10',
+'ff >= 30',
+'chrome >= 34',
+'safari >= 7',
+'opera >= 23',
+'ios >= 7',
+'android >= 4',
+'bb >= 10'
 ];
+
+// A display error function, to format and make custom errors more uniform
+// Could be combined with gulp-util or npm colors for nicer output
+var displayError = function(error) {
+    // Initial building up of the error
+    var errorString = '[' + error.plugin + ']';
+    errorString += ' ' + error.message.replace("\n",''); // Removes new line at the end
+    // If the error contains the filename or line number add it to the string
+    if(error.fileName)
+        errorString += ' in ' + error.fileName;
+    if(error.lineNumber)
+        errorString += ' on line ' + error.lineNumber;
+    // This will output an error like the following:
+    // [gulp-sass] error message in file_name on line 1
+    console.error(errorString);
+}
+
+// #############################
+// Tâches à accomplir - Tasks
+// #############################
 // Tâche "build" = SASS + autoprefixer + CSScomb + beautify (source -> destination)
 gulp.task('sasscompil', function () {
-    return gulp.src(source)
+    return gulp.src(basePaths.src)
             .pipe(plugins.sourcemaps.init())
             .pipe(plugins.sass({
                 noCache: true,
                 bundleExec: true,
-                includePaths:[].concat(PATHS.gems, PATHS.node_modules),
+                includePaths: [].concat(
+                        assetsPath.gems
+                        //assetsPath.node_modules
+                        ),
                 sourceMap: true,
                 outputStyle: 'compressed'
                 
@@ -86,19 +112,23 @@ gulp.task('sasscompil', function () {
                     //Avec fonction anti-crash sur erreurs
                     .on('error', onError)
                     )
+            
+              .on('error', function(err){
+        displayError(err);
+    })
 
 //    .pipe(plugins.csscomb())
 //    .pipe(plugins.cssbeautify({indent: '  '}))
             .pipe(plugins.autoprefixer
                     (
                             {
-                                browsers: COMPATIBILITY,
+                                browsers: AUTOPREFIXER_BROWSERS,
                                 cascade: false
                             }
                     ))
-            .pipe(plugins.sourcemaps.write(destination))
-            .pipe(gulp.dest(destination))
-            .pipe(plugins.size())
+            .pipe(plugins.sourcemaps.write(basePaths.dest))
+            .pipe(gulp.dest(basePaths.dest))
+            .pipe(plugins.size({title:'Taille du fichier css'}))
             .pipe(plugins.notify({
                 title: "SASS Maps Compilé",
                 message: "Les fichiers SCSS sont compilés dans le dossier CSS",
@@ -111,7 +141,7 @@ gulp.task('sasscompil', function () {
  */
 gulp.task('drush:cc', function () {
   
-//  return gulp.src(source)
+//  return gulp.src(basePaths.src)
 //    .pipe(plugins.shell([
 //      'drush @vmdevd6mg cc all'
 //    ])) 
@@ -130,8 +160,13 @@ gulp.task('drush', plugins.shell.task([
 //// Tâche "watch" = je surveille *scss
 gulp.task('watch', function() {
   // Watch - surveiller.scss files
-  gulp.watch(source, ['sasscompil','drush:cc' ]);
-  //Surveiller les images pour les sprites
+  gulp.watch(basePaths.src, ['sasscompil','drush:cc' ])
+  // Also when there is a change, display what file was changed, only showing the path after the 'sass folder'
+    .on('change', function(evt) {
+        console.log(
+            '[watcher] File ' + evt.path.replace(/.*(?=sass)/,'') + ' was ' + evt.type + ', compiling...'
+        );
+    });
 });
 //
 //// Tâche par défaut
@@ -145,3 +180,4 @@ gulp.task('default', ['watch']);
   console.log(err);
   this.emit('end');
 }
+
