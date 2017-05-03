@@ -33,11 +33,11 @@ breakpoint-2.7.0
 //@import "sassy-buttons";
 @import "breakpoint";
 
-
+//Remplacement de Vertical Rhythm par Typey (Composant de node-sass)
+@import 'typey';
 
 // Import des réglages susy pour la grille
 @import "global/variables";
-
 
 // Import des styles et polices Provence Formation
 @import "global/mixins_custom";

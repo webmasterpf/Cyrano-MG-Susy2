@@ -39,7 +39,7 @@ var PATHS = {
   gems: [
     '/home/webmaster/vendor/bundle/gems/susy-2.2.2/sass',
     '/home/webmaster/vendor/bundle/gems/breakpoint-2.7.1/stylesheets',
-    '/home/webmaster/vendor/bundle/gems/',
+    '/home/webmaster/vendor/bundle/gems/'
   ],
    node_modules: [
     options.rootPath.project + 'node_modules/typey/stylesheets'
@@ -48,7 +48,7 @@ var PATHS = {
   javascript: [
     '',
        
-  ],
+  ]
 };
 // Requis
 var gulp = require('gulp');
@@ -74,10 +74,11 @@ gulp.task('sasscompil', function () {
     return gulp.src(source)
             .pipe(plugins.sourcemaps.init())
             .pipe(plugins.sass({
+                noCache: true,
                 bundleExec: true,
-                outputStyle: 'compressed',
-                includePaths:[].concat(PATHS.gems, PATHS.node_modules)
-                    
+                includePaths:[].concat(PATHS.gems, PATHS.node_modules),
+                sourceMap: true,
+                outputStyle: 'compressed'
                 
             })
 //            .on('error', plugins.sass.logError)
@@ -99,7 +100,7 @@ gulp.task('sasscompil', function () {
             .pipe(gulp.dest(destination))
             .pipe(plugins.size())
             .pipe(plugins.notify({
-                title: "SASS Compilé",
+                title: "SASS Maps Compilé",
                 message: "Les fichiers SCSS sont compilés dans le dossier CSS",
                 onLast: true
             }));
