@@ -1,4 +1,55 @@
 "use strict";
+var options = {};
+
+// #############################
+// Edit these paths and options.
+// #############################
+
+var importOnce = require('node-sass-import-once'),
+  path = require('path');
+  
+// The root paths are used to construct all the other paths in this
+// configuration. The "project" root path is where this gulpfile.js is located.
+// While Zen distributes this in the theme root folder, you can also put this
+// (and the package.json) in your project's root folder and edit the paths
+// accordingly.
+options.rootPath = {
+  project     : __dirname + '/',
+  styleGuide  : __dirname + '/styleguide/',
+  theme       : __dirname + '/'
+};
+
+options.theme = {
+  root  : options.rootPath.theme,
+  css   : options.rootPath.theme + 'css/',
+  sass  : options.rootPath.theme + 'sass/',
+  js    : options.rootPath.theme + 'js/'
+};
+
+// Set the URL used to access the Drupal website under development. This will
+// allow Browser Sync to serve the website and update CSS changes on the fly.
+options.drupalURL = '';
+// options.drupalURL = 'http://localhost';
+
+
+
+//Variable pour les gems (à adapter selon environnement)
+// File paths to various assets are defined here.
+var PATHS = {
+  gems: [
+    '/home/webmaster/vendor/bundle/gems/susy-2.2.2/sass',
+    '/home/webmaster/vendor/bundle/gems/breakpoint-2.7.1/stylesheets',
+    '/home/webmaster/vendor/bundle/gems/',
+  ],
+   node_modules: [
+    options.rootPath.project + 'node_modules/typey/stylesheets'
+       
+  ],
+  javascript: [
+    '',
+       
+  ],
+};
 // Requis
 var gulp = require('gulp');
 
@@ -12,19 +63,6 @@ var source = './sass/**/*.scss'; // dossier de travail
 //var source = './sass/**/application.scss'; // dossier de travail
 var destination = './css/'; // dossier à livrer
 
-//Variable pour les gems (à adapter selon environnement)
-// File paths to various assets are defined here.
-var PATHS = {
-  gems: [
-    '/home/webmaster/vendor/bundle/gems/susy-2.2.2/sass',
-    '/home/webmaster/vendor/bundle/gems/breakpoint-2.7.1/stylesheets',
-    '/home/webmaster/vendor/bundle/gems/',
-  ],
-  javascript: [
-    '',
-       
-  ],
-};
 // Autoprefixer : Navigateurs à cibler pour le préfixage CSS
 var COMPATIBILITY = [
   'last 2 versions',
@@ -38,8 +76,9 @@ gulp.task('sasscompil', function () {
             .pipe(plugins.sass({
                 bundleExec: true,
                 outputStyle: 'compressed',
-                includePaths: PATHS.gems
-
+                includePaths:[].concat(PATHS.gems, PATHS.node_modules)
+                    
+                
             })
 //            .on('error', plugins.sass.logError)
                     //    .on('error', console.error.bind(console, 'SASS Error :'))
