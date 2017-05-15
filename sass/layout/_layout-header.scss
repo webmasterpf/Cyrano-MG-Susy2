@@ -32,19 +32,21 @@
          }
         .menuHead{}  
      }                
-      
      
+     
+               
      @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
           //@include clearfix;
          .headHaut {
              @include span(full);
              .logoHead { 
-                @include span(first 2 of $desktopcol);
+                /*@include span(first 2 of $desktopcol);*/
+                @include span(first 3 of 12);
                 padding: 0;
              }
              .menuImg {
-                @include span(last 10 of $desktopcol); 
-                                 
+                /*@include span(last 10 of $desktopcol);*/ 
+                @include span(last 8 of 12);                  
              }
          }
          .headBas {
@@ -53,11 +55,11 @@
              .headSearch{@include span(last 5 of $desktopcol );}
              .menuHead{
              aside.menuDyn{
-                 
-                ul#superfish-1{}
+
+                 ul#superfish-1{}
              }
-         } 
-         
+             } 
+
          }
      }
      @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/

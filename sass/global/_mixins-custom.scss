@@ -30,12 +30,13 @@
     padding:0;
     margin:0;
     overflow:hidden;
-    > li{
-        display:block;
-        float:left;
-        &:last-child{
-            margin-right:0px;
-        }
+
+}
+@mixin horizontal-list-item {
+    display:block;
+    float:left;
+    &:last-child{
+        margin-right:0px;
     }
 }
 @mixin background-size($taille-bg: auto){

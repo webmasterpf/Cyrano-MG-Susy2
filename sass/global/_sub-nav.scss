@@ -17,27 +17,27 @@ aside.navStatic{
        /*@include flex-flow(row wrap);*/
             @include horizontal-list-container;//Compass Mixin
             @include break;
+            @include horizontal-list;
             padding-top: 1em;
             li {
-              /*@include flex(1 0 auto);*/
-                /*@include horizontal-list-item;//Compass Mixin*/
-               
+                /*@include flex(1 0 auto);*/
+                @include horizontal-list-item;//Compass Mixin
+
                 padding: 0;
                 text-align:center;
                 list-style: none;
-               // float: right;//inverse ordre des items,pas besoin avec flexbox
+                // float: right;//inverse ordre des items,pas besoin avec flexbox
 
                 &:last-child {
-              //  @include last;
-                  // width: 30%;//Permet de limiter la taille de la derniere li
+                    //  @include last;
+                    // width: 30%;//Permet de limiter la taille de la derniere li
                 }
-              
                 a {
                     // vertical alignment
                     margin: 0.25em;
                     border: 0;
                     font-family: $AristaFont;
-                    color: $bleu-turquoise;//couleur des liens
+                    color: $rose-fushia;//couleur des liens
                     text-decoration: none;
                     display: block;
                     font-size: x-large;
@@ -46,12 +46,12 @@ aside.navStatic{
                         color: $gris-clair-moyen;//couleur du hover
                     }
                     img{
-                   @include adaptable-img;
-                      margin: 0;
+                        @include adaptable-img;
+                        margin: 0;
+                    }
+
                 }
-                
-                }
-               
+
             }
             li.logo{
                 /*background-image: url("../images/"logo-Pf-sites-lycees.jpg");//avec compass*/
