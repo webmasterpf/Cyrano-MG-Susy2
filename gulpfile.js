@@ -6,7 +6,7 @@ var options = {};
 // #############################
 
 var basePaths = {
-    src: './sass/**/*.scss', // dossier de travail à surveiller
+    src: './sass/**/*.scss', // fichiers scss à surveiller
     dest:  './css/', // dossier à livrer
     node_modules: 'node_modules/',
     gems:'/home/webmaster/vendor/bundle/gems/'
@@ -52,6 +52,8 @@ var assetsPath = {
 };
 // Requis
 var gulp = require('gulp');
+var browserSync = require('browser-sync').create(); // create a browser sync instance.
+var reload = browserSync.reload;
 
 // Include plugins
 // tous les plugins de package.json
@@ -93,6 +95,16 @@ var displayError = function(error) {
 // #############################
 // Tâches à accomplir - Tasks
 // #############################
+// 
+// 
+// Tâche pour BrowserSync
+gulp.task('browser-sync', ['sasscompil'], function() {
+    browserSync.init({
+        //changer l'adresse du site pour lequel utiliser browserSync
+        proxy: "http://d6-gasquet.vmdev"
+    });
+});
+
 // Tâche "build" = SASS + autoprefixer + CSScomb + beautify (source -> destination)
 gulp.task('sasscompil', function () {
     return gulp.src(basePaths.src)
@@ -134,7 +146,8 @@ gulp.task('sasscompil', function () {
                 title: "SASS Maps Compilé",
                 message: "Les fichiers SCSS sont compilés dans le dossier CSS",
                 onLast: true
-            }));
+            }))
+            .pipe(reload({stream: true})); // prompts a reload after compilation
 });
 
 /**
@@ -160,13 +173,18 @@ gulp.task('drush', plugins.shell.task([
    'echo test'
 ]));
 
+
+
+
 //// Tâche "watch" = je surveille *scss
 gulp.task('watch', function() {
   // Watch - surveiller.scss files
   gulp.watch(basePaths.src, [
-      'sasscompil'
+      'sasscompil',
 //      'drush:cc' 
+'browser-sync'
   ])
+  
   // Also when there is a change, display what file was changed, only showing the path after the 'sass folder'
     .on('change', function(evt) {
         
