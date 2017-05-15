@@ -143,8 +143,9 @@ gulp.task('sasscompil', function () {
 gulp.task('drush:cc', function () {
   
   return gulp.src(basePaths.src)
-    .pipe(plugins.shell([
-      'drush @vmdevd6mg cc all'
+    .pipe(plugins.shell.task([
+//      'drush @vmdevd6mg cc all'
+       'echo test'
     ])) 
     .pipe(plugins.notify({
       title: "Caches cleared",
@@ -155,13 +156,17 @@ gulp.task('drush:cc', function () {
 
 // Run drush to clear the theme registry.
 gulp.task('drush', plugins.shell.task([
-   'drush @vmdevd6mg cc all'
+//   'drush @vmdevd6mg cc all',
+   'echo test'
 ]));
 
 //// Tâche "watch" = je surveille *scss
 gulp.task('watch', function() {
   // Watch - surveiller.scss files
-  gulp.watch(basePaths.src, ['sasscompil','drush:cc' ])
+  gulp.watch(basePaths.src, [
+      'sasscompil'
+//      'drush:cc' 
+  ])
   // Also when there is a change, display what file was changed, only showing the path after the 'sass folder'
     .on('change', function(evt) {
         

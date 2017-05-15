@@ -114,7 +114,7 @@ left:em(12px);
 position:relative;
 z-index:15;
 width: 95%;
-@include rgba-background($rouge,0.6);/*Couleur et opacité du fond*/
+@include rgba-background($rose-fushia,0.6);/*Couleur et opacité du fond*/
 
 h2 {
     color: white;

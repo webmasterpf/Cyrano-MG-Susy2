@@ -13,13 +13,13 @@ aside.navStatic{
         .horizontal-nav { display:block; }
         ul.horizontal-nav {        
             //Flexbox initialisation du conteneur
-       @include flex;//Compass Mixin replacement issue de flex.scss
-       @include flex-flow(row wrap);
+       /*@include flex;//Compass Mixin replacement issue de flex.scss*/
+       /*@include flex-flow(row wrap);*/
             @include horizontal-list-container;//Compass Mixin
             @include break;
             padding-top: 1em;
             li {
-              @include flex(1 0 auto);
+              /*@include flex(1 0 auto);*/
                 /*@include horizontal-list-item;//Compass Mixin*/
                
                 padding: 0;

@@ -105,6 +105,8 @@ $FontRaleway : 'Raleway',Trebuchet MS, Verdana, sans-serif;
 /*====================================|
 ==             OVERRIDE TYPEY SETTINGS           ==|
 =====================================*/
+
+
 /*====================================|
 ==             VALEURS PAR DEFAUT             ==|
 =====================================*/
@@ -118,4 +120,48 @@ body {
     font-family: $FontRaleway;//Typo globale du site
     color: $gris-clair-typo;
 
+}
+
+/*====================================|
+==             REGLAGES DES TITRES           ==|
+=====================================*/
+h1, .h1,h2, .h2 ,h3, .h3,h4, .h4,h5, .h5,h6, .h6{
+    padding:0.3em;margin: 0.3em 0 0 0;color:#000;
+}
+
+h1, .h1 {
+        font-size: 20px;
+        /*font-size: em(20px);*/
+        //Pour empêcher les titres tout en majuscule
+          &::first-letter{
+        text-transform: capitalize;
+    }
+}
+  
+h2, .h2 {
+	font-size: m;
+	/*font-size: em(18px);*/
+}
+h2.title{
+	
+
+	font-size: em(18px);
+
+ a{
+	color:$rouge;
+}
+}
+h3, .h3{
+	font-size: em(16px);
+}
+h4, .h4{
+	
+	font-size: em(14px);
+}
+h5, .h5 {
+	
+	font-size: em(12px);
+}
+h6, .h6 {
+	font-size: em(10px);
 }
