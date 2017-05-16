@@ -11,9 +11,8 @@ include ($theme_path.'/includes/inc_header.php');
      </div> <!--/#content-top -->
  <?php endif; ?>
  
-     <div class="">
-   
-        	 
+     <div class="conteneur-flex">
+           	 
 <!-- ______________________ PARTIE GAUCHE _______________________ -->
       
 	<div class="HPGauche">
