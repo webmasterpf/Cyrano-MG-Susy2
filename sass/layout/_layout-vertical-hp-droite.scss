@@ -66,17 +66,17 @@ body .conteneur
             @include flex-flow(row nowrap);
 
             .HPDiapoVerticalDroite{
-                @include span (last 6 of $desktopcol);
-                /*@include flex(1 0 span(last 6 of $desktopcol));*/
+                /*@include span (last 6 of $desktopcol);*/
+                @include flex(1 0 span(6 of $desktopcol last));
                  /*@include isolate(.3%);//permet d'isoler la colonne du flux sans qu'elle en sorte*/
            //, fixe le margin-left, possible aussi avec option no-gutters
-                @include gutters(.3em);//Toujours en dernier pour override de la taille des gouttieres
+                /*@include gutters(.3em);//Toujours en dernier pour override de la taille des gouttieres*/
                 @include order(2);
                 padding: 0;
 
             }
             .HPGauche{
-                @include span (first 6 of $desktopcol);
+                @include span (6 of $desktopcol first);
                 /*@include flex(1 0 span(first 6 of $desktopcol));*/
                 @include order(1);
 

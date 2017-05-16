@@ -14,7 +14,9 @@
 aside.content_top{
     text-align: center;
 }
-#views_slideshow_cycle_main_liste_annonce_accueil-block_1{
+//Mettre à jour le nom de l'ID'
+#block-views-Defilant_accueil-block_1
+{
     display: block;
     max-width: 100%;
     margin: 0 auto;
@@ -35,13 +37,15 @@ aside.annonce-container{
     }
 }
 
+/*Ajouter la classe via block-class dans les paramètres du bloc
+Aller à admin/build/block/configure/views/nom_de_la_vue
+*/
 
 aside.annonce-container .annonce,
 aside.annonce-container,
 aside .annonce-container .annonce
 {
     // max-width: container();
-
     color: $color-defilant;
     font-weight: bold;
     margin: 0;
@@ -78,6 +82,8 @@ aside .annonce-container .annonce
     }
 
 }
+
+
 /*DEFILANT CLASSIQUE*/
 //#block-views-liste_annonce_accueil-block_1{display: block;margin: 5px 0;height: 50px;}
 /*DEFILANT CONTENU PONCTUEL*/

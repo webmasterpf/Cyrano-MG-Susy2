@@ -134,13 +134,13 @@ body .conteneur {
 body .conteneur {
 
     .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background: orangered;}
-    .HPDroite,.HPGauche{background: #00ff66;}
+    .HPDroite,.HPGauche{background-color: #ffff33;}
     .HPDroite1,.HPGauche1{background: sienna;}
     .HPDroite2,.HPGauche2{background: thistle;}
     .HPDroite3,.HPGauche3{background: #00c9fe;}
 
     @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-        .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background: rosybrown;}
+        .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background-color: #00A1CB;}
         .HPDroite,.HPGauche{background: #486900;}
         .HPDroite1,.HPGauche1{background: gold;}
         .HPDroite2,.HPGauche2{background: bisque;}
@@ -148,7 +148,7 @@ body .conteneur {
     }
 
     @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-        .HPDiapoVerticalGauche{}
+        .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background-color: fuchsia;}
         .HPDroite,.HPGauche{background: #C8D215;}
         .HPDroite1,.HPGauche1{background: royalblue;}
         .HPDroite2,.HPGauche2{background: #00CC99;}

@@ -7,6 +7,7 @@ include ($theme_path.'/includes/inc_header.php');
        <!-- ______________________ CONTENT INNER GLOBAL _______________________ -->
 
         <div class="content-inner">
+            
               <!-- ______________________ CONTENT TOP _______________________ -->
       <?php if ($breadcrumb ||$content_top): ?>
             <div id="content-top">
@@ -58,13 +59,14 @@ include ($theme_path.'/includes/inc_header.php');
         <?php endif; ?>
 
          <!-- ______________________ CONTENU BAS _______________________ -->
+         
 <?php if ($content_bottom): ?>
             <div class="content-bottom">
               <?php print $content_bottom; ?>
             </div><!-- /#content-bottom -->
           <?php endif; ?>
-	
-<?php
+
+            <?php
 global $theme_path;
 include ($theme_path.'/includes/inc_footer.php');
 ?>     

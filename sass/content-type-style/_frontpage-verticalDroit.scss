@@ -31,13 +31,13 @@ body .conteneur {
     //Taille du conteneur du groupe    
 
     .HPGauche{
-        @include span(first $desktopcol/2 of $desktopcol);
+        
         .HPGauche1{}
         .HPGauche2{}
         .HPGauche3{}
     }
     .HPDiapoVerticalDroite{
-        @include span(last 6 of $desktopcol);
+        
     }
 }
 
@@ -61,17 +61,16 @@ body .conteneur {
         .HPGauche3{}
     }
     .HPDiapoVerticalDroite{
-        background-color: #66ff33;
+        
     }
    
     @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
     .HPGauche{
-        background-color: #ffff33;
-        .HPGauche1{background-color: #CFD0D2;}
-        .HPGauche2{background-color: violet;}
+        .HPGauche1{}
+        .HPGauche2{}
         .HPGauche3{}
     }
-    .HPDiapoVerticalDroite{background-color: #00A1CB;}
+    .HPDiapoVerticalDroite{}
     }
    
     @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
@@ -80,7 +79,7 @@ body .conteneur {
         .HPGauche2{}
         .HPGauche3{}
     }
-    .HPDiapoVerticalDroite{background-color: fuchsia;}
+    .HPDiapoVerticalDroite{}
     }
 }
 
@@ -100,34 +99,4 @@ body .conteneur {
         }
     }
 
-}
-/*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE ----*/
-
-
-// Style du diaporama dynamique
-
-#transparency{
-
-height:em(65px);
-bottom:5em; 
-left:em(12px);
-position:relative;
-z-index:15;
-width: 95%;
-@include rgba-background($rose-fushia,0.6);/*Couleur et opacité du fond*/
-
-h2 {
-    color: white;
-    padding: em(5px);
-    font-family: $AristaFont;
-    font-size: larger;
-    bottom:0.75em;
-
-}
-a {
-    text-decoration: none;
-}
-p{
-    margin-top: 0.2em;
-}
 }
