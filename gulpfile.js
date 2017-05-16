@@ -85,12 +85,12 @@ var displayError = function(error) {
 //gulp.task('browser-sync', ['sasscompil'], function() {
 gulp.task('browser-sync', function() {
      // Watch files
-    var files = [
-        './js/*.js',
-        '**/*.php',
-        './**/*.tpl.php',
-        './images/**/*.{png,jpg,gif,svg}'
-    ];
+//    var files = [
+//        './js/*.js',
+//        '**/*.php',
+//        './**/*.tpl.php',
+//        './images/**/*.{png,jpg,gif,svg}'
+//    ];
        browserSync.init({
         //changer l'adresse du site pour lequel utiliser browserSync
         proxy: "http://d6-gasquet.vmdev",

@@ -58,6 +58,7 @@ body .conteneur
         .HPGauche3{}
 
     }
+    
     @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
         //Taille du conteneur du groupe    
         @include container($desktopcol);
@@ -66,10 +67,10 @@ body .conteneur
             @include flex-flow(row nowrap);
 
             .HPDiapoVerticalDroite{
-                /*@include span (last 6 of $desktopcol);*/
-                @include flex(1 0 span(6 of $desktopcol last));
+                @include span (last 6 of $desktopcol);
+                /*@include flex(1 0 span(6 of $desktopcol last));*/
                  /*@include isolate(.3%);//permet d'isoler la colonne du flux sans qu'elle en sorte*/
-           //, fixe le margin-left, possible aussi avec option no-gutters
+                //, fixe le margin-left, possible aussi avec option no-gutters
                 /*@include gutters(.3em);//Toujours en dernier pour override de la taille des gouttieres*/
                 @include order(2);
                 padding: 0;
