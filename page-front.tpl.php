@@ -12,7 +12,8 @@ include ($theme_path.'/includes/inc_header.php');
  <?php endif; ?>
  
      <div class="conteneur-flex">
-           	 
+   
+        	 
 <!-- ______________________ PARTIE GAUCHE _______________________ -->
       
 	<div class="HPGauche">
