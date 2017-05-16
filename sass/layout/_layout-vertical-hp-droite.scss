@@ -26,8 +26,7 @@ body .conteneur
         @include flex(1 0 span($mobilecol));
         margin-top: 1em 0 0 0;
         .HPDiapoVerticalDroite{
-            @include flex(1 0 span(6 of $desktopcol first));
-            padding: 0;
+      padding: 0.3em;
             //Flexbox ordre des blocs
 
             @include order(2);    
@@ -40,7 +39,6 @@ body .conteneur
 
         .HPGauche{
             //Flexbox ordre des blocs 
-            @include flex(1 0 span(6 of $desktopcol last));
             @include order(1);
             padding:0;
             img{@include adaptable-img;}
@@ -68,15 +66,18 @@ body .conteneur
             @include flex-flow(row nowrap);
 
             .HPDiapoVerticalDroite{
-                //@include span(6 of $desktopcol first);
-                @include flex(1 0 span(6 of $desktopcol last));
+                @include span (last 6 of $desktopcol);
+                /*@include flex(1 0 span(last 6 of $desktopcol));*/
+                 /*@include isolate(.3%);//permet d'isoler la colonne du flux sans qu'elle en sorte*/
+           //, fixe le margin-left, possible aussi avec option no-gutters
+                @include gutters(.3em);//Toujours en dernier pour override de la taille des gouttieres
                 @include order(2);
                 padding: 0;
 
             }
             .HPGauche{
-
-                @include flex(1 0 span(6 of $desktopcol first));
+                @include span (first 6 of $desktopcol);
+                /*@include flex(1 0 span(first 6 of $desktopcol));*/
                 @include order(1);
 
             }
