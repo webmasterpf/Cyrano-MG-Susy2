@@ -8,26 +8,9 @@ var options = {};
 var basePaths = {
     src: './sass/**/*.scss', // fichiers scss à surveiller
     dest:  './css/', // dossier à livrer
+    tpl: '**/*.tpl.php',
     node_modules: './node_modules/',
     gems:'/home/webmaster/vendor/bundle/gems/'
-};
-
-var paths = {
-    images: {
-        src: basePaths.src + 'images/',
-        dest: basePaths.dest + 'images/min/'
-    },
-    scripts: {
-        src: basePaths.src + 'js/',
-        dest: basePaths.dest + 'js/min/'
-    },
-    styles: {
-        src: basePaths.src + 'sass/',
-        dest: basePaths.dest + 'css/min/'
-    },
-    sprite: {
-        src: basePaths.src + 'sprite/*'
-    }
 };
 
 
@@ -99,10 +82,21 @@ var displayError = function(error) {
 // 
 // 
 // Tâche pour BrowserSync
-gulp.task('browser-sync', ['sasscompil'], function() {
-    browserSync.init({
+//gulp.task('browser-sync', ['sasscompil'], function() {
+gulp.task('browser-sync', function() {
+     // Watch files
+    var files = [
+        './js/*.js',
+        '**/*.php',
+        './**/*.tpl.php',
+        './images/**/*.{png,jpg,gif,svg}'
+    ];
+       browserSync.init({
         //changer l'adresse du site pour lequel utiliser browserSync
-        proxy: "http://d6-gasquet.vmdev"
+        proxy: "http://d6-gasquet.vmdev",
+        open: false,
+        logLevel: 'debug',
+        logConnections: true
     });
 });
 
@@ -148,8 +142,8 @@ gulp.task('sasscompil', function () {
                 message: "Les fichiers SCSS sont compilés dans le dossier CSS",
                 onLast: true
             }))
-    //        .pipe(bs_reload({stream: true}))// prompts a reload after compilation
-            .pipe(bs_stream)
+            .pipe(bs_reload({stream: true}))// prompts a reload after compilation
+
     ;
 });
 
@@ -185,7 +179,7 @@ gulp.task('watch', function() {
   gulp.watch(basePaths.src, [
       'sasscompil',
 //      'drush:cc' 
-'browser-sync'
+//'browser-sync'
   ])
   
   // Also when there is a change, display what file was changed, only showing the path after the 'sass folder'
@@ -198,7 +192,7 @@ gulp.task('watch', function() {
 });
 //
 //// Tâche par défaut
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch','browser-sync']);
 
 
 //Debug des plugins chargés : liste les plugins chargés
