@@ -8,7 +8,7 @@ var options = {};
 var basePaths = {
     src: './sass/**/*.scss', // fichiers scss à surveiller
     dest:  './css/', // dossier à livrer
-    node_modules: 'node_modules/',
+    node_modules: './node_modules/',
     gems:'/home/webmaster/vendor/bundle/gems/'
 };
 
@@ -53,7 +53,8 @@ var assetsPath = {
 // Requis
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create(); // create a browser sync instance.
-var reload = browserSync.reload;
+var bs_reload = browserSync.reload;
+var bs_stream = browserSync.stream();
 
 // Include plugins
 // tous les plugins de package.json
@@ -147,7 +148,9 @@ gulp.task('sasscompil', function () {
                 message: "Les fichiers SCSS sont compilés dans le dossier CSS",
                 onLast: true
             }))
-            .pipe(reload({stream: true})); // prompts a reload after compilation
+    //        .pipe(bs_reload({stream: true}))// prompts a reload after compilation
+            .pipe(bs_stream)
+    ;
 });
 
 /**
