@@ -13,7 +13,21 @@ var basePaths = {
     gems:'/home/webmaster/vendor/bundle/gems/'
 };
 
-
+//Chemins spécifiques
+var folderPaths = {
+    styles: {
+        src: basePaths.project + 'sass/',
+        dest: basePaths.theme + 'css/'
+    },
+    images: {
+        src: basePaths.project + 'images/',
+        dest: basePaths.theme + 'images/'
+    },
+    templates: {
+        d6: basePaths.project + '**/*.tpl.php',
+        d8: basePaths.project + '**/*.html.twig'
+    }
+};
 
 //Variable pour les gems (à adapter selon environnement)
 // File paths to various assets are defined here.
@@ -140,7 +154,7 @@ gulp.task('sasscompil', function () {
             .pipe(gulp.dest(basePaths.dest))
             .pipe(plugins.size({title:'Taille du fichier css'}))
             .pipe(plugins.notify({
-                title: "SASS Maps Compilé",
+                title: "SASS Compilé - Fichier Map créé",
                 message: "Les fichiers SCSS sont compilés dans le dossier CSS",
                 onLast: true
             }))
