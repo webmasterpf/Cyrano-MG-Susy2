@@ -6,6 +6,7 @@ var options = {};
 // #############################
 
 var basePaths = {
+    project:  './',
     src: './sass/**/*.scss', // fichiers scss à surveiller
     dest:  './css/', // dossier à livrer
     tpl: '**/*.tpl.php',
@@ -150,7 +151,8 @@ gulp.task('sasscompil', function () {
                                 cascade: false
                             }
                     ))
-            .pipe(plugins.sourcemaps.write('.'))//Pour créer le fichier css.map à coté du css
+//            .pipe(plugins.sourcemaps.write('.'))//Pour créer le fichier css.map à coté du css
+            .pipe(plugins.sourcemaps.write('.',{, sourceRoot:folderPaths.styles.src}))//Pour créer le fichier css.map à coté du css
             .pipe(gulp.dest(basePaths.dest))
             .pipe(plugins.size({title:'Taille du fichier css'}))
             .pipe(plugins.notify({
