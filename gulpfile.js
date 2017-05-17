@@ -5,14 +5,29 @@ var options = {};
 // Réglages des différents chemins
 // #############################
 
+//Chemins de base
 var basePaths = {
+    project: __dirname + '/',
     src: './sass/**/*.scss', // fichiers scss à surveiller
-    dest:  './css/', // dossier à livrer
+    theme: __dirname + '/',
+    dest: './css/', // dossier à livrer
     tpl: '**/*.tpl.php',
     node_modules: './node_modules/',
-    gems:'/home/webmaster/vendor/bundle/gems/'
+    gems: '/home/webmaster/vendor/bundle/gems/'
+    
 };
 
+//Chemins spécifiques
+var folderPaths = {
+    styles: {
+        src: basePaths.project + 'sass/',
+        dest: basePaths.theme + 'css/'
+    },
+    images: {
+        src: basePaths.project + 'images/',
+        dest: basePaths.theme + 'images/'
+    }
+};
 
 
 //Variable pour les gems (à adapter selon environnement)
@@ -85,12 +100,13 @@ var displayError = function(error) {
 //gulp.task('browser-sync', ['sasscompil'], function() {
 gulp.task('browser-sync', function() {
      // Watch files
-//    var files = [
-//        './js/*.js',
-//        '**/*.php',
-//        './**/*.tpl.php',
-//        './images/**/*.{png,jpg,gif,svg}'
-//    ];
+    var files = [
+        'css/*.css',
+        'js/*.js',
+        '**/*.php',
+        '**/*.tpl.php',
+        '/images/**/*.{png,jpg,gif,svg}'
+    ];
        browserSync.init({
         //changer l'adresse du site pour lequel utiliser browserSync
         proxy: "http://d6-gasquet.vmdev",
@@ -102,7 +118,7 @@ gulp.task('browser-sync', function() {
 
 // Tâche "build" = SASS + autoprefixer + CSScomb + beautify (source -> destination)
 gulp.task('sasscompil', function () {
-    return gulp.src(basePaths.src)
+    return gulp.src(folderPaths.styles.src)
             .pipe(plugins.sourcemaps.init())
             .pipe(plugins.sass({
                 noCache: true,
@@ -134,8 +150,8 @@ gulp.task('sasscompil', function () {
                                 cascade: false
                             }
                     ))
-            .pipe(plugins.sourcemaps.write(basePaths.dest))
-            .pipe(gulp.dest(basePaths.dest))
+            .pipe(plugins.sourcemaps.write('.',{includeContent: true, sourceRoot:folderPaths.styles.src}))//Pour créer le fichier css.map à coté du css
+            .pipe(gulp.dest(folderPaths.styles.dest))
             .pipe(plugins.size({title:'Taille du fichier css'}))
             .pipe(plugins.notify({
                 title: "SASS Maps Compilé",
