@@ -63,7 +63,6 @@ a{
     &:hover{}
 }
 
-
 h2 a{}
 h2 a:hover{}
 h3 a{}
@@ -127,6 +126,7 @@ h4 a:hover{}
         }
     }
 }
+
 #colonne-2.page-classes{
     padding: 0.5em;
 }
@@ -140,12 +140,11 @@ h4 a:hover{}
     img{
 
     }
-
     a{
         &:hover{}
     }
 
-
+    
     h2 a{}
     h2 a:hover{}
     h3 a{}

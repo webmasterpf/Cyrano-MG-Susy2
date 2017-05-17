@@ -17,8 +17,7 @@ include ($theme_path.'/includes/inc_header.php');
 	  
       
        <!-- ______________________ COLONNE GAUCHE _______________________ -->
-		
-			  
+					  
          <div id="left-content">
            <?php if ($title): ?>
                 <h1 class="title"><?php print $title; ?></h1>

@@ -42,9 +42,7 @@ body .conteneur .HPDiapo{
         #contenu-diapo{display: block;}
       img{@include adaptable-img;}
     }
- 
-}
-
+    }
 }
 
 // Style du diaporama dynamique avec Overlay // Pas affiché sur Mobile
