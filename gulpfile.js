@@ -6,7 +6,7 @@ var options = {};
 // #############################
 
 var basePaths = {
-    project:  './',
+    project:  '../',
     src: './sass/**/*.scss', // fichiers scss à surveiller
     dest:  './css/', // dossier à livrer
     tpl: '**/*.tpl.php',
