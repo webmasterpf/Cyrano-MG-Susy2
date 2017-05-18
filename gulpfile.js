@@ -34,14 +34,15 @@ var folderPaths = {
 // File paths to various assets are defined here.
 var assetsPath = {
   gems: [
-    basePaths.gems + 'susy-2.2.2/sass',
-    basePaths.gems + 'breakpoint-2.7.1/stylesheets',
+//    basePaths.gems + 'susy-2.2.2/sass',
+    basePaths.gems + 'breakpoint-2.7.1/stylesheets'
     
-    basePaths.node_modules +  'typey/stylesheets'
+    
   ],
    node_modules: [
        //Ajoutés avec les gems pour simplifier     
-       
+    basePaths.node_modules +  'susy/sass',
+    basePaths.node_modules +  'typey/stylesheets'   
   ],
   javascript: [
     '',
@@ -128,17 +129,18 @@ gulp.task('sasscompil', function () {
                 noCache: true,
                 bundleExec: true,
                 includePaths: [].concat(
-                        assetsPath.gems
-                        //assetsPath.node_modules
+                        assetsPath.gems,
+                        assetsPath.node_modules,
+                        folderPaths.styles.src
                         ),
                 sourceMap: true,
-                outputStyle: 'compressed'
-                
+                outputStyle: 'compressed',
+                errLogToConsole: true
             })
-//            .on('error', plugins.sass.logError)
+            .on('error', plugins.sass.logError)
                     //    .on('error', console.error.bind(console, 'SASS Error :'))
                     //Avec fonction anti-crash sur erreurs
-                    .on('error', onError)
+//                    .on('error', onError)
                     )
             
               .on('error', function(err){

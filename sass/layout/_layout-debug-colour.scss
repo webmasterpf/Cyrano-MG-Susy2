@@ -140,7 +140,7 @@ body .conteneur {
     .HPDroite3,.HPGauche3{background: #00c9fe;}
 
     @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-        .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background-color: #00A1CB;}
+        .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background-color:#red;}
         .HPDroite,.HPGauche{background: #486900;}
         .HPDroite1,.HPGauche1{background: gold;}
         .HPDroite2,.HPGauche2{background: bisque;}
