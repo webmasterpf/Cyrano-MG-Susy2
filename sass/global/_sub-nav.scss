@@ -12,6 +12,7 @@ aside.navStatic{
         .selectnav { display: none; }
         .horizontal-nav { display:block; }
         ul.horizontal-nav {        
+     
             //Flexbox initialisation du conteneur
        /*@include flex;//Compass Mixin replacement issue de flex.scss*/
        /*@include flex-flow(row wrap);*/
@@ -32,6 +33,7 @@ aside.navStatic{
                     //  @include last;
                     // width: 30%;//Permet de limiter la taille de la derniere li
                 }
+                
                 a {
                     // vertical alignment
                     margin: 0.25em;
@@ -54,7 +56,7 @@ aside.navStatic{
 
             }
             li.logo{
-                /*background-image: url("../images/"logo-Pf-sites-lycees.jpg");//avec compass*/
+                
                 background-image: url("./images/logo-PF-lycees.svg");//sans compass
                 background-position: left 0.45em;
                 background-size: contain;
@@ -67,6 +69,7 @@ aside.navStatic{
         }
     }
 }
+
 
 //Subnav dans une table, comme système original, mais pas RWD
 aside.navPicto{

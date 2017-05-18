@@ -1,10 +1,10 @@
 /*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
-
 ----- TYPOS PROVENCE FORMATION -----
 ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
 /* Ressources
 http://www.developerdrive.com/2015/02/control-vertical-rhythm-using-sass-and-compass/
 */
+
 
 // Vertical rhythm pour la taille de typo selon compass (déprécié 2016)
 /*$base-font-size:16px;
@@ -16,7 +16,6 @@ $base-line-height: 24px;
 @if $target == 0 { @return 0 }
 @return $target / $context + 0em;
 }*/
-
 $browser-context: 16;
 
 @function em($pixels, $context: $browser-context) {
@@ -61,8 +60,7 @@ $FontRaleway : 'Raleway',Trebuchet MS, Verdana, sans-serif;
      text-align: right;
      padding: $paddingTop 0 0 0;
      background: url("../images/deco_fiche_formation.gif") no-repeat top left;
-     
-}
+     }
 
 /*------------ PARAGRAPHES ---------------*/
 //Vertical Rythm via compass pour tout le site

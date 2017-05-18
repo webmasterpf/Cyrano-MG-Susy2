@@ -47,9 +47,8 @@ body .conteneur .HPDiapo{
 
 // Style du diaporama dynamique avec Overlay // Pas affiché sur Mobile
 body .conteneur .HPDiapo .field-content{
-    
+  
 }
-
 body .conteneur .HPDiapo,
 body .conteneur .HPDiapoVerticalDroite
 {
@@ -74,7 +73,6 @@ body .conteneur .HPDiapoVerticalDroite
             left: em(10px);
             color: white;
             z-index: 20;
-
 
             h2,p {
                 color: white;

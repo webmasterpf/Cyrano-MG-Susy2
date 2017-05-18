@@ -2,13 +2,14 @@
 // créer des fichiers _node-TYPE.scss et les importer dans application.scss
 
 /*-------------------------------------|
-|       CONTENU CUSTOM NODE.TPL        |
-|     FRONTPAGE  VERTICAL DROIT        |
+|       CONTENU CUSTOM NODE.TPL |   
+|               STYLE                               |
+|     FRONTPAGE  VERTICAL DROIT   |
 |--------------------------------------*/
 
-  //@include susy-breakpoint ($mobile){}
-  //@include susy-breakpoint ($desktop){}
-  //@include susy-breakpoint ($tablet){}
+  //@include breakpoint ($mobile){}
+  //@include breakpoint ($desktop){}
+  //@include breakpoint ($tablet){}
 
 //Code imbriqué à 100%
 body .conteneur {
@@ -52,41 +53,9 @@ body .conteneur {
     .HPDiapoVerticalDroite{@include span(last $tabletcol/2 of $tabletcol);} 
         
 }
-//Pour le dev, code visuel sur les blocs selon le breakpoint
-// à commenter ou supprimer pour la production
-body .conteneur {
-        .HPGauche{
-        .HPGauche1{}
-        .HPGauche2{}
-        .HPGauche3{}
-    }
-    .HPDiapoVerticalDroite{
-        
-    }
-   
-    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    .HPGauche{
-        .HPGauche1{}
-        .HPGauche2{}
-        .HPGauche3{}
-    }
-    .HPDiapoVerticalDroite{}
-    }
-   
-    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-    .HPGauche{
-        .HPGauche1{}
-        .HPGauche2{}
-        .HPGauche3{}
-    }
-    .HPDiapoVerticalDroite{}
-    }
-}
 
-
-/****************/
+/********** STYLE DES ELEMENTS ******/
 .HPGauche1,.HPGauche2,.HPGauche3 {
-
     background: none;
     color: black;
     ul li {
@@ -98,5 +67,65 @@ body .conteneur {
             text-decoration: underline;
         }
     }
-
 }
+
+/*------------------------------
+Liste Actus pour homepage
+-------------------------------*/
+
+#HPGauche1,#HPGauche2{
+    aside .PartieGauche1,aside .PartieGauche2
+    {
+        h3.title{
+            text-align: center;
+            font-family: $AristaFont;
+            display: block;
+            font-size: medium;
+        }
+        .view-empty{text-align: center;}
+        .table-actus-hp, .table-actus-hp2{
+            width: em(400px);
+            margin: 0 auto;
+            border: 0;
+        }
+        .table-actus-hp thead th,.table-actus-hp2 thead th{
+            border-bottom: em(3px) solid $rose-fushia;
+        }
+        .table-actus-hp tbody, .table-actus-hp2 tbody{}
+.table-actus-hp tr, .table-actus-hp2 tr{
+    margin: em(9px);
+    display: block;
+}
+.table-actus-hp td, .table-actus-hp2 td{
+    background: white;
+    border: 0;
+    margin: 2px 0;
+    padding: em(5px);
+    display: block;
+    border-bottom: 1px solid $rose-fushia;
+}
+.table-actus-hp td:hover, .table-actus-hp2 td:hover{
+    background: $rose-fushia;
+}
+.table-actus-hp p,.table-actus-hp2 p{}
+.table-actus-hp a, .table-actus-hp2 a{
+    color: $gris-anthracite;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+.table-actus-hp a:hover, .table-actus-hp2 a:hover{
+    text-decoration: underline;
+    color: white;
+}
+.table-actus-hp span.date-display-single, .table-actus-hp2 span.date-display-single{
+    text-align: right;
+    float: right;
+    font-style: italic;
+}
+    }
+    }
+
+
+
