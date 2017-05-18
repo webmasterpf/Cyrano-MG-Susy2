@@ -99,7 +99,7 @@ var displayError = function(error) {
 // Tâche pour BrowserSync
 //gulp.task('browser-sync', ['sasscompil'], function() {
 gulp.task('browser-sync', function() {
-     // Watch files
+     // Fichiers à surveiller pour lancer browser-sync
     var files = [
         './css/*.css',
         './js/*.js',
@@ -112,9 +112,12 @@ gulp.task('browser-sync', function() {
         //changer l'adresse du site pour lequel utiliser browserSync
         proxy: "http://d6-gasquet.vmdev",
         open: false,
-        logLevel: 'debug',
+        logLevel: 'info',//debug pour avoir toutes les infos
         logConnections: true
     });
+    
+    gulp.watch(basePaths.src, ['sasscompil']);
+//    gulp.watch(folderPaths.templates.d6).on('change', browserSync.reload);
 });
 
 // Tâche "build" = SASS + autoprefixer
@@ -142,8 +145,7 @@ gulp.task('sasscompil', function () {
         displayError(err);
     })
 
-//    .pipe(plugins.csscomb())
-//    .pipe(plugins.cssbeautify({indent: '  '}))
+
             .pipe(plugins.autoprefixer
                     (
                             {
@@ -160,10 +162,12 @@ gulp.task('sasscompil', function () {
                 message: "Les fichiers SCSS sont compilés dans le dossier CSS",
                 onLast: true
             }))
-//            .pipe(bs_reload({stream: true}))// prompts a reload after compilation
+//            .pipe(bs_stream)// prompts a reload after compilation
+            .pipe(bs_reload({stream: true}))// prompts a reload after compilation
 
     ;
 });
+
 
 /**
  * Defines a task that triggers a Drush cache clear (css-js).
@@ -191,14 +195,10 @@ gulp.task('drush', plugins.shell.task([
 
 
 
-//// Tâche "watch" = je surveille *scss
+//// Tâche "watch" = je surveille *scss ; sans utiliser browserSync
 gulp.task('watch', function() {
   // Watch - surveiller.scss files
-  gulp.watch(basePaths.src, [
-      'sasscompil',
-//      'drush:cc' 
-//'browser-sync'
-  ])
+  gulp.watch(basePaths.src, ['sasscompil' ])
   
   // Also when there is a change, display what file was changed, only showing the path after the 'sass folder'
     .on('change', function(evt) {
@@ -209,8 +209,12 @@ gulp.task('watch', function() {
     });
 });
 //
-//// Tâche par défaut
-gulp.task('default', ['watch','browser-sync']);
+//// Tâche par défaut (choisir si utilisation de watch ou browserSync
+gulp.task('default', [
+//    'watch',
+    
+    'browser-sync'
+]);
 
 
 //Debug des plugins chargés : liste les plugins chargés
