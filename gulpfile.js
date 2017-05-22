@@ -98,12 +98,12 @@ var AUTOPREFIXER_BROWSERS = [
 // 
 // 
 gulp.task('sasscompil', function () {
-    return gulp.src('./sass/**/*.scss')
+    return gulp.src(basePaths.src)
             .pipe(plugins.sourcemaps.init()) // Start Sourcemaps
             .pipe(plugins.sass({
                 noCache: true,
-//                outputStyle: 'compressed',
-//                errLogToConsole: true,
+                outputStyle: 'compressed',
+                errLogToConsole: true,
                 includePaths: [].concat(
                         assetsPath.gems,
                         assetsPath.node_modules,
@@ -111,5 +111,22 @@ gulp.task('sasscompil', function () {
                         )
             }).on('error', plugins.sass.logError))
             .pipe(plugins.sourcemaps.write('.', {sourceRoot: folderPaths.styles.src}))//Pour créer le fichier css.map à coté du css
-            .pipe(gulp.dest('./css'));
+            .pipe(gulp.dest('./css'))
+            .pipe(plugins.size({title: 'Taille du fichier css'}))
+            .pipe(plugins.notify({
+                title: "SASS Compilé - Fichier Map créé",
+                message: "Les fichiers SCSS sont compilés dans le dossier CSS",
+                onLast: true
+            }))
+            ;
+});
+
+gulp.task('browser-sync', function() {
+browserSync.init({
+        //changer l'adresse du site pour lequel utiliser browserSync
+        proxy: "http://d6-gasquet.vmdev",
+        open: false,
+        logLevel: 'info',//debug pour avoir toutes les infos
+        logConnections: true
+    });
 });
