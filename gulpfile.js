@@ -103,6 +103,7 @@ gulp.task('browser-sync', function() {
      // Fichiers à surveiller pour lancer browser-sync
     var files = [
         './css/*.css',
+        './sass/**/*.scss',
         './js/*.js',
         './**/*.php',
         './**/*.tpl.php',
