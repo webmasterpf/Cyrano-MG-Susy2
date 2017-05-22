@@ -142,10 +142,9 @@ gulp.task('sasscompil', function () {
                     //Avec fonction anti-crash sur erreurs
 //                    .on('error', onError)
                     )
-            
-              .on('error', function(err){
-        displayError(err);
-    })
+//            .on('error', function (err) {
+//                displayError(err);
+//            })
 
 
             .pipe(plugins.autoprefixer
