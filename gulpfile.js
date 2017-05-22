@@ -118,6 +118,7 @@ gulp.task('sasscompil', function () {
                 message: "Les fichiers SCSS sont compilés dans le dossier CSS",
                 onLast: true
             }))
+            .pipe(bs_reload({stream: true}))// rechargement des navigateurs par BS après compilation
             ;
 });
 
