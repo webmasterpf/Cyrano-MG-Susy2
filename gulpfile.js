@@ -110,6 +110,13 @@ gulp.task('sasscompil', function () {
                         folderPaths.styles.src
                         )
             }).on('error', plugins.sass.logError))
+            .pipe(plugins.autoprefixer
+                    (
+                            {
+                                browsers: AUTOPREFIXER_BROWSERS,
+                                cascade: false
+                            }
+                    ))
             .pipe(plugins.sourcemaps.write('.', {sourceRoot: folderPaths.styles.src}))//Pour créer le fichier css.map à coté du css
             .pipe(gulp.dest(basePaths.dest))
             .pipe(plugins.size({title: 'Taille du fichier css'}))
@@ -130,4 +137,11 @@ browserSync.init({
         logLevel: 'info',//debug pour avoir toutes les infos
         logConnections: true
     });
+});
+
+//Tâche de surveillance et d'automatisation
+//gulp.task('default', ['browser-sync'], function(){
+    gulp.task('default', function(){
+  gulp.watch(basePaths.src, ['sasscompil']);
+  gulp.watch("*.tpl.php", bs_reload);
 });
