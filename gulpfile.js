@@ -111,7 +111,7 @@ gulp.task('sasscompil', function () {
                         )
             }).on('error', plugins.sass.logError))
             .pipe(plugins.sourcemaps.write('.', {sourceRoot: folderPaths.styles.src}))//Pour créer le fichier css.map à coté du css
-            .pipe(gulp.dest('./css'))
+            .pipe(gulp.dest(basePaths.dest))
             .pipe(plugins.size({title: 'Taille du fichier css'}))
             .pipe(plugins.notify({
                 title: "SASS Compilé - Fichier Map créé",
