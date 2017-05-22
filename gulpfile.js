@@ -6,7 +6,7 @@ var options = {};
 // #############################
 
 var basePaths = {
-    project:  '../',
+    project:  './',
     src: './sass/**/*.scss', // fichiers scss à surveiller
     dest:  './css/', // dossier à livrer
     tpl: '**/*.tpl.php',
@@ -127,7 +127,7 @@ gulp.task('sasscompil', function () {
             .pipe(plugins.sourcemaps.init()) // Start Sourcemaps
             .pipe(plugins.sass({
                 noCache: true,
-                bundleExec: true,
+//                bundleExec: true,
                 includePaths: [].concat(
                         assetsPath.gems,
                         assetsPath.node_modules,
