@@ -113,7 +113,6 @@ html {
  padding: 0;
 }
 
-
 body {	
     font-family: $FontRaleway;//Typo globale du site
     color: $gris-clair-typo;
@@ -137,8 +136,8 @@ h1, .h1 {
 }
   
 h2, .h2 {
-	font-size: m;
-	/*font-size: em(18px);*/
+	/*font-size: m;*/
+	font-size: em(18px);
 }
 h2.title{
 	

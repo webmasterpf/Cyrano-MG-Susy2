@@ -81,12 +81,11 @@ body .conteneur .HPDiapoVerticalDroite
                 line-height: 1.3em;
             }
             a {
-
                 text-decoration: none;
             }
             p{
                 margin-top: 0.2em;
-                font-size: larger;//taille du texte cartouche
+                font-size: x-large;//taille du texte cartouche
             }
         }
     }
@@ -148,7 +147,6 @@ body .conteneur-flex .HPDiapoVerticalDroite{
                                                          @include rgba-background($gris-clair-moyen,0.6);/*Couleur et opacité du fond*/
                                                      }
                                                      #contenu-diapo {
-
                                                          position: relative;
                                                          bottom:8.375em;
                                                          left: em(10px);
@@ -165,7 +163,7 @@ body .conteneur-flex .HPDiapoVerticalDroite{
 
                                                              text-decoration: none;
                                                          }
-                                                         p{
+                                                         p {
                                                              margin-top: 0.2em;
                                                              font-size: large;//taille du texte cartouche
                                                          }

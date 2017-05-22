@@ -58,6 +58,7 @@ var bs_stream = browserSync.stream();
 // Include plugins
 // tous les plugins de package.json
 var plugins = require('gulp-load-plugins')();
+var gutil = require('gulp-util');
 
 
 // Autoprefixer : Navigateurs à cibler pour le préfixage CSS
@@ -99,6 +100,10 @@ var AUTOPREFIXER_BROWSERS = [
 // 
 gulp.task('sasscompil', function () {
     return gulp.src(basePaths.src)
+    .pipe(plugins.plumber(function(error) {
+        gutil.log(gutil.colors.red(error.message));
+        this.emit('end');
+    }))
             .pipe(plugins.sourcemaps.init()) // Start Sourcemaps
             .pipe(plugins.sass({
                 noCache: true,
