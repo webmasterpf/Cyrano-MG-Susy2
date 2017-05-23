@@ -35,7 +35,7 @@ breakpoint-2.7.0
 @import "breakpoint";
 
 //Remplacement de Vertical Rhythm par Typey (Composant de node-sass)
-@import 'typey';
+@import './node_modules/typey/stylesheets/_typey.scss';
 
 // Import des réglages susy pour la grille
 @import "./global/_variables.scss";

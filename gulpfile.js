@@ -42,7 +42,7 @@ var assetsPath = {
    node_modules: [
        //Ajoutés avec les gems pour simplifier     
     basePaths.node_modules +  'susy/sass',
-    basePaths.node_modules +  'typey/stylesheets'   
+    basePaths.node_modules +  'typey/stylesheets/_typey.scss'
   ],
   javascript: [
     '',
@@ -149,5 +149,5 @@ browserSync.init({
 gulp.task('default', ['browser-sync'], function(){
 //    gulp.task('default', function(){
   gulp.watch(basePaths.src, ['sasscompil']);
-  gulp.watch("*.tpl.php", bs_reload);
+  gulp.watch(folderPaths.templates.d6, bs_reload);
 });

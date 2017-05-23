@@ -69,6 +69,17 @@ h3 a{}
 h3 a:hover{}
 h4 a{}
 h4 a:hover{}
+.diapo_lycee{
+    display: block;
+    margin: 0 auto;
+    width: em(175px) !important;
+    width: em(174px);/*IE*/
+     img{
+    border: em(2px) solid $violet;
+    margin: em(10px) 0 0;
+}
+}
+
 } 
 /*######-------- COLONNE 2 --------######*/
 #colonne-2.page-lycee{
@@ -130,60 +141,59 @@ h4 a:hover{}
 #colonne-2.page-classes{
     padding: 0.5em;
 }
-/*######-------- COLONNE 3 --------######*/
-#colonne-3.page-lycee{
-    h2{}
-    h3{}
-    h4{}
-    p{}
-    ul{}
-    img{
 
-    }
-    a{
-        &:hover{}
-    }
 
-    
-    h2 a{}
-    h2 a:hover{}
-    h3 a{}
-    h3 a:hover{}
-    h4 a{}
-    h4 a:hover{}
-}
 
-#service-tiers{
+
+#docs_lycee{
+    width: 200px;
     margin: 0 auto;
-    width: 55%;
-    border: 0.15em solid $violet;
-    padding: 0.2em;
 }
-#docs-utiles{
-    margin: 1em auto;
-    width: 40%;
-    background: $gris-clair;
-    text-align: left;
+#docs_lycee h3{
+    font-family:Arista,trebuchet MS,sans-serif;
+    text-align: center;
+    color: #950F7E;
+    padding: 5px 0;
+    font-size: 20px;
+    margin: 0 0 5px 0;
 }
-table.doc-joint-lycee{
-       tr.even, tr.odd {//override suite stacktable.js
-                         background-color: transparent;
-                         border-bottom: none;
-                         padding: 0;
-
-        }
+#docs_lycee table{
+    width: 200px;
+    display: block;
+    border: 3px solid #D0D1D2;
+    background: #EFEFEF;
+    box-shadow:0px 0px 7px 1px #564E4E;
+    -moz-box-shadow: 3px #564E4E;
+    -webkit-box-shadow: 3px #564E4E;
+    behavior: url(/sites/all/libraries/PIE/PIE.htc);
+   position: relative;
 }
-
-
-/*________ CLASSES DOCUMENTS ________*/
-
-.accordeon-classes{}
-.accordeon-classes a{color: $violet;text-decoration: none;}
-.accordeon-classes a:hover{text-decoration: underline;}
-.accordeon-classes .views-accordion-item .accordion-header-active {
-background: $violet;color: $gris-clair;
+#docs_lycee tbody{
+     display: block;
+    padding: 10px 5px;
+    text-align: center;
 }
-/*________ CONTENU INFOS ADMIN ________*/
-#colonne-2.info-admin{
-    padding: 0.5em;
+#docs_lycee tr{}
+#docs_lycee td{}
+#docs_lycee td a{
+    display: block;
+    color: #564E4E;
+    text-decoration: none;
+    width: 185px;
+}
+#docs_lycee td a:hover{
+    background: #E2007A;
+    border-radius: 10px;
+    behavior: url(/sites/all/libraries/PIE/PIE.htc);
+   position: relative;
+}
+#docs_lycee .filefield-icon{
+    display: none;
+}
+#video_lycee{
+    border: 2px solid #950F7E;
+    width: 450px;
+    height: auto;
+    margin: 0 auto;
+    
 }

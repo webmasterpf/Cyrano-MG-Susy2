@@ -136,9 +136,11 @@ h1, .h1 {
 }
   
 h2, .h2 {
-	/*font-size: m;*/
-	font-size: em(18px);
+    
+	font-size: m;
+	/*font-size: em(18px);*/
 }
+
 h2.title{
 	
 	font-size: em(18px);
@@ -146,6 +148,7 @@ h2.title{
  a{
 	color:$rouge;
 }
+
 }
 h3, .h3{
 	font-size: em(16px);
