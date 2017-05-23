@@ -100,7 +100,8 @@ var AUTOPREFIXER_BROWSERS = [
 // 
 gulp.task('sasscompil', function () {
     return gulp.src(basePaths.src)
-    .pipe(plugins.plumber(function(error) {
+//    return gulp.src('./sass/**/*.scss')
+        .pipe(plugins.plumber(function(error) {
         gutil.log(gutil.colors.red(error.message));
         this.emit('end');
     }))
