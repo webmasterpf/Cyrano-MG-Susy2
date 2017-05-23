@@ -22,6 +22,8 @@ body .conteneur{
             .content-header{}
         }
         .content-top{
+            min-height: 5em;//permet d'éviter que defilant se superpose
+            
                @include break;
                 &:before{
                 content: " ";
