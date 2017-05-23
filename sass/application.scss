@@ -1,8 +1,8 @@
-//Import de toutes les feuilles SCSS partielles dédiées.
-//Cette seule feuille est chargée par Drupal
+//Import de toutes les fe./uilles SCSS partielles dédiées.
+//Cette seule fe./uille est chargée par Drupal
 //Gulp va compiler les fichiers scss en un seul fichier css
 
-// Importer les fichiers scss partiels (avec ) afin de compiler le
+// Importer les fichiers scss partiels (avec _) afin de compiler le
 // fichier css final utile pour le thème
 // Utiliser Gulp 
 // webmaster@vm-server1:~$ cd /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
@@ -21,10 +21,10 @@ breakpoint-2.7.0
 ---------------------*/
 
 //Reset des propriétés : important pour utiliser Susy 2
-@import "vendor/normalize6";
+@import "vendor/_normalize6.scss";
 
 // Import de Compass (framework abandonné en 2016)
-//voir mixinscustom pour les remplacements des mixins Compass
+//voir mixins_custom pour les remplacements des mixins Compass
 
 /// !!! EDITER LE FICHIER GULPFILE.JS POUR DEFINIR LES CHEMINS DES GEMS !!!
 
@@ -38,83 +38,87 @@ breakpoint-2.7.0
 @import 'typey';
 
 // Import des réglages susy pour la grille
-@import "global/variables";
+@import "./global/_variables.scss";
 
 // Import des styles et polices Provence Formation
-@import "global/flex";
-@import "global/mixins-custom";
-@import "global/typos";
-/*@import "global/style";*/
+@import "./global/_flex.scss";
+@import "./global/_mixins-custom.scss";
+@import "./global/_typos.scss";
+@import "./global/_style.scss";
 
-@import "global/stacktable";
-@import "global/sub-nav";
+@import "./global/_stacktable.scss";
+@import "./global/_sub-nav.scss";
 
 // Import des partiels du layout du thème Drupal
 
-@import "layout/layout";
-@import "layout/layout-nodes";
-@import "layout/layout-nodes-flexbox";
-@import "layout/layout-header";
-@import "layout/layout-footer";
-@import "layout/layout-defilant";
-@import "layout/layout-bandeau";
-@import "layout/layout-off-canvas-susy";
+@import "./layout/_layout.scss";
+@import "./layout/_layout-nodes.scss";
+@import "./layout/_layout-nodes-flexbox.scss";
+@import "./layout/_layout-header.scss";
+@import "./layout/_layout-footer.scss";
+@import "./layout/_layout-defilant.scss";
+@import "./layout/_layout-bandeau.scss";
+@import "./layout/_layout-off-canvas-susy.scss";
 
 // Les BREAKPOINTS
-    
-@import "layout/layout-bp-tablet";
-@import "layout/layout-bp-desktop";
-//@import "layout/layout-bp-mobile-landscape";
-
-@import "ui/maintenance";
-@import "ui/search";
-@import "ui/style-backoffice";
-//@import "ui/volet-coulissant-css";
+        
+@import "./layout/_layout-bp-tablet.scss";
+@import "./layout/_layout-bp-desktop.scss";
+//@import "./layout/layout-bp-mobile-landscape.scss";
 
 //Import Homepage - choisir quel layout et style utiliser
-@import "layout/layout-diapo-frontpage";
+@import "./layout/_layout-diapo-frontpage.scss";
 
-@import "layout/layout-vertical-hp-droite";
-/*@import "layout/layout-vertical-hp-gauche";*/
+@import "./layout/_layout-vertical-hp-droite.scss";
+//@import "./layout/_layout-vertical-hp-gauche.scss";
 
-
-//@import "content-type-style/frontpage-verticalGauche";
-@import "content-type-style/frontpage-verticalDroit";
-
-
-// Import des partiels pour le style des node.tpl
-//@import "content-type-style/node-TYPE";
-@import "content-type-style/views";
-
-@import "content-type-style/page-lycee";
-@import "content-type-style/contenu-vdl";
-@import "content-type-style/page-pole";
-@import "content-type-style/page-vdl-liste";
-@import "content-type-style/node-vdl-global";
-@import "content-type-style/page-actualites";
-@import "content-type-style/contenu-actualite";
-@import "content-type-style/contenu-vdl";
-@import "content-type-style/contenu-cdi";
-@import "content-type-style/webform-contact";
-@import "content-type-style/fiche-formation";
-@import "content-type-style/webform";
-@import "content-type-style/calendrier";
-
-//Content type site 
-
-/*@import "content-type-style/fiche-formation-pf";*/
 
 //developpement
 
-@import "layout/layout-debug-colour";
+@import "./layout/_layout-debug-colour.scss";
+
+// Les styles pour l' UI Drupal
+@import "./ui/_maintenance.scss";
+@import "./ui/_search.scss";
+@import "./ui/_style-backoffice.scss";
+//@import "./ui/_volet-coulissant-css";
+
+// Les styles pour chaque type de contenu (templates))
+
+//@import "./content-type-style/_frontpage-verticalGauche.scss";
+@import "./content-type-style/_frontpage-verticalDroit.scss";
+
+
+// Import des partiels pour le style des node.tpl
+//@import "./content-type-style/node-TYPE";
+@import "./content-type-style/_views.scss";
+
+@import "./content-type-style/_page-lycee.scss";
+@import "./content-type-style/_contenu-vdl.scss";
+@import "./content-type-style/_page-pole.scss";
+@import "./content-type-style/_page-vdl-liste.scss";
+@import "./content-type-style/_node-vdl-global.scss";
+@import "./content-type-style/_page-actualites.scss";
+@import "./content-type-style/_contenu-actualite.scss";
+@import "./content-type-style/_contenu-vdl.scss";
+@import "./content-type-style/_contenu-cdi.scss";
+@import "./content-type-style/_webform-contact.scss";
+@import "./content-type-style/_fiche-formation.scss";
+@import "./content-type-style/_webform.scss";
+@import "./content-type-style/_calendrier.scss";
+
+//Content type site 
+
+/*@import "./content-type-style/_fiche-formation-pf.scss";*/
+
 
 //Galeries slideshow views
-@import "galeries/views-slideshow";
-@import "galeries/bxslider-cyrano";
-@import "galeries/flexslider-cyrano";
-@import "galeries/views-masonry";
-@import "galeries/views-mur-image-susy";
-@import "galeries/views-wookmark";
-@import "galeries/views-salvattore";
-@import "galeries/views-mur-image-fullcss";
-@import "galeries/slick";
+@import "./galeries/_views-slideshow.scss";
+@import "./galeries/_bxslider-cyrano.scss";
+@import "./galeries/_flexslider-cyrano.scss";
+@import "./galeries/_views-masonry.scss";
+@import "./galeries/_views-mur-image-susy.scss";
+@import "./galeries/_views-wookmark.scss";
+@import "./galeries/_views-salvattore.scss";
+@import "./galeries/_views-mur-image-fullcss.scss";
+@import "./galeries/_slick.scss";
