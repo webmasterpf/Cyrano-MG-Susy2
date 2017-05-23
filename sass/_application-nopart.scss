@@ -1,0 +1,120 @@
+//Import de toutes les feuilles SCSS partielles dédiées.
+//Cette seule feuille est chargée par Drupal
+//Gulp va compiler les fichiers scss en un seul fichier css
+
+// Importer les fichiers scss partiels (avec ) afin de compiler le
+// fichier css final utile pour le thème
+// Utiliser Gulp 
+// webmaster@vm-server1:~$ cd /var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/
+// webmaster@vm-server1:/var/www/drupal6/sites/all/themes/THEMENAMEFOLDER/ $ gulp
+
+//http://www.zell-weekeat.com/susy2-tutorial/
+
+
+/*---- VERSIONS ----
+--- 2015-03-04 ---
+compass-1.0.3
+sass-3.4.13
+susy-2.2.2
+breakpoint-2.7.0
+-- voir le Gemfile pour les versions utilisées
+---------------------*/
+
+//Reset des propriétés : important pour utiliser Susy 2
+@import "vendor/normalize6";
+
+// Import de Compass (framework abandonné en 2016)
+//voir mixinscustom pour les remplacements des mixins Compass
+
+/// !!! EDITER LE FICHIER GULPFILE.JS POUR DEFINIR LES CHEMINS DES GEMS !!!
+
+//Import des plugins de Sass (sans compass) via des Gems
+@import "susy";// utiliser susyone si syntaxe ancienne(Susy v1),sinon susy pour utiliser v2
+
+//@import "sassy-buttons";
+@import "breakpoint";
+
+//Remplacement de Vertical Rhythm par Typey (Composant de node-sass)
+@import 'typey';
+
+// Import des réglages susy pour la grille
+@import "global/variables";
+
+// Import des styles et polices Provence Formation
+@import "global/flex";
+@import "global/mixins-custom";
+@import "global/typos";
+/*@import "global/style";*/
+
+@import "global/stacktable";
+@import "global/sub-nav";
+
+// Import des partiels du layout du thème Drupal
+
+@import "layout/layout";
+@import "layout/layout-nodes";
+@import "layout/layout-nodes-flexbox";
+@import "layout/layout-header";
+@import "layout/layout-footer";
+@import "layout/layout-defilant";
+@import "layout/layout-bandeau";
+@import "layout/layout-off-canvas-susy";
+
+// Les BREAKPOINTS
+    
+@import "layout/layout-bp-tablet";
+@import "layout/layout-bp-desktop";
+//@import "layout/layout-bp-mobile-landscape";
+
+@import "ui/maintenance";
+@import "ui/search";
+@import "ui/style-backoffice";
+//@import "ui/volet-coulissant-css";
+
+//Import Homepage - choisir quel layout et style utiliser
+@import "layout/layout-diapo-frontpage";
+
+@import "layout/layout-vertical-hp-droite";
+/*@import "layout/layout-vertical-hp-gauche";*/
+
+
+//@import "content-type-style/frontpage-verticalGauche";
+@import "content-type-style/frontpage-verticalDroit";
+
+
+// Import des partiels pour le style des node.tpl
+//@import "content-type-style/node-TYPE";
+@import "content-type-style/views";
+
+@import "content-type-style/page-lycee";
+@import "content-type-style/contenu-vdl";
+@import "content-type-style/page-pole";
+@import "content-type-style/page-vdl-liste";
+@import "content-type-style/node-vdl-global";
+@import "content-type-style/page-actualites";
+@import "content-type-style/contenu-actualite";
+@import "content-type-style/contenu-vdl";
+@import "content-type-style/contenu-cdi";
+@import "content-type-style/webform-contact";
+@import "content-type-style/fiche-formation";
+@import "content-type-style/webform";
+@import "content-type-style/calendrier";
+
+//Content type site 
+
+/*@import "content-type-style/fiche-formation-pf";*/
+
+//developpement
+
+@import "layout/layout-debug-colour";
+
+//Galeries slideshow views
+@import "galeries/views-slideshow";
+@import "galeries/bxslider-cyrano";
+@import "galeries/flexslider-cyrano";
+@import "galeries/views-masonry";
+@import "galeries/views-mur-image-susy";
+@import "galeries/views-wookmark";
+@import "galeries/views-salvattore";
+@import "galeries/views-mur-image-fullcss";
+@import "galeries/slick";

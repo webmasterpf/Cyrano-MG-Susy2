@@ -146,8 +146,8 @@ browserSync.init({
 });
 
 //Tâche de surveillance et d'automatisation
-//gulp.task('default', ['browser-sync'], function(){
-    gulp.task('default', function(){
+gulp.task('default', ['browser-sync'], function(){
+//    gulp.task('default', function(){
   gulp.watch(basePaths.src, ['sasscompil']);
   gulp.watch("*.tpl.php", bs_reload);
 });

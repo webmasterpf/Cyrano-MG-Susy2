@@ -22,7 +22,12 @@ body .conteneur{
             .content-header{}
         }
         .content-top{
-
+               @include break;
+                &:before{
+                content: " ";
+                display: block;
+                clear: both;
+            }
         }
         .middle-content{
            
