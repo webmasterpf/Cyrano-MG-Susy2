@@ -32,12 +32,11 @@ body .conteneur{
             }
         }
         .middle-content{
-           
-            @include clearfix;
+                     
 
         }
         .node-inner{  
-
+            @include span( 12 of $desktopcol);
         }                       
         .content-bottom{}
         .content-bottom-home{

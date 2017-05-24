@@ -6,7 +6,8 @@ var options = {};
 // #############################
 
 var basePaths = {
-    project:  '../',
+    project:  './',
+    projectsourcemap:  '../',
     src: './sass/**/*.scss', // fichiers scss à surveiller
     dest:  './css/', // dossier à livrer
     tpl: '**/*.tpl.php',
@@ -17,7 +18,7 @@ var basePaths = {
 //Chemins spécifiques
 var folderPaths = {
     styles: {
-        src: basePaths.project + 'sass/',
+        src: basePaths.projectsourcemap + 'sass/',
         dest: basePaths.theme + 'css/'
     },
     images: {

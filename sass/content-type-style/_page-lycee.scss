@@ -74,10 +74,14 @@ h4 a:hover{}
     margin: 0 auto;
     width: em(175px) !important;
     width: em(174px);/*IE*/
-     img{
-    border: em(2px) solid $violet;
-    margin: em(10px) 0 0;
-}
+     * {//cible le contenu
+         position:relative;
+        
+    }
+    img{
+        border: em(2px) solid $violet;
+        margin: em(10px) 0 0;
+    }
 }
 
 } 

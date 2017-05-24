@@ -31,8 +31,8 @@ include($theme_path .'/includes/regions_inc/inc_region_col_1.php');
 
             <div class="content">
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
-            </div>
-           <?php 
+                
+                          <?php 
   //$theme_path = drupal_get_path('theme', 'NOM_THEME');
   global $theme_path;
 include($theme_path .'/includes/regions_inc/inc_region_col_2.php');
@@ -42,6 +42,9 @@ include($theme_path .'/includes/regions_inc/inc_region_col_2.php');
   global $theme_path;
 include($theme_path .'/includes/regions_inc/inc_region_col_3.php');
 ?>
+                
+            </div>
+ 
             <!--***********!!!!!!  EXEMPLE DE CHAMP CCK INCLUS AVEC CONDITION !!!!!!!!************ -->
             <?php if ($node->nom_du_champ[0]['view']): ?>
             <div id="nom-css">
