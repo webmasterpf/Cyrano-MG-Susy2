@@ -108,6 +108,11 @@ $FontRaleway : 'Raleway',Trebuchet MS, Verdana, sans-serif;
 /*====================================|
 ==             VALEURS PAR DEFAUT             ==|
 =====================================*/
+//Pour les problèmes de hauteur parent/enfant
+html, body {
+    height:100%;
+}
+
 html {
  margin: 0;
  padding: 0;

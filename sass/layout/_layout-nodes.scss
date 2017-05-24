@@ -259,7 +259,8 @@ body .conteneur{
         }
         @include breakpoint ($desktop){
             @include span(first 4 of $desktopcol);
-
+            @include clearfix;
+            @include post(-50%); //fixe la valeur du margin-right
         }
     }
     .col2_layout_4_8{

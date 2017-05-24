@@ -69,14 +69,14 @@ h3 a{}
 h3 a:hover{}
 h4 a{}
 h4 a:hover{}
-.diapo_lycee{
+aside.diapo_lycee{
     display: block;
     margin: 0 auto;
     width: em(175px) !important;
     width: em(174px);/*IE*/
      * {//cible le contenu
          position:relative;
-        
+        min-height: 100%;
     }
     img{
         border: em(2px) solid $violet;
@@ -154,7 +154,7 @@ h4 a:hover{}
     margin: 0 auto;
 }
 #docs_lycee h3{
-    font-family:Arista,trebuchet MS,sans-serif;
+    font-family:$AristaFont;
     text-align: center;
     color: #950F7E;
     padding: 5px 0;

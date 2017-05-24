@@ -17,7 +17,9 @@
 // sinon problèmes dans la grille !
  
 /*-- LAYOUT PRINCIPAL --*/
-body .conteneur{
+body {
+    
+    .conteneur{
     //Approche mobile-first,réglage pour mobile
     @include container($susy);// largeur stricte
     @debug susy-get(columns);
@@ -90,5 +92,8 @@ aside.content_top{
 //Images RWD pour nodes
 .node-inner
 {
+    //réglages commun à surcharger si besoin
     img,iframe,object,embed{@include adaptable-img;}
+    ul{list-style-position: inside;}
     }
+}
