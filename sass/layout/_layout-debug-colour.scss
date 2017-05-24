@@ -3,7 +3,7 @@ Pour le dev, code visuel sur les blocs selon le breakpoint
 à commenter ou supprimer pour la production
 */
 
-body .conteneur{
+body .conteneur {
     //Approche mobile-first,réglage pour mobile
 
     #header{}
@@ -21,15 +21,12 @@ body .conteneur{
     #right-content{}
     #footer{background-color: firebrick;
             aside{
-        background-color: teal;     
-    }     
+                background-color: teal;     
+            }     
     }
     @include breakpoint($tablet) {//Dimensions pour les tablettes
 
-
-
                                   #header{
-
                                       background-color: sienna;
                                   }
                                   .content-global{}
@@ -42,9 +39,9 @@ body .conteneur{
                                   #left-content{}
                                   #right-content{}
                                   #footer{background-color: peachpuff;
-                                           aside{
-      background:sandybrown;
-    }  
+                                          aside{
+                                              background:sandybrown;
+                                          }  
                                   }        
     }   
 
@@ -65,6 +62,9 @@ body .conteneur{
                                    .middle-content{
                                        background-color:yellow;
 
+                                   }
+                                   .node-inner{
+                                       background-color: blanchedalmond;     
                                    }
                                    .content-top{background-color: yellowgreen;}
                                    .content-bottom{}

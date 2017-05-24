@@ -75,8 +75,17 @@ aside.diapo_lycee{
     width: em(175px) !important;
     width: em(174px);/*IE*/
      * {//cible le contenu
-         position:relative;
+        position:relative;
+        /*position:relative !important;*/
         min-height: 100%;
+    }
+    .views_slideshow_cycle_main{
+        /*position:relative !important;*/
+        
+        
+    }
+    .views_slideshow_cycle_slide{
+        overflow: auto;
     }
     img{
         border: em(2px) solid $violet;

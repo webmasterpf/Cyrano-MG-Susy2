@@ -197,17 +197,14 @@ $('#liste-vdl div.view-content').attr("data-columns","");
 
 
 
+
 //Action sur taille des images : retrait de toutes les tailles en dur (HTML) de manière ciblée
  //$('img').each(function(){
     $('.fiche-formation img').each(function(){
  $(this).removeAttr('width');
  $(this).removeAttr('height');
  });
- //si dans attribut style,alors il faut régler la valeur sur auto (views slideshow,mais taille overrider,
- //solution ajouter un max-width
-  $('.diapo_fiche div.views_slideshow_cycle_teaser_section').css('width','auto');
-  $('.diapo_fiche .views_slideshow_cycle_teaser_section').css('height','auto');
-  $('.diapo_fiche  .views_slideshow_cycle_teaser_section').css('max-width','100%');
+
 
  
 
@@ -222,7 +219,17 @@ $('#liste-vdl span.titre-vdl > a').css('text-transform','lowercase');
         $("#colonne-2 ul").removeAttr("style");
         $(".masonry-brick").removeAttr("style");//pas d'effet
         
+        
+//Pour surcharger éléments des diaporama de views
+        $('.diapo_fiche div.views_slideshow_cycle_teaser_section').css('width', 'auto'),
+        $('.diapo_fiche .views_slideshow_cycle_teaser_section').css('height', 'auto'),
+        $('.diapo_fiche  .views_slideshow_cycle_teaser_section').css('max-width', '100%');
+        $('views_slideshow_cycle_slide:visible').css('position', 'relative', 'important');
+        $('#views_slideshow_cycle_div_Diapo_illustration-block_1_0').css('position', 'relative', 'important');
+        $('.views_slideshow_cycle_slide').not(':visible').css('position', 'absolute', 'important');
     });
+
+            
 
 // Pour MixItUp plugin: voir le fichier ajout.classes.mixitup.js
 // Calling the MixItUp plugin for this View.
@@ -230,5 +237,21 @@ $('#liste-vdl span.titre-vdl > a').css('text-transform','lowercase');
 //        console.log('Chargement de Mixitup');
 //        $('.mixitup').mixItUp();
 //    });
+
+jQuery(window).bind('beforeunload', function(){
+    //Pour surcharger éléments des diaporama de views
+     //si dans attribut style,alors il faut régler la valeur sur auto (views slideshow,mais taille overrider,
+ //solution ajouter un max-width
+   $('.views_slideshow_cycle_slide').not(':visible').css('position', 'absolute', 'important');
+//  $('#views_slideshow_cycle_div_Diapo_illustration-block_1_0').ajax({
+//         complete: function(){
+//     css("position","relative");
+//   }
+//  });
+
+    
+});
+
+
 
 })(jQuery);
