@@ -104,6 +104,21 @@ $FontRaleway : 'Raleway',Trebuchet MS, Verdana, sans-serif;
 ==             OVERRIDE TYPEY SETTINGS           ==|
 =====================================*/
 
+$line-height-method: ratio;
+
+$base-font-size: 16px;
+$base-line-height-ratio: 1.5;
+
+$font-size: (
+  xl: 32px,
+  l:  24px,
+  m: 16px,
+  s: 12px,
+  xs:9px,
+);
+
+$typey-debug: true;
+$typey-debug-color: red;
 
 /*====================================|
 ==             VALEURS PAR DEFAUT             ==|
@@ -116,14 +131,24 @@ html, body {
 html {
  margin: 0;
  padding: 0;
+ @include define-type-sizing;
 }
 
 body {	
     font-family: $FontRaleway;//Typo globale du site
     color: $gris-clair-typo;
-
+/*@include font-size(m);*/
 }
-
+p,table,
+article.middle-content ul
+{
+    @include font-size(s);
+    @include line-height(1.1);
+    @include typey-debug-grid(1);
+}
+ul.sf-menu{
+    @include font-size(13px);
+}
 /*====================================|
 ==             REGLAGES DES TITRES           ==|
 =====================================*/
@@ -132,7 +157,7 @@ h1, .h1,h2, .h2 ,h3, .h3,h4, .h4,h5, .h5,h6, .h6{
 }
 
 h1, .h1 {
-        font-size: 20px;
+        @include font-size(l);
         /*font-size: em(20px);*/
         //Pour empêcher les titres tout en majuscule
           &::first-letter{
@@ -142,17 +167,17 @@ h1, .h1 {
   
 h2, .h2 {
     
-	font-size: m;
+	@include font-size(m);
 	/*font-size: em(18px);*/
 }
 
 h2.title{
-	
-	font-size: em(18px);
+    @include font-size(m);
+    /*font-size: em(18px);*/
 
- a{
-	color:$rouge;
-}
+    a{
+        color:$rouge;
+    }
 
 }
 h3, .h3{
