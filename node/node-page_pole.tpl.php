@@ -21,58 +21,25 @@
             </div>
             
         
-        <!--______________COLONNE 1________________ -->
-      
-        <div class="layout_3col_all4">
-           <?php if ($node->field_vue_test[0]['view']): ?>
-            <div class="pole1">
-                    <?php  print $node->field_vue_test[0]['view']  ?>
-            </div>
-            <?php endif;?>
-             <?php
-              global $theme_path;
-              include ($theme_path.'/includes/inc_region_col_1.php');
-              ?>
-        </div>
-        <!--______________COLONNE 2________________ -->
-         <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div  class="layout_3col_all4">
-            
-               <?php if ($node->field_vue_test2[0]['view']): ?>
-            <div class="pole2">
-                    <?php  print $node->field_vue_test2[0]['view']  ?>
-            </div>
-            <?php endif;?>
-           <?php
-              global $theme_path;
-              include ($theme_path.'/includes/inc_region_col_2.php');
-              ?>
+      <!-- ______________________ COLONNE 1  _______________________ -->
+ <?php if ($pole_col1): ?>
+              <div class="layout_3col_all4 page-pole">
+                  <?php print $pole_col1; ?>
+              </div>
+<?php endif; ?>
+<!-- ______________________ COLONNE 2  _______________________ -->
+<?php if ($pole_col2): ?>
+    <div class="layout_3col_all4 page-pole">
+        <?php print $pole_col2; ?>
+    </div>
+<?php endif; ?>
+<!-- ______________________ COLONNE 3  _______________________ -->
+<?php if ($pole_col3): ?>
+    <div class="layout_3col_all4last page-pole">
+        <?php print $pole_col3; ?>
+    </div>
+<?php endif; ?>
 
-        </div>
-
-        <!--______________COLONNE 3________________ -->
-        <div  class="layout_3col_all4last">
-            
-               <?php if ($node->field_vue_test3[0]['view']): ?>
-            <div class="pole3">
-                    <?php  print $node->field_vue_test3[0]['view']  ?>
-            </div>
-            <?php endif;?>
-            <?php
-              global $theme_path;
-              include ($theme_path.'/includes/inc_region_col_3.php');
-              ?>
-            
-            
-            <!--***********!!!!!!  EXEMPLE DE CHAMP CCK INCLUS AVEC CONDITION !!!!!!!!************ -->
-            <?php if ($node->nom_du_champ[0]['view']): ?>
-            <div id="nom-css">
-                    <?php  print $node->nom_du_champ[0]['view']  ?>
-            </div>
-            <?php endif;?>
-
-
-        </div>
 
         <?php if ($terms): ?>
         <div class="taxonomy"><?php //print $terms; ?></div>
