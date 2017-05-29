@@ -54,7 +54,6 @@ include($theme_path .'/includes/regions_inc/inc_region_col_3.php');
         </div>
 
       
-
         <?php if ($terms): ?>
         <div class="taxonomy"><?php //print $terms; ?></div>
         <?php endif;?>

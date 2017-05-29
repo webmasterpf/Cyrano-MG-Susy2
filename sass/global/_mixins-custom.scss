@@ -170,10 +170,10 @@
     -webkit-box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
     box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
     }    
-@mixin ombrage-bas {
-    -moz-box-shadow: 2px 2px 5px #aaa;
-    -webkit-box-shadow: 2px 2px 5px #aaa;
-    box-shadow: 2px 2px 5px #555;
+@mixin ombrage-bas ($decalage-horizontal:0.5em,$decalage-vertical:0.5em,$force-degrade:0.3em,$couleur-ombre:#aaa) {
+    -moz-box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
+    -webkit-box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
+    box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
     }
 @mixin ombrage-effet-incurve($PositionHalo:-1em,$LargeurHalo:10em,$HauteurHalo:2em){
         -moz-box-shadow: 0 $PositionHalo $LargeurHalo $HauteurHalo #FFF, 0 0.8em 0.7em -0.2em rgba(0, 0, 0, 1);

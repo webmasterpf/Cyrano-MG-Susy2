@@ -224,11 +224,12 @@ $('#liste-vdl span.titre-vdl > a').css('text-transform','lowercase');
         $('.diapo_fiche div.views_slideshow_cycle_teaser_section').css('width', 'auto'),
         $('.diapo_fiche .views_slideshow_cycle_teaser_section').css('height', 'auto'),
         $('.diapo_fiche  .views_slideshow_cycle_teaser_section').css('max-width', '100%');
-        $('views_slideshow_cycle_slide:visible').css('position', 'relative', 'important');
+        $('.views_slideshow_cycle_slide').css('position', 'relative', 'important');
+        $('.views_slideshow_cycle_hidden').css('position', 'relative', 'important');
         $('#views_slideshow_cycle_div_Diapo_illustration-block_1_0').css('position', 'relative', 'important');
+        $('#views_slideshow_cycle_div_Diapo_illustration-block_1_1').css('position', 'relative', 'important');
         $('.views_slideshow_cycle_slide').not(':visible').css('position', 'absolute', 'important');
     });
-
             
 
 // Pour MixItUp plugin: voir le fichier ajout.classes.mixitup.js
@@ -238,19 +239,7 @@ $('#liste-vdl span.titre-vdl > a').css('text-transform','lowercase');
 //        $('.mixitup').mixItUp();
 //    });
 
-jQuery(window).bind('beforeunload', function(){
-    //Pour surcharger éléments des diaporama de views
-     //si dans attribut style,alors il faut régler la valeur sur auto (views slideshow,mais taille overrider,
- //solution ajouter un max-width
-   $('.views_slideshow_cycle_slide').not(':visible').css('position', 'absolute', 'important');
-//  $('#views_slideshow_cycle_div_Diapo_illustration-block_1_0').ajax({
-//         complete: function(){
-//     css("position","relative");
-//   }
-//  });
 
-    
-});
 
 
 
