@@ -33,9 +33,57 @@ body .conteneur {
 }
 /*######-------- ||| STYLE ||| --------######*/
 h1.titre_ficheform{
-    color: $violet;
+    color: $rose-fushia;
 }
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#colonne-1.fiche-formation,#colonne-2.fiche-formation{
+  a{
+    color: $rose-fushia;
+    padding: 0 em(2px);
+}
+ a:hover{
+     background: $rose-fushia;
+    color: white;
+    text-decoration: none;
+}
+h2{
+    color: $bleu-turquoise;
+    font-size: medium;
+    font-family:$TrebuchetFont;
+}
+ h3{
+    font-size: smaller;
+}
+ h4{
+    font-size: small;
+    color: $vert;
+}
+ ul{
+    list-style: circle inside;
+}
+ strong{
+    color: $bleu-turquoise;
+}
+
+#deco-ficheform{
+    margin: 0 auto;
+    width: 95%;
+    img{
+ 
+ border: em(3px) solid $rose-fushia;
+ @include ombrage-bas (0,em(5px),0.5em,#564E4E);
+ @include adaptable-img;
+}
+}
+
+    
+}
+
+/*¤¤¤ STYLES PROPRES ¤¤¤*/
 #colonne-1.fiche-formation{
+    h3{
+        color: $rose-fushia;
+    }
     ul{
         padding:0;
         margin:0;
@@ -98,7 +146,7 @@ h1.titre_ficheform{
     }
     ul li{
         padding: em(2px);
-        list-style: square inside none;
+        /*list-style: square none;*/
         line-height: 1;
     }
     .diapo_fiche{
@@ -116,3 +164,46 @@ h1.titre_ficheform{
 }
 
 .views-field-field-complement-info-formation-value{text-align: center;margin: 0 auto;width: 160px;}
+
+/*------------------------------------
+        PAGE FICHE FORMATION
+_______________________________________*/
+
+
+#complement-ficheform p{
+    font-family:$AristaFont;
+    font-size: large;
+    color: $violet;
+}
+#docs_ficheform {
+    background: $gris-clair;
+    border: em(3px) solid $violet;
+    width: 95%;
+    margin: 0 auto;
+    @include ombrage-bas (0,em(5px),0.5em,#564E4E);
+     table{
+         width: 98%;
+}
+ td{
+    text-align: center;
+    
+    margin: 0 auto;
+    display: block;
+}
+ td a{
+    text-decoration: none;
+    color: #543F4F;
+    
+}
+ td a:hover{
+     background: $rose-fushia;
+    border-radius: 10px;
+}
+ .filefield-icon{
+    display: none;
+}
+}
+
+.taxo-ficheform{
+   font-style: italic;
+}

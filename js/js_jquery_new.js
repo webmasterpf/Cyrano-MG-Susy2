@@ -11,6 +11,16 @@
         //<!--Pour utiliser selectnav en RWD-->
         console.log('Chargement du script pour selectnav');
         selectnav('subnav', {label: '- Accès rapide -'});
+        
+        //Pour surcharger éléments des diaporama de views
+        $('.diapo_fiche div.views_slideshow_cycle_teaser_section').css('width', 'auto'),
+        $('.diapo_fiche .views_slideshow_cycle_teaser_section').css('height', 'auto'),
+        $('.diapo_fiche  .views_slideshow_cycle_teaser_section').css('max-width', '100%');
+        $('.views_slideshow_cycle_slide').css('position', 'relative', 'important');
+        $('.views_slideshow_cycle_hidden').css('position', 'relative', 'important');
+        $('#views_slideshow_cycle_div_Diapo_illustration-block_1_0').css('position', 'relative', 'important');
+        $('#views_slideshow_cycle_div_Diapo_illustration-block_1_1').css('position', 'relative', 'important');
+        $('.views_slideshow_cycle_slide').not(':visible').css('position', 'absolute', 'important');
     });
     
 
@@ -219,16 +229,7 @@ $('#liste-vdl span.titre-vdl > a').css('text-transform','lowercase');
         $("#colonne-2 ul").removeAttr("style");
         $(".masonry-brick").removeAttr("style");//pas d'effet
         
-        
-//Pour surcharger éléments des diaporama de views
-        $('.diapo_fiche div.views_slideshow_cycle_teaser_section').css('width', 'auto'),
-        $('.diapo_fiche .views_slideshow_cycle_teaser_section').css('height', 'auto'),
-        $('.diapo_fiche  .views_slideshow_cycle_teaser_section').css('max-width', '100%');
-        $('.views_slideshow_cycle_slide').css('position', 'relative', 'important');
-        $('.views_slideshow_cycle_hidden').css('position', 'relative', 'important');
-        $('#views_slideshow_cycle_div_Diapo_illustration-block_1_0').css('position', 'relative', 'important');
-        $('#views_slideshow_cycle_div_Diapo_illustration-block_1_1').css('position', 'relative', 'important');
-        $('.views_slideshow_cycle_slide').not(':visible').css('position', 'absolute', 'important');
+
     });
             
 

@@ -26,15 +26,15 @@
     @include breakpoint ($desktop){
         display: block;
         padding: 0 0 0 0.3em;
-        color: $gris-clair-moyen;
+        color: $violet;
         text-decoration: none;
 //        background: chocolate;//supprimer en PROD
         a {
-            color: $gris-anthracite;
+            color: $rose-fushia;
             text-decoration: none;
               font-size: small;
             &:hover {
-                color: #000;
+                color: $violet;
                 text-decoration: underline;
             }
         }
