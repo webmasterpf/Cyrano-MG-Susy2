@@ -39,13 +39,13 @@ aside.navStatic{
                     margin: 0.25em;
                     border: 0;
                     font-family: $AristaFont;
-                    color: $rose-fushia;//couleur des liens
+                    color: $violet;//couleur des liens
                     text-decoration: none;
                     display: block;
                     font-size: x-large;
                     font-weight: bold;//si typo trop fine
                     &:hover {
-                        color: $gris-clair-moyen;//couleur du hover
+                        color: $rose-fushia;//couleur du hover
                     }
                     img{
                         @include adaptable-img;
