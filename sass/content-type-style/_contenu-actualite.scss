@@ -42,92 +42,144 @@ h1.titre_actualites_content{
 #colonne-1.contenu-actu,
 #colonne-2.contenu-actu,
 #colonne-3.contenu-actu{
+    h3{
+         padding: em(5px) 0;
+            font-size: medium;
+            margin: 0 0 em(5px) 0;
+    }
+}
+#gasquet-actus {
+    h3{
+        font-family:$AristaFont;
+        text-align: center;
+        color: $rose-fushia;
+    }
+    table{
+        background: $gris-clair;
+        border: em(3px) solid $rose-fushia;
+        width: 95%;/*225px;*/
+        margin: 0 auto;
+        -moz-box-shadow:0px 0px 7px 1px #564E4E;
+        -webkit-box-shadow:0px 0px 7px 1px #564E4E;
+        box-shadow:0px 0px 7px 1px #564E4E;
+        cellspacing: 0;
+        @include PIE;
+        position: relative;
+    }
+    tr{
 
+    }
+    td{
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
+    td a{
+        text-decoration: none;
+        color: #543F4F;
+        padding: 3px;
+        font-size: x-small;
+    }
+    td a:hover{
+        background: #D0D1D2;
+        border-radius: 10px;
+        behavior: url(/sites/all/libraries/PIE/PIE.htc);
+        position: relative;
+    }
 }
 
 /*¤¤¤ STYLES PROPRES ¤¤¤*/
+#colonne-1.contenu-actu{
+    #actu-passerelle a{
+        text-decoration: none;
+        color: $rose-fushia;
+    }
+    #actu-passerelle, #taxo-custom{
+        background: url('../images/bg_point_rp.gif') repeat top left;
+        margin: em(10px);
+        padding: em(5px);
+        text-align: center;
+        width: auto;
+        font-size: small;
+    }
+    #actu-illustration img{
+        border: em(2px) solid $rose-fushia;
+        margin: em(5px) 0;
+        margin-left: 12%;//centrer l'image'
+    }
+}
 #colonne-2.contenu-actu{
     p{
-    padding: em(5px);
-}
+        padding: em(5px);
+    }
+    strong{
+        color: $violet;
+    }
+    a{
+        color: $rose-fushia;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    #actu-galerie-image{
+        width: 95%;
+    }
+    /*Galerie lightbox*/
+    #actu-galerie-image .image-gallery-nodes ul li {
+        background: none repeat scroll 0 0 transparent;
+        display: inline-block;
+        height: 100px;
+        list-style-type: none;
+        text-align: center;
+        width: 150px;
+    }
+    #actu-galerie-image .image-gallery-nodes ul li img{
+        border: em(3px) solid #EFEFEF;
+    }
+    #actu-video{
+        width: 95%;
+        margin: 0 auto;
+        border: em(2px) solid $gris-clair-moyen;
+    }
 }
 
-.actu-content 
-#actu-passerelle a{
-    text-decoration: none;
-    color: #E2007A;
-}
-#actu-passerelle, #taxo-custom{
-     background: url('../images/bg_point_rp.gif') repeat top left;
-     margin: 10px;
-    padding: 5px;
-    text-align: center;
-    width: 170px;
-}
-#taxo-custom{
-    color: #00ACD1;
-    font-weight: bold;
-}
-#actu-illustration img{
-    border: 2px solid #E2007A;
-    margin: 5px 0;
-}
-#actu-galerie-image{
-    width: 520px;
-}
-/*Galerie lightbox*/
-#actu-galerie-image .image-gallery-nodes ul li {
-    background: none repeat scroll 0 0 transparent;
-    display: inline-block;
-    height: 100px;
-    list-style-type: none;
-    text-align: center;
-    width: 150px;}
-#actu-galerie-image .image-gallery-nodes ul li img{
-    border: 3px solid #EFEFEF;
-}
-#actu-video{
-    width: 425px;
-    margin: 0 auto;
-    border: 2px solid #D0D1D2;
-}
-#actu-docs h3{
-   font-family:Arista,trebuchet-MS,sans-serif;
-    text-align: center;
-    color: #950F7E;
-    padding: 5px 0;
-    font-size: 20px;
-    margin: 0 0 5px 0;
-}
-#actu-docs table{
-    background: #EFEFEF;
-    border: 3px solid #D0D1D2;
-    width: 225px;
-    margin: 0 auto;
-     box-shadow:0px 0px 7px 1px #564E4E;
-    -moz-box-shadow:0px 0px 7px 1px #564E4E;
-    -webkit-box-shadow:0px 0px 7px 1px #564E4E;
-}
-#actu-docs td{
-    text-align: center;
-}
-#actu-docs td a{
-    text-decoration: none;
-    color: #543F4F;
-    
-}
-#actu-docs td a:hover{
-     background: #E2007A;
-    border-radius: 10px;
-}
-#actu-docs .filefield-icon{
-    display: none;
-}
 #colonne-3.contenu-actu{
-    a{
-        color: $orange-fonce;text-decoration: none;
-      &:hover{
-          background:$orange-fonce;color: $gris-clair;
-      }
+    #taxo-custom{
+        color: $bleu-turquoise;
+        font-weight: bold;
     }
+    #actu-docs {
+        h3{
+            font-family:$AristaFont;
+            text-align: center;
+            color: $violet;
+
+        }
+        table{
+            background: $gris-clair;
+            border: em(3px) solid $gris-clair-moyen;
+            width: 97%;
+            margin: 0 auto;
+            @include ombrage-bas($prune);
+            /*@include ombrage-bas(0, em(7px), em(1px), $prune);*/
+        }
+        td{
+            text-align: center;
+            a{
+                text-decoration: none;
+                color: $prune;
+                font-size:small;
+                &:hover{
+                    background: $rose-fushia;
+                    @include arrondis (em(10px));
+
+                }
+            }
+        }
+        .filefield-icon{
+            display: none;
+        }
+    }
+
 }
