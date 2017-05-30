@@ -22,8 +22,11 @@ body .conteneur .conteneur-flex{
 /*######-------- ||| BORDURES ||| --------######*/
 body .conteneur {
     @include breakpoint ($desktop){
+        #colonne-2.contenu-actu{
+            @include border-L-rose;
+        }
         #colonne-3.contenu-actu{
-            @include border-L-anthracite;
+            
         }
         }
     
@@ -31,56 +34,95 @@ body .conteneur {
 /*######-------- ||| STYLE ||| --------######*/
 
 h1.titre_actualites_content{
-    color: $orange;
-    font-family: 'Arvo',Trebuchet MS,sans-serif;
-}
-#colonne-1.contenu-actu {
-    h3.docs-actualites{
-        color: $vert;
-        text-align: center;
-    }
-    #bloc-docs-actualites{
-        width: 100%;
-        background: $gris-clair;
-        padding: em(10px);
-        a{
-            text-decoration: none;
-            color: $bleu-turquoise;
-            padding: 4px;
-            &:hover{
-                background: $bleu-turquoise;
-                color: white;
-            }
-        }
-    }
+    color: $rose-fushia;
+    font-family: $FontArvo;
 }
 
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#colonne-1.contenu-actu,
+#colonne-2.contenu-actu,
+#colonne-3.contenu-actu{
 
-#bloc-video-actualites{
-    width: 89%;
-    display: block;
-    border: 0.1em solid $orange;
+}
+
+/*¤¤¤ STYLES PROPRES ¤¤¤*/
+#colonne-2.contenu-actu{
+    p{
+    padding: em(5px);
+}
+}
+
+.actu-content 
+#actu-passerelle a{
+    text-decoration: none;
+    color: #E2007A;
+}
+#actu-passerelle, #taxo-custom{
+     background: url('../images/bg_point_rp.gif') repeat top left;
+     margin: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 170px;
+}
+#taxo-custom{
+    color: #00ACD1;
+    font-weight: bold;
+}
+#actu-illustration img{
+    border: 2px solid #E2007A;
+    margin: 5px 0;
+}
+#actu-galerie-image{
+    width: 520px;
+}
+/*Galerie lightbox*/
+#actu-galerie-image .image-gallery-nodes ul li {
+    background: none repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 100px;
+    list-style-type: none;
+    text-align: center;
+    width: 150px;}
+#actu-galerie-image .image-gallery-nodes ul li img{
+    border: 3px solid #EFEFEF;
+}
+#actu-video{
+    width: 425px;
     margin: 0 auto;
-    padding: em(2px);
+    border: 2px solid #D0D1D2;
 }
-
-#table-docs-actualites{
-    tbody{
-        border: 0;
-    }
-    tr{
-        border: 0 none;
-    }
-    td{
-        display: inline-block;
-        margin: 0 em(50px);
-    }
-    a{
-        &:hover{}
-    }
-
-} 
-
+#actu-docs h3{
+   font-family:Arista,trebuchet-MS,sans-serif;
+    text-align: center;
+    color: #950F7E;
+    padding: 5px 0;
+    font-size: 20px;
+    margin: 0 0 5px 0;
+}
+#actu-docs table{
+    background: #EFEFEF;
+    border: 3px solid #D0D1D2;
+    width: 225px;
+    margin: 0 auto;
+     box-shadow:0px 0px 7px 1px #564E4E;
+    -moz-box-shadow:0px 0px 7px 1px #564E4E;
+    -webkit-box-shadow:0px 0px 7px 1px #564E4E;
+}
+#actu-docs td{
+    text-align: center;
+}
+#actu-docs td a{
+    text-decoration: none;
+    color: #543F4F;
+    
+}
+#actu-docs td a:hover{
+     background: #E2007A;
+    border-radius: 10px;
+}
+#actu-docs .filefield-icon{
+    display: none;
+}
 #colonne-3.contenu-actu{
     a{
         color: $orange-fonce;text-decoration: none;

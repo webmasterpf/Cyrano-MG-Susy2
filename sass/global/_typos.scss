@@ -139,8 +139,9 @@ body {
     color: $gris-clair-typo;
 /*@include font-size(m);*/
 }
-p,table,
-article.middle-content ul
+p,
+article.middle-content ul,
+article.middle-content ol
 {
     @include font-size(s);
     @include line-height(1.1);
@@ -181,16 +182,20 @@ h2.title{
 
 }
 h3, .h3{
-	font-size: em(16px);
+	@include font-size(s);
+        /*	font-size: em(16px);*/
 }
 h4, .h4{
 	
-	font-size: em(14px);
+	@include font-size(s);
+        /*	font-size: em(14px);*/
 }
 h5, .h5 {
-	
-	font-size: em(12px);
+	@include font-size(xs);
+/*	font-size: em(12px);*/
 }
 h6, .h6 {
-	font-size: em(10px);
+    
+    @include font-size(xs);
+	/*font-size: em(10px);*/
 }
