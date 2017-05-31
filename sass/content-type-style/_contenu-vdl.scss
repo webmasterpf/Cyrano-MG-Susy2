@@ -26,7 +26,7 @@ body .conteneur {
 body .conteneur {
     @include breakpoint ($desktop){
         #colonne-2.contenu-vdl{
-            @include border-L-vert;
+            @include border-L-rose;
         }
         }
     
@@ -36,7 +36,16 @@ h1.titre-vdl{
     color: $violet;
   
 }
-.contenu-vdl{
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#colonne-1.contenu-vdl,
+#colonne-2.contenu-vdl,
+#colonne-3.contenu-vdl{
+    p{
+    padding: em(5px);
+}
+strong,b{
+    color: $rose-fushia;
+}
     a{
         color: $violet;
         text-decoration: none;
@@ -46,4 +55,79 @@ h1.titre-vdl{
         
     }
     
+}
+
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+
+#vdl-passerelle a{
+    text-decoration: none;
+    color: #E2007A;
+}
+#vdl-passerelle{
+     background: url('../images/bg_point_rp.gif') repeat top left;
+     margin: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 170px;
+}
+#vdl-illustration img{
+    border: 2px solid #E2007A;
+    margin: 5px 0;
+}
+#vdl-galerie-image{
+    width: 520px;
+    margin: 5px 0;
+}
+/*Galerie lightbox*/
+#vdl-galerie-image .image-gallery-nodes ul li {
+    background: none repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 100px;
+    list-style-type: none;
+    text-align: center;
+    width: 150px;}
+#vdl-galerie-image .image-gallery-nodes ul li img{
+    border: 3px solid #EFEFEF;
+}
+#vdl-video{
+    width: 425px;
+    margin: 0 auto;
+    border: 2px solid #D0D1D2;
+}
+#vdl-docs h3{
+   font-family:Arista,trebuchet-MS,sans-serif;
+    text-align: center;
+    color: #950F7E;
+    padding: 5px 0;
+    font-size: 20px;
+    margin: 0 0 5px 0;
+}
+#vdl-docs table{
+    background: #EFEFEF;
+    border: 3px solid #D0D1D2;
+    width: 225px;
+    margin: 0 auto;
+     box-shadow:0px 0px 7px 1px #564E4E;
+    -moz-box-shadow:0px 0px 7px 1px #564E4E;
+    -webkit-box-shadow:0px 0px 7px 1px #564E4E;
+    behavior: url(/sites/all/libraries/PIE/PIE.htc);
+   position: relative;
+}
+#vdl-docs td{
+    text-align: center;
+}
+#vdl-docs td a{
+    text-decoration: none;
+    color: #543F4F;
+    
+}
+#vdl-docs td a:hover{
+     background: #E2007A;
+    border-radius: 10px;
+}
+#vdl-docs .filefield-icon{
+    display: none;
 }
