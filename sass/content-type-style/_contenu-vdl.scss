@@ -32,7 +32,7 @@ body .conteneur {
     
 }
 /*######-------- ||| STYLE ||| --------######*/
-h1.titre-vdl{
+h1.vdl_titre{
     color: $violet;
   
 }
@@ -61,23 +61,31 @@ strong,b{
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
+#colonne-1.contenu-vdl{
 
-#vdl-passerelle a{
-    text-decoration: none;
-    color: #E2007A;
+    .vdl-passerelle{
+        background: url('../images/bg_point_rp.gif') repeat top left;
+        margin: em(10px);
+        padding: em(5px);
+        text-align: center;
+        width: auto;
+        font-size: small;
+        @include arrondis(em(10px));
+        a{
+            text-decoration: none;
+            color: $rose-fushia;
+        }
+    }
+    .vdl-illustration{
+         img{
+        border: em(2px) solid $rose-fushia;
+        margin: em(5px) 0;
+        margin-left: 12%;//centrer l'image'
+    }
+    }
 }
-#vdl-passerelle{
-     background: url('../images/bg_point_rp.gif') repeat top left;
-     margin: 10px;
-    padding: 5px;
-    text-align: center;
-    width: 170px;
-}
-#vdl-illustration img{
-    border: 2px solid #E2007A;
-    margin: 5px 0;
-}
-#vdl-galerie-image{
+#colonne-2.contenu-vdl{
+    #vdl-galerie-image{
     width: 520px;
     margin: 5px 0;
 }
@@ -88,16 +96,20 @@ ______________________________*/
     height: 100px;
     list-style-type: none;
     text-align: center;
-    width: 150px;}
+    width: 150px;
+}
 #vdl-galerie-image .image-gallery-nodes ul li img{
     border: 3px solid #EFEFEF;
 }
-#vdl-video{
-    width: 425px;
+aside.vdl-video{
+    width: 95%;
     margin: 0 auto;
-    border: 2px solid #D0D1D2;
+    border: em(2px) solid $gris-clair-moyen;
 }
-#vdl-docs h3{
+
+}
+#colonne-3.contenu-vdl{
+    #vdl-docs h3{
    font-family:Arista,trebuchet-MS,sans-serif;
     text-align: center;
     color: #950F7E;
@@ -131,3 +143,7 @@ ______________________________*/
 #vdl-docs .filefield-icon{
     display: none;
 }
+
+}
+
+
