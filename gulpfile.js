@@ -29,10 +29,14 @@ var folderPaths = {
         d6: basePaths.project + '**/*.tpl.php',
         d8: basePaths.project + '**/*.html.twig'
     },
-     js: {
+    settings: {
+        d6: basePaths.project + '**/*.php',
+        d8: basePaths.project + '**/*.php'
+    },
+    js: {
         jsd68: basePaths.project + 'js/**/*.js'
-        
     }
+
 };
 
 //Variable pour les gems (à adapter selon environnement)
@@ -155,5 +159,6 @@ gulp.task('default', ['browser-sync'], function(){
 //    gulp.task('default', function(){
   gulp.watch(basePaths.src, ['sasscompil']);
   gulp.watch(folderPaths.templates.d6, bs_reload);
+  gulp.watch(folderPaths.settings.d6, bs_reload);
   gulp.watch(folderPaths.js.jsd68, bs_reload);
 });

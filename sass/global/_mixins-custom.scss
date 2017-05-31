@@ -46,7 +46,7 @@
 }
 /*---------- PIE pour CSS3 IE --------------*/
 @mixin PIE {
-    behavior: url(/sites/all/libraries/PIE/PIE.htc);
+    behavior: url(./../sites/all/libraries/PIE/PIE.htc);
 }
 /*-------- LAYOUT CSS3 --------------*/
 @mixin colonnes($nb-col:3){

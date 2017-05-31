@@ -93,10 +93,10 @@
 });
 
 //Pour Galerie Chocolat.js
-    jQuery(document).ready(function(){
-        console.log('Appel du script Chocolat.js');
-    $('.chocolat-parent').Chocolat();
-});
+//    jQuery(document).ready(function(){
+//        console.log('Appel du script Chocolat.js');
+//    $('.chocolat-parent').Chocolat();
+//});
 
 //Pour Galerie BaguetteBox.js
     jQuery(document).ready(function () {

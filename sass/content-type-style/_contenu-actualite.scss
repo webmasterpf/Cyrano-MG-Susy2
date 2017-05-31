@@ -67,7 +67,7 @@ h1.titre_actualites_content{
         position: relative;
     }
     tr{
-
+        border: none;
     }
     td{
         display: block;
@@ -101,6 +101,7 @@ h1.titre_actualites_content{
         text-align: center;
         width: auto;
         font-size: small;
+        @include arrondis(em(10px));
     }
     #actu-illustration img{
         border: em(2px) solid $rose-fushia;
