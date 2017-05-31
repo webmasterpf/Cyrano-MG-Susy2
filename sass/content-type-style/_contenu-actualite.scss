@@ -123,11 +123,11 @@ h1.titre_actualites_content{
             text-decoration: underline;
         }
     }
-    #actu-galerie-image{
+    .galerie-vdl{
         width: 95%;
     }
     /*Galerie lightbox*/
-    #actu-galerie-image .image-gallery-nodes ul li {
+    .galerie-vdl .image-gallery-nodes ul li {
         background: none repeat scroll 0 0 transparent;
         display: inline-block;
         height: 100px;
@@ -135,7 +135,7 @@ h1.titre_actualites_content{
         text-align: center;
         width: 150px;
     }
-    #actu-galerie-image .image-gallery-nodes ul li img{
+    .galerie-vdl .image-gallery-nodes ul li img{
         border: em(3px) solid #EFEFEF;
     }
     #actu-video{

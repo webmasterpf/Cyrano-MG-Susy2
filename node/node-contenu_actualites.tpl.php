@@ -51,7 +51,7 @@
             <?php endif;?>
                 
                 <?php if ($node->field_choix_galerie_vdl[0]['view']): ?>
-            <div id="vdl-galerie-image">
+            <div class="galerie-vdl">
                     <?php  print $node->field_choix_galerie_vdl[0]['view']  ?>
             </div>
             <?php endif;?>

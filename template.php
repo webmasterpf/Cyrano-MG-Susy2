@@ -132,7 +132,7 @@ function cyranod6_susy2_mg_preprocess_page(&$vars){
     //drupal_add_js(drupal_get_path('theme', 'cyranod6_susy2_mg') . '/3rdparty/buttons/js/buttons.js', 'theme');
     
     
-    //*** Utilisation des plugins Jquery  plus récents ***
+    //*** Utilisation des plugins Jquery  plus récents - Toujours terminer avec ce JS***
      drupal_add_js(drupal_get_path('theme', 'cyranod6_susy2_mg') . '/js/js_jquery_new.js', 'theme');
     
     //  mise à disposition des 2 versions de jQuery
