@@ -124,6 +124,20 @@ ______________________________*/
 
 #colonne-1.page-archive{}
 #colonne-2.page-archive{
+    ul.pager{
+        a{
+            color: $rose-fushia;
+            text-decoration: none;
+            &:hover{
+                color: $violet;
+            }
+
+        }
+      li  a:active{
+            color: $violet;
+            font-weight: bold;
+        }
+    }
     .actuGlobale-archives{
    text-align: center;
 }

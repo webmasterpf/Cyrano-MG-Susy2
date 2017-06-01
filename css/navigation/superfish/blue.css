@@ -75,7 +75,7 @@ span.menu-item-container{/*hover des li*/
   color: #95107D;/*couleur des a *//*violet : #95107D vert :#AEC721 rose :#E1017B anthracite : #606070 rouge:#E2001A*/
 }
 /*Rubrique active - Active Trail*/
-.sf-menu.sf-style-blue li.active-trail,.sf-menu.sf-style-blue li.active-trail > a{color: #E2001A;background: #D0D1D2;}
+.sf-menu.sf-style-blue li.active-trail,.sf-menu.sf-style-blue li.active-trail > a{color: #E1017B;background: #D0D1D2;}
 
 /*MENU ITEM CONTAINER*/
 span.menu-item-container{display: block;font-size: 12px;font-weight: bold;height: 2.4em;

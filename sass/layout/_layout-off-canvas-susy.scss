@@ -28,7 +28,7 @@ body .conteneur {
 
     }
     .close{
-        background: $gris-clair;//changer couleur selon le site !!!
+        background: $rose-fushia;//changer couleur selon le site !!!
     }
     img.close-btn{
         vertical-align: middle;
@@ -71,7 +71,7 @@ $off-canvas-top: 9.8em;
             bottom: 0;
             height: $off-canvas-height;//limite la hauteur du bloc
             @include arrondis;
-            background: $gris-clair;//changer couleur selon le site !!!
+            background: $rose-fushia;//changer couleur selon le site !!!
         }
         
     .menu-toggle, .transformer.is-open > .menu-toggle{
