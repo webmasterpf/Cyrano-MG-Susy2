@@ -3,21 +3,7 @@
 ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
 // Styles globaux
 /*------- EFFETS VISUELS GENERIQUES--------------*/
-.ombrage {
-    @include ombrage;
-}
-.ombrage_bas {
-    @include ombrage-bas;
-}
-.table_tr_ombrage_bas{
-    @include table-tr-ombrage-bas;
-}
-.ombrage_bloc {
-    @include ombrage-bloc;
-}
-.ombrage_bas_table_actu{
-    @include ombrage-bas-table-actu;
-}
+
 
 /**-- style du fil d'ariane --**/
 
