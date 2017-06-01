@@ -222,6 +222,68 @@ body .conteneur{
 
     }
 }
+//3 colonnes asymétriques page actualités MG
+body .conteneur{
+    .col1_layout_3_5_4{
+       @include span($mobilecol);
+       @include clearfix;
+       
+       @include breakpoint ($tablet){
+            @include span(2 of $tabletcol);
+        
+        }
+       
+       @include breakpoint ($desktop){
+           @include span(3 of $desktopcol);
+        
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(3 of $tabletcol-landcsape);
+        
+        }
+    }
+    .col2_layout_3_5_4{
+       @include span($mobilecol);
+        
+        
+        @include clearfix;
+        @include breakpoint ($tablet){
+           @include span(4 of $tabletcol);
+        
+        }
+        @include breakpoint ($desktop){
+          @include span(5 of $desktopcol);
+        
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(4 of $tabletcol-landcsape);
+
+        }
+
+    }
+    .col3_layout_3_5_4{//pas de of pour le span car le contexte est définit par le breakpoint
+        @include span($mobilecol);
+       
+
+        @include clearfix;
+        @include breakpoint ($tablet){
+            @include span( 2 of $tabletcol);
+
+        }
+        @include breakpoint ($desktop){
+           @include span(last 4);
+
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(last 3 of $tabletcol-landcsape);
+
+        }
+
+    }
+}
 //Pour un 3 colonnes egales : page pole
 body .conteneur{
     .layout_3col_all4{

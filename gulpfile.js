@@ -54,7 +54,7 @@ var assetsPath = {
     basePaths.node_modules +  'typey/stylesheets/_typey.scss'
   ],
   javascript: [
-    '',
+    
        
   ]
 };

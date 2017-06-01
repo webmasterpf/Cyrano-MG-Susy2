@@ -104,6 +104,19 @@
         }
     }
 }
+
+@mixin zoom-css3($coeffzoom:1){
+    position: relative;
+    transition: all 200ms ease-in;
+    transform: scale($coeffzoom);
+    z-index: 20;
+}
+@mixin zoom-css3-hover($coeffzoom:1.05){
+    transform: scale($coeffzoom);
+    z-index: 20;
+    transition: all 200ms ease-in;
+    
+}
 /*--------- MASQUAGE ELEMENTS ---------*/
 @mixin visuallyhidden {
   margin: -1px;

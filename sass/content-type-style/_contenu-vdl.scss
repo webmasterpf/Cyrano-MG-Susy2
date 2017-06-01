@@ -77,11 +77,17 @@ ______________________________*/
         }
     }
     .vdl-illustration{
-         img{
-        border: em(2px) solid $rose-fushia;
-        margin: em(5px) 0;
-        margin-left: 12%;//centrer l'image'
-    }
+        img{
+            border: em(2px) solid $rose-fushia;
+            /*        margin: em(5px) 0;
+                    margin-left: 12%;//centrer l'image'*/
+            @include img-centered;
+          @include zoom-css3(1);
+            &:hover{
+                @include zoom-css3-hover(1.05);
+            }
+
+        }
     }
 }
 #colonne-2.contenu-vdl{
