@@ -254,7 +254,7 @@ body .conteneur{
         }
         @include breakpoint ($desktop){
           @include span(5 of $desktopcol);
-        
+        @include post(1%); //fixe la valeur du margin-right
         }
         //Pour orientation paysage
          @include breakpoint ($tabletlandscape){
@@ -273,8 +273,8 @@ body .conteneur{
 
         }
         @include breakpoint ($desktop){
-           @include span(last 4);
-
+           @include span(last 4 of $desktopcol);
+           @include isolate(.3%);
         }
         //Pour orientation paysage
          @include breakpoint ($tabletlandscape){

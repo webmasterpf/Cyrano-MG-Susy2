@@ -49,7 +49,7 @@
         </div>
 
         <!--______________COLONNE 3________________ -->
-        <div id="colonne-3" class="col3_layout_295_385_295">
+        <div id="colonne-3" class="col3_layout_3_5_4 page-actualites">
           
             <?php
               global $theme_path;

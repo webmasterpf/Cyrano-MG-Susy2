@@ -25,7 +25,7 @@ body .conteneur .conteneur-flex{
 /*######-------- ||| BORDURES ||| --------######*/
 body .conteneur {
     @include breakpoint ($desktop){
-        #colonne-2.page-actualites{@include border-orange-violet;}
+        #colonne-2.page-actualites{}
     }
     
 }
@@ -39,11 +39,36 @@ h1.titre_page_actualites{
 #colonne-1.page-actualites,
 #colonne-2.page-actualites,
 #colonne-3.page-actualites{
+    .titre-actu{
+    bottom: -20px;
+    left: 3px;
+    position: relative;
+    width: 98%;
+    z-index: 20;
+    }
+.img-actu img{
+    float: left;
+    border: em(1px) solid white;
+    @include zoom-css3(1);
+    &:hover{
+        @include zoom-css3-hover(0.95);
+    }
+}
+.actuGlobale-archives{
+   text-align: center;
+}
+.actuGlobale-archives a{
+    font-size: small;
+    color: $violet;
+    margin: em(5px);
+    font-family:$AristaFont;
+}
+.actuGlobale-archives a:hover{}
     p{
     padding: em(5px);
 }
 strong,b{
-    color: $rose-fushia;
+    color: $prune;
 }
     a{
         color: $violet;
@@ -53,108 +78,174 @@ strong,b{
         }
         
     }
-    
+    span{
+        @include font-size(s);
+    }
 }
 
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
-#colonne-1.page-actualites{}
-#colonne-2.page-actualites{}
-#colonne-3.page-actualites{}
-
-/*------------------------
-        PAGE
-    ACTU GLOBALE
---------------------------*/
-.titre_page-actu{
-    text-align: center;
-}
-.titre-actu{
-    bottom: -20px;
-    left: 3px;
-    position: relative;
-    width: 190px;
-    z-index: 20;
+#colonne-1.page-actualites{
+    /*Liste actu europe*/
+    #actu-liste-europe p.txt-vide-actu-globale{
+        width: 98%;
+        text-align: center;
     }
-.img-actu img{
-    float: left;
-    border: 1px solid white;
+    #actu-liste-europe{
+        width: 98%;
+        margin: 0 auto;
+    }
+    #actu-liste-europe h3{
+        font-size: larger;
+        color: $violet;
+        margin: em(5px);
+        text-align: center;
+        font-family:$AristaFont;
+    }
+    #actu-liste-europe table{
+        border: 3px solid $violet;
+        background: $gris-clair;
+        @include ombrage-table-actu;
+        @include PIE;
+        position: relative;
+    }
+    #actu-liste-europe tbody{}
+    #actu-liste-europe tr{}
+    #actu-liste-europe td{
+        padding: em(2px);
+    }
+    #actu-liste-europe a{
+        color: $prune;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    #actu-liste-europe a:hover{
+        color: $rose-fushia;
+    }
 }
-.actuGlobale-archives{
-   text-align: center;
-}
-.actuGlobale-archives a{
-    font-size: 11px;
-    color: #950F7E;
-    margin: 5px;
-    font-family:Arista,trebuchet-MS,sans-serif;
-}
-.actuGlobale-archives a:hover{}
-/*Liste actu europe*/
-#actu-liste-europe p.txt-vide-actu-globale{
-    width: 290px;
+#colonne-2.page-actualites{
+     /*Liste annonce RP - Big*/
+#actu-liste-rp-annonce p.txt-vide-actu-globale{
+    margin: 0 auto;
+    width: 98%;
     text-align: center;
+    color: $orange-fonce;
 }
-#actu-liste-europe{
-    width: 290px;
+#actu-liste-rp-annonce{
+    margin: 0 auto;
+    width: 98%;
 }
-#actu-liste-europe h3{
-    font-size: 20px;
-    color: #950F7E;
-    margin: 5px;
+#actu-liste-rp-annonce h3{
+    color:$bleu-turquoise;
     text-align: center;
-    font-family:Arista,trebuchet-MS,sans-serif;
+    margin: em(5px) 0;
 }
-#actu-liste-europe table{
-    border: 3px solid #950F7E;
-    background: #EFEFEF;
-    box-shadow:0px 0px 3px 1px #564E4E;
-    -moz-box-shadow:0px 0px 3px 1px #564E4E;
-    -webkit-box-shadow:0px 0px 3px 1px #564E4E;
-    behavior: url(/sites/all/libraries/PIE/PIE.htc);
-   position: relative;
+#actu-liste-rp-annonce img{
+    border: em(2px) solid $rose-fushia;
+    padding: em(1px);
 }
-#actu-liste-europe tbody{}
-#actu-liste-europe tr{}
-#actu-liste-europe td{
-    padding: 2px;
-}
-#actu-liste-europe a{
-    color: #564E4E;
-    font-weight: bold;
+#actu-liste-rp-annonce a{
+    color: $rose-fushia;
     text-decoration: none;
 }
-#actu-liste-europe a:hover{
-    color: #E2007A;
+#actu-liste-rp-annonce a:hover{
+    color: $violet;
 }
-/*Liste actu VDL*/
+/*Liste annonce RP - Small*/
+#actu-liste-rp-annonce2 p.txt-vide-actu-globale{
+     margin: 0 auto;
+    width: 98%;
+    text-align: center;
+    color: $orange-fonce;
+}
+#actu-liste-rp-annonce2 img{
+    border: em(1px) solid $rose-fushia;
+    padding: em(1px);
+}
+#actu-liste-rp-annonce2 a{
+    color: $rose-fushia;
+    text-decoration: none;
+    text-align: center;
+}
+#actu-liste-rp-annonce2 a:hover{
+    color: $violet;
+}
+#actu-liste-rp-annonce2 table{}
+#actu-liste-rp-annonce2 tbody{}
+#actu-liste-rp-annonce2 tr{}
+#actu-liste-rp-annonce2 td{
+    padding: em(1px);
+}
+/*------------------------
+BLOC FLUX RSS ACTU DE L'ASSO
+-----------------------------*/
+#block-aggregator-feed-1 h3{
+    color: $rose-fushia;
+    font-family: $AristaFont;
+    padding: 5px;
+    text-align: center;
+     font-size: small;
+}
+#block-aggregator-feed-1 ul{
+    list-style: none;
+    background:  url(../images/bg_doc_utile_rp.jpg) repeat left top ;
+    margin: 0 auto;
+    width: 85%;
+    padding: em(20px) 0;
+    @include arrondis (em(10px));
+    position: relative;
+}
+#block-aggregator-feed-1 ul li{
+    margin: em(5px) 0;
+    list-style: none;
+
+}
+#block-aggregator-feed-1 li a{
+    text-decoration: none;
+    padding: 2px;
+    display: block;
+    @include arrondis (em(5px));
+    position: relative;
+    width: 85%;
+    margin: 0 auto;
+    color: white;
+    background: $rose-fushia;
+    &:hover{
+        background: white;
+        color: $rose-fushia;
+        text-decoration: none;
+    }
+}
+
+}
+
+#colonne-3.page-actualites{
+   /*Liste actu VDL*/
 #actu-liste-vdl p.txt-vide-actu-globale{}
 #actu-liste-vdl{
-     margin: 0 0 0 13px;
-    width: 285px;
+     margin: 0 auto;
+    width: 98%;
 }
 #actu-liste-vdl h3{
-    font-size: 20px;
-    color: #E2007A;
-    margin: 5px;
+    font-size: larger;
+    color: $rose-fushia;
+    margin: em(5px);
     text-align: center;
     font-family:Arista,trebuchet-MS,sans-serif;
 }
 #actu-liste-vdl table{
-    border: 3px solid #E2007A;
-    background: #EFEFEF;
-    box-shadow:0px 0px 3px 1px #564E4E;
-    -moz-box-shadow:0px 0px 3px 1px #564E4E;
-    -webkit-box-shadow:0px 0px 3px 1px #564E4E;
-    behavior: url(/sites/all/libraries/PIE/PIE.htc);
+    border: em(3px) solid $rose-fushia;
+    background: $gris-clair;
+    @include ombrage-table-actu;
+    @include PIE;
    position: relative;
 }
 #actu-liste-vdl tbody{}
 #actu-liste-vdl tr{}
 #actu-liste-vdl td{
-    padding: 2px;
+    padding: em(2px);
 }
 #actu-liste-vdl a{
     color: #564E4E;
@@ -162,80 +253,6 @@ ______________________________*/
     text-decoration: none;
 }
 #actu-liste-vdl a:hover{
-    color: #E2007A;
+    color: $rose-fushia;
 }
-/*Liste annonce RP - Big*/
-#actu-liste-rp-annonce p.txt-vide-actu-globale{
-    margin: 0 auto;
-    width: 365px;
-    text-align: center;
-    color: #E85134;
-}
-#actu-liste-rp-annonce{
-    margin: 0 auto;
-    width: 365px;
-}
-#actu-liste-rp-annonce h3{
-    color: #00ACD1;
-    text-align: center;
-    margin: 5px 0;
-}
-#actu-liste-rp-annonce img{
-    border: 2px solid #E2007A;
-    padding: 1px;
-}
-#actu-liste-rp-annonce a{
-    color: #E2007A;
-    text-decoration: none;
-}
-#actu-liste-rp-annonce a:hover{
-    color: #911381;
-}
-/*Liste annonce RP - Small*/
-#actu-liste-rp-annonce2 p.txt-vide-actu-globale{
-     margin: 0 auto;
-    width: 365px;
-    text-align: center;
-    color: #E85134;
-}
-#actu-liste-rp-annonce2 img{
-    border: 1px solid #E2007A;
-    padding: 1px;
-}
-#actu-liste-rp-annonce2 a{
-    color: #E2007A;
-    text-decoration: none;
-    text-align: center;
-}
-#actu-liste-rp-annonce2 a:hover{
-    color: #911381;
-}
-#actu-liste-rp-annonce2 table{}
-#actu-liste-rp-annonce2 tbody{}
-#actu-liste-rp-annonce2 tr{}
-#actu-liste-rp-annonce2 td{
-    padding: 1px;
-}
-
-
-/*Bloc RSS*/
-/*--------*//* FLUX BLOC ACTU ASSO*/
-#block-aggregator-feed-1 {
-    margin: em(5px) 0;
-    color: $bleu-turquoise;
-    h3{
-        color: $rose-fushia;
-        padding: em(2px);
-    }
-    ul li{
-        list-style-position: inside;
-        list-style-type: square;
-        a{
-            text-decoration: none;
-            color:$bleu-turquoise;
-            &:hover{
-                color: $rose-fushia;
-            }
-        }
-    }
 }

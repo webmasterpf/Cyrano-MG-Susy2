@@ -1,21 +1,8 @@
 /*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
 ----- TYPOS PROVENCE FORMATION -----
 ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
-/* Ressources
-http://www.developerdrive.com/2015/02/control-vertical-rhythm-using-sass-and-compass/
-*/
 
-
-// Vertical rhythm pour la taille de typo selon compass (déprécié 2016)
-/*$base-font-size:16px;
-$base-line-height: 24px;
-@include establish-baseline;
-
-// Create em() for setting font-sizes in pixels.
-@function em($target, $context: $base-font-size) {
-@if $target == 0 { @return 0 }
-@return $target / $context + 0em;
-}*/
+ /*------- CONVERSION PX EN EM   ---------------*/
 $browser-context: 16;
 
 @function em($pixels, $context: $browser-context) {
@@ -63,47 +50,11 @@ $FontRaleway : 'Raleway',Trebuchet MS, Verdana, sans-serif;
      }
 
 /*------------ PARAGRAPHES ---------------*/
-//Vertical Rythm via compass pour tout le site
-/*.conteneur{
-    p{
-        //@include leader();//ajoute un margin ou padding top
-        @include normalize-font-size(10px);//calcule un  line-height selon le rythme vertical
-       //margin-bottom: rhythm(1, 12px);//calcule un margin-bottom selon le rythme vertical
-        
-    }
-    #header{@include normalize-font-size(12px);}
-    .content-global{}
-    #left-content{}
-    .content-inner{
-        p,td, ul,ol{
-
-            padding: 0.15em;
-            font-size: small;
-        }
-        ul,ol{
-            list-style: inside;
-        }
-    }
-    #right-content{}
-    #footer{@include normalize-font-size(10px);
-            p{
-                //@include trailer();
-                font-size: x-small;
-                padding: 0.3em;
-                line-height: 1.4em;
-            }
-    }
-}
-.HPBasGauche, .HPBasDroit {
-        p{
-        @include normalize-font-size(12px);
-    }
-}*/
 
 /*====================================|
 ==             OVERRIDE TYPEY SETTINGS           ==|
 =====================================*/
-
+$base-unit: em;
 $line-height-method: ratio;
 
 $base-font-size: 16px;

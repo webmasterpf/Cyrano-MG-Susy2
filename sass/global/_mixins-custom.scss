@@ -209,11 +209,12 @@
         text-shadow: $angle $distance $flou $couleur;
 filter: dropshadow(color=$couleur, offx=$angle, offy=$distance);
     }    
-@mixin ombrage-bas-table-actu{
-    -moz-box-shadow: 2px 2px 5px #aaa;
-    -webkit-box-shadow: 2px 2px 5px #aaa;
-    box-shadow: 2px 2px 5px #555;
+@mixin ombrage-table-actu
+($decalage-horizontal:0em,$decalage-vertical:0em,$force-degrade:0.3em,$diffusion-degrade:0.1em,$couleur-ombre:$prune)
+{
+  box-shadow:$decalage-horizontal $decalage-vertical $force-degrade $diffusion-degrade $couleur-ombre;
 }
+
 @mixin opacity ($opacite:1){
  opacity:$opacite;/*0.6*/
 -moz-opacity : $opacite;
