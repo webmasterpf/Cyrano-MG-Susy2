@@ -54,16 +54,7 @@ h1.titre_page_actualites{
         @include zoom-css3-hover(0.95);
     }
 }
-.actuGlobale-archives{
-   text-align: center;
-}
-.actuGlobale-archives a{
-    font-size: small;
-    color: $violet;
-    margin: em(5px);
-    font-family:$AristaFont;
-}
-.actuGlobale-archives a:hover{}
+
     p{
     padding: em(5px);
 }
