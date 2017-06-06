@@ -58,6 +58,10 @@ Intervenant 15
 Mini-stage 16	
 Projet 17
 Sortie-action 18
+Vocabulaire: Lycée-Entreprise
+Journée Interprofessionnelle	22
+Visite d'entreprise 23
+Documents pratiques	 24
 */
 
 span{
@@ -94,6 +98,9 @@ span{
     &.vdl-17{background: $violet;}
     &.vdl-18{background: $rose-fushia;}
     &.vdl-25{background: $gris-anthracite;}
+    &.vdl-22{background: $gris-anthracite;}
+    &.vdl-23{background: $violet;}
+    &.vdl-24{background: $rose-fushia;}
 }
 div.img-vdl{
     &:hover{
@@ -104,6 +111,9 @@ div.img-vdl{
     &.vdl-17{background: $violet;}
     &.vdl-18{background: $rose-fushia;}
     &.vdl-25{background: $gris-anthracite;}
+    &.vdl-22{background: $gris-anthracite;}
+    &.vdl-23{background: $violet;}
+    &.vdl-24{background: $rose-fushia;}
     }
     img{
         padding: 0;
