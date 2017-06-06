@@ -143,3 +143,46 @@ left: 8em;position: relative;
     background:url('../css/css_galeries/images/arrow-rond-pf.png') 0 4.3em;float: right;}
 .galerie .views_slideshow_controls_text_next a:hover{
     background:url('../css/css_galeries/images/arrow-rond-pf.png') 0 11.2em;float: right;}
+
+/*
+VIEWS 3 CYCLE1: DIAPO ILLUSTRATION RWD ===================================
+*/
+#block-views-Diapo_illustration-block_1{
+.views_slideshow_cycle_main {
+  width: 100%;
+  float: left;
+}
+.views_slideshow_cycle_main .views-slideshow-cycle-main-frame {
+  width: 100% !important;
+  height: auto;
+}
+.views_slideshow_cycle_main .views-slideshow-cycle-main-frame-row {
+  width: 100% !important;
+  height: auto;
+}
+.views_slideshow_cycle_main .views-slideshow-cycle-main-frame-item {
+  width: 100% !important;
+  height: auto;
+}
+.views_slideshow_cycle_main .embedded-video {
+  width: 100% !important;
+  height: auto;
+}
+.views_slideshow_cycle_main .player {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.views_slideshow_cycle_main .player iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.views-row-odd{
+    position: relative;
+}
+}

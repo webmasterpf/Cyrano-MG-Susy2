@@ -11,9 +11,6 @@
 //      $("#header").sticky({topSpacing: 10});
 //    });
     
-  
-
-
 
 
     //Pour enlever la taille des images sur les Gallery Formatter

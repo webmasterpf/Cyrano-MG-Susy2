@@ -117,36 +117,37 @@
 });
 
 //Slick Basic, nav par points, transition fade
-jQuery(document).ready(function ()
- {
- $('.slickdiapofade').slick({
-  dots: true,
-  infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear'
-});
-}); 
+//jQuery(document).ready(function ()
+// {
+// $('.slickdiapofade').slick({
+//  dots: true,
+//  infinite: true,
+//  speed: 500,
+//  fade: true,
+//  cssEase: 'linear'
+//});
+//}); 
+//
+////Pour utiliser Slick avec une nav par miniatures (thumbs)
+//jQuery(document).ready(function ()
+// {
+//   $('.slider-for').slick({
+//  slidesToShow: 1,
+//  slidesToScroll: 1,
+//  arrows: false,
+//  fade: true,
+//  asNavFor: '.slider-nav'
+//});
+//$('.slider-nav').slick({
+//  slidesToShow: 3,
+//  slidesToScroll: 1,
+//  asNavFor: '.slider-for',
+//  dots: true,
+//  centerMode: true,
+//  focusOnSelect: true
+//});
+//}); 
 
-//Pour utiliser Slick avec une nav par miniatures (thumbs)
-jQuery(document).ready(function ()
- {
-   $('.slider-for').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.slider-nav'
-});
-$('.slider-nav').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  asNavFor: '.slider-for',
-  dots: true,
-  centerMode: true,
-  focusOnSelect: true
-});
-}); 
 //// Script pour Masonry - Views casse les __ utiliser -- plutôt
 
 //    jQuery(document).ready(function () 
@@ -228,10 +229,44 @@ $('#liste-vdl span.titre-vdl > a').css('text-transform','lowercase');
         $("#colonne-2 p").removeAttr("style");
         $("#colonne-2 ul").removeAttr("style");
         $(".masonry-brick").removeAttr("style");//pas d'effet
-        
+ 
+    //Retrait position:absolute sur le Views Slideshow       
+  $('.views_slideshow_cycle_slide:visible').css('position', 'relative', 'important');
+  $('.views_slideshow_cycle_slide').not(':visible').css('position', 'absolute', 'important');
 
     });
-            
+    
+
+  //Views Slideshow Cycle RWD    
+
+$(window).resize(function(){
+  $('.views_slideshow_cycle_main').each(function(){
+    var cycleMain = $(this);
+    var img_width = 0,
+        img_height = 0;
+    var clearCSS = {width: "auto", height: "auto"};
+    var cycle = cycleMain.children('.views-slideshow-cycle-main-frame');
+    cycleElements = cycle.data("cycle.opts");
+    cycle.css(clearCSS);
+    cycleMain.find('.views-slideshow-cycle-main-frame-row').each(function(i){
+      $(this).css(clearCSS);
+      var tmp_img_width = $(this).width();
+      var tmp_img_height = $(this).height();
+      if(tmp_img_width > img_width)
+        img_width = tmp_img_width;
+      if(tmp_img_height > img_height)
+        img_height = tmp_img_height;
+      cycleElements.elements[i].cycleW = tmp_img_width;
+      cycleElements.elements[i].cycleH = tmp_img_height;
+      $(this).css({width: tmp_img_width, height: tmp_img_height});
+    });
+    cycleMain.height(img_height);
+    cycle.css({width: img_width, height: img_height});
+    cycle.data("cycle.opts.elements", cycleElements);
+  });
+});
+
+    
 
 // Pour MixItUp plugin: voir le fichier ajout.classes.mixitup.js
 // Calling the MixItUp plugin for this View.
