@@ -56,16 +56,17 @@ h1.titre-webform{
 
 #colonne-2.webform{
     h2{
-        color: $orange;
+        color: $rose-fushia;
         padding: em(5px);
     }
     h3{
         color: $violet;
         padding: em(5px);
+        font-size: large;
     }
     h4{
         padding: em(5px);
-        color: $orange;
+        color: $rose-fushia;
     }
     p{
         padding: em(5px);
@@ -75,15 +76,30 @@ h1.titre-webform{
         padding: em(5px);
     }
     img{
-
+        @include border-fuschia-violet;
+        margin: 0 auto;
+        display: block;
     }
     a{
-        color: $orange;
+        color: $rose-fushia;
         text-decoration: none;
         padding: 2px;
         &:hover{
             color: white;
-            background: $orange;
+            background: $rose-fushia;
+        }
+    }
+    a.gmap{
+
+        &:hover{
+
+            background: 0;
+        }
+        img{
+            @include zoom-css3(1);
+            &:hover{
+                @include zoom-css3-hover(0.97);
+            }
         }
     }
     form{
