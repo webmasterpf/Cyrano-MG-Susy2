@@ -72,6 +72,14 @@ strong,b{
     span{
         @include font-size(s);
     }
+    tbody{
+     background: 0;
+     border: 0;
+ }
+ tr{
+      background: 0;
+     border: 0;
+ }
 }
 
 
@@ -117,98 +125,118 @@ ______________________________*/
     }
 }
 #colonne-2.page-actualites{
-     /*Liste annonce RP - Big*/
-#actu-liste-rp-annonce p.txt-vide-actu-globale{
-    margin: 0 auto;
-    width: 98%;
-    text-align: center;
-    color: $orange-fonce;
-}
-#actu-liste-rp-annonce{
-    margin: 0 auto;
-    width: 98%;
-}
-#actu-liste-rp-annonce h3{
-    color:$bleu-turquoise;
-    text-align: center;
-    margin: em(5px) 0;
-}
-#actu-liste-rp-annonce img{
-    border: em(2px) solid $rose-fushia;
+    /*Liste annonce RP - Big*/
+    #actu-liste-rp-annonce {
+        margin: 0 auto;
+        width: 98%;
+        p.txt-vide-actu-globale{
+            margin: 0 auto;
+            width: 98%;
+            text-align: center;
+            color: $orange-fonce;
+        }
+
+        h3{
+            color:$bleu-turquoise;
+            text-align: center;
+            margin: em(5px) 0;
+            font-size:large;
+        }
+        img{
+            border: em(2px) solid $rose-fushia;
+            padding: em(1px);
+        }
+        a{
+            color: $rose-fushia;
+            text-decoration: none;
+            &:hover{
+                color: $violet;
+            }
+        }
+
+    }
+/*Liste annonce RP - Small*/
+#actu-liste-rp-annonce2{
+     img{
+    border: em(1px) solid $rose-fushia;
     padding: em(1px);
 }
-#actu-liste-rp-annonce a{
+ a{
     color: $rose-fushia;
     text-decoration: none;
-}
-#actu-liste-rp-annonce a:hover{
+    text-align: center;
+     &:hover{
     color: $violet;
 }
-/*Liste annonce RP - Small*/
-#actu-liste-rp-annonce2 p.txt-vide-actu-globale{
+}
+
+ table{}
+ tbody{
+   
+ }
+ tr{
+
+ }
+ td{
+    padding: em(3px);
+    vertical-align: top;
+}
+td.col-2{
+    padding-left: em(5px);
+}
+p.txt-vide-actu-globale{
      margin: 0 auto;
     width: 98%;
     text-align: center;
     color: $orange-fonce;
 }
-#actu-liste-rp-annonce2 img{
-    border: em(1px) solid $rose-fushia;
-    padding: em(1px);
 }
-#actu-liste-rp-annonce2 a{
-    color: $rose-fushia;
-    text-decoration: none;
-    text-align: center;
-}
-#actu-liste-rp-annonce2 a:hover{
-    color: $violet;
-}
-#actu-liste-rp-annonce2 table{}
-#actu-liste-rp-annonce2 tbody{}
-#actu-liste-rp-annonce2 tr{}
-#actu-liste-rp-annonce2 td{
-    padding: em(1px);
-}
+
+
+
 /*------------------------
 BLOC FLUX RSS ACTU DE L'ASSO
 -----------------------------*/
-#block-aggregator-feed-1 h3{
-    color: $rose-fushia;
-    font-family: $AristaFont;
-    padding: 5px;
-    text-align: center;
-     font-size: small;
-}
-#block-aggregator-feed-1 ul{
-    list-style: none;
-    background:  url(../images/bg_doc_utile_rp.jpg) repeat left top ;
-    margin: 0 auto;
-    width: 85%;
-    padding: em(20px) 0;
-    @include arrondis (em(10px));
-    position: relative;
-}
-#block-aggregator-feed-1 ul li{
-    margin: em(5px) 0;
-    list-style: none;
-
-}
-#block-aggregator-feed-1 li a{
-    text-decoration: none;
-    padding: 2px;
-    display: block;
-    @include arrondis (em(5px));
-    position: relative;
-    width: 85%;
-    margin: 0 auto;
-    color: white;
-    background: $rose-fushia;
-    &:hover{
-        background: white;
+#block-aggregator-feed-1{
+    h3{
         color: $rose-fushia;
-        text-decoration: none;
+        font-family: $AristaFont;
+        padding: 5px;
+        text-align: center;
+        font-size: large;
     }
-}
+    ul{
+        list-style: none;
+        background:  url(../images/bg_doc_utile_rp.jpg) repeat left top ;
+        margin: 0 auto;
+        width: 85%;
+        padding: em(20px) 0;
+        @include arrondis (em(10px));
+        position: relative;
+    }
+    ul li{
+        margin: em(5px) 0;
+        list-style: none;
+
+    }
+    li a{
+        text-decoration: none;
+        padding: 2px;
+        display: block;
+        @include arrondis (em(5px));
+        position: relative;
+        width: 85%;
+        margin: 0 auto;
+        color: white;
+        background: $rose-fushia;
+        &:hover{
+            background: white;
+            color: $rose-fushia;
+            text-decoration: none;
+        }
+    }
+
+} 
 
 }
 
