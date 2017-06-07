@@ -107,7 +107,19 @@
 
     });
 
+//Pour Responsive Slides
+        jQuery(document).ready(function () {
+console.log('Appel du script ResponsiveSlides.js');
+        $(".rslides").responsiveSlides({
+// Custom options
 
+            pager: false, // Boolean: Show pager, true or false
+            nav: false, // Boolean: Show navigation, true or false
+            random: true, // Boolean: Randomize the order of the slides, true or false
+            pause: false        // Boolean: Pause on hover, true or false
+});
+   });
+   
   //Pour stacktable (tableaux RWD)
     jQuery(window).load(function (){
         console.log('Chargement des paramètres de Stacktable.js');

@@ -30,16 +30,20 @@ stylesheets[all][] = css/vendor/buttons/buttons.css
 ;scripts[] = 3rdparty/buttons/js/buttons.js
 
 ;Style pour Flexslider
-stylesheets[all][] = 3rdparty/flexslider/flexslider.css
+;stylesheets[all][] = 3rdparty/flexslider/flexslider.css
 
 ;Style pour Bxslider
-stylesheets[all][] = 3rdparty/bxslider/jquery.bxslider.css
+;stylesheets[all][] = 3rdparty/bxslider/jquery.bxslider.css
 
 ;Style pour BaguetteBox
 stylesheets[all][] = 3rdparty/baguettebox/baguetteBox.min.css
 
 ;Style pour Chocolat (vignettes zoomables RWD)
-stylesheets[all][] = 3rdparty/chocolat/chocolat.css
+;stylesheets[all][] = 3rdparty/chocolat/chocolat.css
+
+;Style pour Responsive Slides (diaporama RWD)
+stylesheets[all][] = js/jquery_plugin/responsiveslides/responsiveslides.css
+
 
 ; CSS pour utiliser NiceMenu
 ;stylesheets[all][] = css/navigation/nice_menus_custom.css

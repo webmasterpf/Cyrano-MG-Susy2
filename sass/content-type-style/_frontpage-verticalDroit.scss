@@ -16,14 +16,30 @@ body .conteneur {
     background:transparent url("../images/bg_content_etoile.gif") no-repeat left bottom;
            
     .HPGauche{
-        
+              iframe{
+            border: 0.2em solid $rose-fushia;
+            padding: em(1px);
+            @include img-centered;
+            max-width: 95%;
+            @include breakpoint ($desktop){
+                
+       
+            }
+    }
+    img{
+        @include img-centered;
+    }
         .HPGauche1{}
         .HPGauche2{}
         .HPGauche3{}
     }
     .HPDiapoVerticalDroite{
         aside.DiapoDroiteHP {
-            img{@include adaptable-img;}
+            img{
+                @include adaptable-img;
+              @include img-centered;
+            }
+
         }
     }
     
@@ -32,7 +48,7 @@ body .conteneur {
     //Taille du conteneur du groupe    
 
     .HPGauche{
-        
+  
         .HPGauche1{}
         .HPGauche2{}
         .HPGauche3{}
@@ -86,48 +102,56 @@ Liste Actus pour homepage
         }
         .view-empty{text-align: center;}
         .table-actus-hp, .table-actus-hp2{
-            width: em(400px);
+            width: auto;
             margin: 0 auto;
             border: 0;
-        }
-        .table-actus-hp thead th,.table-actus-hp2 thead th{
-            border-bottom: em(3px) solid $rose-fushia;
-        }
-        .table-actus-hp tbody, .table-actus-hp2 tbody{}
-        .table-actus-hp tr, .table-actus-hp2 tr{
-            margin: em(9px);
-            display: block;
-        }
-        .table-actus-hp td, .table-actus-hp2 td{
-            background: white;
-            border: 0;
-            margin: 2px 0;
-            padding: em(5px);
-            display: block;
-            border-bottom: 1px solid $rose-fushia;
-            &:hover{
-                background: $rose-fushia;
+            @include breakpoint ($desktop){
+                width: em(400px);
             }
-        }
-        
-        .table-actus-hp p,.table-actus-hp2 p{}
-        .table-actus-hp a, .table-actus-hp2 a{
-            color: $gris-anthracite;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            display: block;
-            font-size: small;
-            &:hover{
-                text-decoration: underline;
-                color: white;
+            thead th{
+                border-bottom: em(3px) solid $rose-fushia;
+            }
+            tbody{
+                border: 0;
+            }
+            tr{
+                
+                display: block;
+                background: 0;
+                border: 0;
+            }
+            td{
+                background: white;
+                border: 0;
+              margin: em(2px) 0;
+                padding: em(5px);
+                display: block;
+                border-bottom: em(1px) solid $rose-fushia;
+                &:hover{
+                    background: $rose-fushia;
+                }
+            }
+
+            p{}
+            a{
+                color: $gris-anthracite;
+                text-decoration: none;
+                font-weight: bold;
+                text-align: center;
+                display: block;
+                font-size: small;
+                &:hover{
+                    text-decoration: underline;
+                    color: white;
+                }
+            }
+
+            span.date-display-single{
+                text-align: right;
+                float: right;
+                font-style: italic;
             }
         }
 
-        .table-actus-hp span.date-display-single, .table-actus-hp2 span.date-display-single{
-            text-align: right;
-            float: right;
-            font-style: italic;
-        }
     }
 }
