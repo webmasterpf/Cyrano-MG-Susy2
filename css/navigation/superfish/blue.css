@@ -23,7 +23,7 @@ Active trail sur élément de la rubrique = OK
 .sf-menu.sf-style-blue a{
  border: none;
   width: 7.5em;/*largeur des a*/
-  height: 3.4em;/*hauteur des a*/
+  
   text-align: center;
   text-transform:uppercase;
   font-weight: bold;
@@ -33,8 +33,11 @@ Active trail sur élément de la rubrique = OK
   line-height: 1.3em;
   margin: 0.5em 0;
 }
-.sf-menu.sf-style-blue a.sf-with-ul{
+
+.sf-menu.sf-style-blue a.sf-with-ul,
+.sf-menu.sf-style-blue a.sf-depth-1{
   padding-right: 2.25em;
+      height: 3.4em;/*hauteur des a 1er niveau*/
 }
 .sf-menu.sf-style-blue.rtl a.sf-with-ul {
   padding-left: 2.25em;
@@ -59,6 +62,7 @@ Active trail sur élément de la rubrique = OK
 .sf-menu.sf-style-blue li li {
   background: #EFEFEF;/*Bg des liens li li sous-rubrique*/
   width: 170px;/*Largeur des li de 2nd niveau*/
+  min-height: 50%;
 }
 .sf-menu.sf-style-blue li li li {
   background: #EFEFEF;/*Bg des li items sous-rubrique*/
@@ -74,6 +78,8 @@ span.menu-item-container{/*hover des li*/
   background: #D0D1D2;
   color: #95107D;/*couleur des a *//*violet : #95107D vert :#AEC721 rose :#E1017B anthracite : #606070 rouge:#E2001A*/
 }
+
+
 /*Rubrique active - Active Trail*/
 .sf-menu.sf-style-blue li.active-trail,.sf-menu.sf-style-blue li.active-trail > a{color: #E1017B;background: #D0D1D2;}
 
