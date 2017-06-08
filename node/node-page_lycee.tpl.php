@@ -59,8 +59,13 @@ include($theme_path .'/includes/regions_inc/inc_region_col_2.php');
                      
             
              <?php
+             if (
+               $node->field_lien_page_lycee[0]['view'] OR
+               $node->field_fichier_joint_lycee[0]['view']
+                 ): 
               global $theme_path;
               include ($theme_path.'/includes/dedicates_inc/inc_lycee_docs.php');
+              endif;
               ?>
             
              <?php
