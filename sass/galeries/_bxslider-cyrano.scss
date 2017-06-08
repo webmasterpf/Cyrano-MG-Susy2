@@ -47,13 +47,20 @@ Override du style de galerie Bxslider
 
 #colonne-1.page-lycee{
     .bx-wrapper{
-        max-width: 90% !important;
-        margin: em(5px) auto !important;
+        max-width: 100% !important;
+        margin: em(10px) auto !important;
         .bx-viewport{
             background: 0;
             border: 0;
-            max-width: 90%;
+            max-width: 100%;
             box-shadow:none;
+            img{
+                margin: 0;
+            }
+            li{
+                position: relative !important;
+            }
         }
     }
 }
+
