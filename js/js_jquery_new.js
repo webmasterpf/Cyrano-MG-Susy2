@@ -58,6 +58,11 @@
     }
             
         });
+        
+        //Flexslider pour HP (avec caption)
+         $('.flexslider-hp').flexslider({
+             animation: "slide"
+         });
     });
     
          //Pour une galerie avec des vignettes : Flexslider thumbs
@@ -85,11 +90,35 @@
     });
     
     //Pour le BxSlider
-    jQuery(window).load(function (){
+//    jQuery(window).load(function (){
+        jQuery(document).ready(function(){
         console.log('Chargement des paramètres de BxSlider');
-  $('.bxslider').bxSlider();
-   pagerCustom: "#bx-pager"
-   captions: true;
+//  $('.bxslider').bxSlider({
+//      pagerCustom: "#bx-pager",
+//   captions: true
+//  });
+   
+   console.log('Chargement des paramètres de BxSlider Illus');
+    $('.bxslider-illus').bxSlider({
+            mode: 'fade',
+            controls: false,
+            captions: false,
+            auto: true,
+            autoStart: true,
+            pager: false
+    });
+   
+        console.log('Chargement des paramètres de BxSlider HP');
+        $('.bxslider-hp').bxSlider({
+            mode: 'fade',
+            controls: false,
+            captions: true,
+            auto: true,
+            autoStart: true,
+            pager: false
+        });
+//   alert('BxSlider est chargé');
+   
 });
 
 //Pour Galerie Chocolat.js
@@ -104,21 +133,23 @@
         baguetteBox.run('.galerieBaguetteBox', {
             // Custom options
         });
-
-    });
-
-//Pour Responsive Slides
-        jQuery(document).ready(function () {
-console.log('Appel du script ResponsiveSlides.js');
-        $(".rslides").responsiveSlides({
+        
+        //Pour Responsive Slides
+ console.log('Appel du script ResponsiveSlides.js');
+        $(".rslides").responsiveSlides
+        
+        ({
 // Custom options
-
             pager: false, // Boolean: Show pager, true or false
             nav: false, // Boolean: Show navigation, true or false
             random: true, // Boolean: Randomize the order of the slides, true or false
             pause: false        // Boolean: Pause on hover, true or false
-});
-   });
+        });
+
+
+
+    });
+
    
   //Pour stacktable (tableaux RWD)
     jQuery(window).load(function (){
@@ -190,20 +221,20 @@ console.log('Appel du script ResponsiveSlides.js');
     
     });
 //// Script pour Wookmark (liste html)
-jQuery(document).ready(function ()
-{
-  console.log('Chargement des paramètres Wookmark.js');   
-$('#wookmark-id li').wookmark({
-            autoResize: true, // This will auto-update the layout when the browser window is resized.
-            container: $('#tiles'), // Optional, used for some extra CSS styling
-            offset: 2, // Optional, the distance between grid items
-            itemWidth: 210 // Optional, the width of a grid item
-        });
- 
- window.onresize = function(event) {
-     $('#wookmark-id li').wookmark({offset: 2});
- }
-  });
+//jQuery(document).ready(function ()
+//{
+//  console.log('Chargement des paramètres Wookmark.js');   
+//$('#wookmark-id li').wookmark({
+//            autoResize: true, // This will auto-update the layout when the browser window is resized.
+//            container: $('#tiles'), // Optional, used for some extra CSS styling
+//            offset: 2, // Optional, the distance between grid items
+//            itemWidth: 210 // Optional, the width of a grid item
+//        });
+// 
+// window.onresize = function(event) {
+//     $('#wookmark-id li').wookmark({offset: 2});
+// }
+//  });
   
 //jQuery(document).ready(function ()
 jQuery(window).on('load', function()

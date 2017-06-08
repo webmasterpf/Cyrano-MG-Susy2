@@ -51,12 +51,18 @@ h1.titre-lycee,h1.title-classes{
 h3{}
 h4{}
 p{}
-ul{}
+ul{
+    width: auto;
+}
 img{
     //@include ombrage(0.3em,0,0,0.1em);
     display: block;
     margin: 0 auto;
     @include adaptable-img;
+    width: auto;
+    float: none;
+    border: em(2px) solid $violet;
+    padding: em(2px);
 }
 
 a{

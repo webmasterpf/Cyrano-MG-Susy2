@@ -30,10 +30,10 @@ stylesheets[all][] = css/vendor/buttons/buttons.css
 ;scripts[] = 3rdparty/buttons/js/buttons.js
 
 ;Style pour Flexslider
-;stylesheets[all][] = 3rdparty/flexslider/flexslider.css
+stylesheets[all][] = 3rdparty/flexslider/flexslider.css
 
 ;Style pour Bxslider
-;stylesheets[all][] = 3rdparty/bxslider/jquery.bxslider.css
+stylesheets[all][] = 3rdparty/bxslider/jquery.bxslider.css
 
 ;Style pour BaguetteBox
 stylesheets[all][] = 3rdparty/baguettebox/baguetteBox.min.css

@@ -227,7 +227,7 @@ filter : alpha(opacity=$opacite); /* IE < 8 */
 }
 
 @mixin rgba-background($color, $opacity) {
-    position: relative;
+    /*position: relative;*/
     background: $color;
     background: rgba($color, $opacity);
     -pie-background: rgba($color, $opacity);
