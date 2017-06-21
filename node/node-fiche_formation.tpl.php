@@ -26,8 +26,12 @@
             
               
              <?php
+              if ($node->field_fichier_joint_ficheform[0]['view']
+                  OR $node->field_lien_utile_ficheform[0]['view']
+                  ):
               global $theme_path;
               include ($theme_path.'/includes/dedicates_inc/inc_ficheform_docs.php');
+          endif;
               ?>
             
                               <?php 

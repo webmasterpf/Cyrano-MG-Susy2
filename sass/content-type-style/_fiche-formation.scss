@@ -40,6 +40,7 @@ h1.titre_ficheform{
   a{
     color: $rose-fushia;
     padding: 0 em(2px);
+    font-size: small;
 }
  a:hover{
      background: $rose-fushia;
@@ -91,7 +92,7 @@ h2{
          li{
         padding: em(2px);
         list-style: square inside none;
-        line-height: 1;
+        line-height: inherit;
     }
     }
     .complement_titre_fiche h3{
@@ -147,7 +148,7 @@ h2{
     ul li{
         padding: em(2px);
         /*list-style: square none;*/
-        line-height: 1;
+        line-height: inherit;
     }
     .diapo_fiche{
         margin: em(5px) 0;
@@ -179,7 +180,7 @@ _______________________________________*/
     background: $gris-clair;
     border: em(3px) solid $violet;
     width: 95%;
-    margin: 0 auto;
+    margin: em(15px) auto;
     @include ombrage-bas (0,em(5px),0.5em,#564E4E);
      table{
          width: 98%;
