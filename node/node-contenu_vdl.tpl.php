@@ -2,7 +2,7 @@
 /* Ce template permet la création d'un layout multicolonne pour le spages de base, en permettant la disposition facile
  * des champs CCK custom, si nécessaires pour une page de base.
 */?>
-<!--______________NODE TPL POUR PAGE.TPL CUSTOM________________ -->
+<!--______________NODE TPL POUR CONTENU VDL CUSTOM________________ -->
 <div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
     <div class="node-inner">
         <!--______________COLONNE 1________________ -->
@@ -51,7 +51,7 @@
             <?php endif;?>
                 
                 <?php if ($node->field_choix_galerie_vdl[0]['view']): ?>
-            <aside class="vdl-galerie-image">
+            <aside class="galerie-vdl">
                     <?php  print $node->field_choix_galerie_vdl[0]['view']  ?>
             </aside>
             <?php endif;?>
