@@ -31,13 +31,16 @@ body .conteneur {
 }
 /*######-------- ||| STYLE ||| --------######*/
 h1.titre_page-erreur{
-    color: $orange;
+    color: $rose-fushia;
     font-size: x-large;
 }
 #colonne-2.page-erreur{
     background: $gris-clair;
+    h2{
+        color: $rose-fushia;
+    }
     a{
-        color: $orange;
+        color: $rose-fushia;
         text-decoration: none;
         &:hover{
             text-decoration: underline;

@@ -68,7 +68,7 @@ $font-size: (
   xs:9px,
 );
 
-$typey-debug: true;
+$typey-debug: false;
 $typey-debug-color: red;
 
 /*====================================|
@@ -95,7 +95,7 @@ article.middle-content ul,
 article.middle-content ol
 {
     @include font-size(s);
-    @include line-height(1.1);
+    @include line-height(1.5);
     @include typey-debug-grid(1);
 }
 ul.sf-menu{
