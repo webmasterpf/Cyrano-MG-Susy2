@@ -114,16 +114,27 @@ ______________________________*/
 aside.vdl-video{
     width: 95%;
     margin: em(15px) auto;
-    
-               iframe{
-            border: em(2px) solid $violet;
-            padding: em(1px);
-            @include img-centered;
-            max-width: 95%;
-            @include breakpoint ($desktop){
-                
-       
-            }
+    @include breakpoint ($desktop){
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: em(35px);
+        height: 0;
+        overflow: initial;
+    }
+    iframe,object{
+        border: em(2px) solid $violet;
+        padding: em(1px);
+        @include img-centered;
+        max-width: 95%;
+
+        @include breakpoint ($desktop){
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
     }
 }
 

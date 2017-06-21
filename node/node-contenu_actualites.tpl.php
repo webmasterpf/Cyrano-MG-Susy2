@@ -45,9 +45,9 @@
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
             
                 <?php if ($node->field_video_rp[0]['view']): ?>
-            <div id="vdl-video">
+                <aside class="actu-video">
                     <?php  print $node->field_video_rp[0]['view']  ?>
-            </div>
+                </aside>
             <?php endif;?>
                 
                 <?php if ($node->field_choix_galerie_vdl[0]['view']): ?>
