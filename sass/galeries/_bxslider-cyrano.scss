@@ -27,6 +27,11 @@ Override du style de galerie Bxslider
 
 .HPDiapoVerticalDroite{
     .bx-wrapper{
+        .bx-viewport {
+        box-shadow: none;
+    border: none;
+        background: none;
+        }
         .bx-caption{
             bottom: em(9px);
             left: em(11px);
