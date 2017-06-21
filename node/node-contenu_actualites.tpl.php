@@ -76,13 +76,7 @@
               include ($theme_path.'/includes/dedicates_inc/inc_gasquet_actus.php');
               ?>
             
-            
-            <!--***********!!!!!!  EXEMPLE DE CHAMP CCK INCLUS AVEC CONDITION !!!!!!!!************ -->
-            <?php if ($node->nom_du_champ[0]['view']): ?>
-            <div id="nom-css">
-                    <?php  print $node->nom_du_champ[0]['view']  ?>
-            </div>
-            <?php endif;?>
+
 
 
         </div>

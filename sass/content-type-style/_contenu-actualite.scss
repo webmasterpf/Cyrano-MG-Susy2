@@ -49,6 +49,10 @@ h1.titre_actualites_content{
     }
 }
 #gasquet-actus {
+    margin: em(15px) 0;
+    @include breakpoint ($desktop){
+        margin: 0;
+    }
     h3{
         font-family:$AristaFont;
         text-align: center;

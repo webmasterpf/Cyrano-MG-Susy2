@@ -43,6 +43,10 @@ h1.vdl_titre{
     p{
     padding: em(5px);
 }
+span{
+    font-size: small;
+    padding: em(5px);
+}
 strong,b{
     color: $rose-fushia;
 }
@@ -91,26 +95,36 @@ ______________________________*/
     }
 }
 #colonne-2.contenu-vdl{
-    #vdl-galerie-image{
-    width: 520px;
-    margin: 5px 0;
+    .galerie-vdl{
+    
+    margin: em(5px) 0;
 }
 /*Galerie lightbox*/
-#vdl-galerie-image .image-gallery-nodes ul li {
+.galerie-vdl .image-gallery-nodes ul li {
     background: none repeat scroll 0 0 transparent;
     display: inline-block;
-    height: 100px;
+    height: em(100px);
     list-style-type: none;
     text-align: center;
-    width: 150px;
+    width: em(150px);
 }
-#vdl-galerie-image .image-gallery-nodes ul li img{
-    border: 3px solid #EFEFEF;
+.galerie-vdl .image-gallery-nodes ul li img{
+    
 }
 aside.vdl-video{
     width: 95%;
-    margin: 0 auto;
-    border: em(2px) solid $gris-clair-moyen;
+    margin: em(15px) auto;
+    
+               iframe{
+            border: em(2px) solid $violet;
+            padding: em(1px);
+            @include img-centered;
+            max-width: 95%;
+            @include breakpoint ($desktop){
+                
+       
+            }
+    }
 }
 
 }
