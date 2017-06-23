@@ -13,7 +13,7 @@
   
 <div id="colonne-1" class="col1_layout_3_6_3 webform">
      <?php if ($title): /*insertion du titre de la page et style differencié*/?>
-     <h1 class="titre_pl"><?php print $title; ?></h1>
+     <h1 class="titre-webform"><?php print $title; ?></h1>
 
     <?php endif; ?>
       <br clear="all"/>
@@ -33,13 +33,20 @@
  
 
   <div class="content">
-    <table>
+  <table>
     <tr>
     <td><?php print $node->content['body']['#value']; ?></td>
     </tr>
     <tr>
     <td><?php print $node->content['webform']['#value']; ?></td>
     </tr>
+      <tr>
+    <td><?php if ($node->field_apres_form[0]['view']): ?>
+            <div id="texte-sous-formulaire">
+                    <?php  print $node->field_apres_form[0]['view']  ?>
+            </div>
+            <?php endif;?></td>
+    </tr>         
     </table>
   </div>
 
