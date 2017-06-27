@@ -91,7 +91,12 @@ img{
     border: em(2px) solid $violet;
     padding: em(2px);
 }
-
+div.illus-lycee{
+    img{
+        
+        transform: scale(0.8);
+    }
+}
 a{
     &:hover{}
 }
@@ -216,6 +221,33 @@ aside.diapo_lycee{
         }
     }
     }
+    
+  #video_lycee{
+    width: 95%;
+    margin: em(15px) auto;
+    @include breakpoint ($desktop){
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: em(35px);
+        height: 0;
+        overflow: initial;
+    }
+    iframe,object{
+        border: em(2px) solid $violet;
+        padding: em(1px);
+        @include img-centered;
+        max-width: 95%;
+
+        @include breakpoint ($desktop){
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+    }
+}
    
 }
 
@@ -223,12 +255,7 @@ aside.diapo_lycee{
     padding: 0.5em;
 }
 
-#video_lycee{
-    border: 2px solid $violet;
-    width: 450px;
-    height: auto;
-    margin: 0 auto;
-}
+
 
 #colonne-3.page-lycee{
  #docs_lycee{

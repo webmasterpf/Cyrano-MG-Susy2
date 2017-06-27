@@ -22,6 +22,9 @@
             <div class="diapo-lycee">
                           <?php  print $node->field_diapo_illus[0]['view']  ?>
             </div>
+            <?php else : ?><div class="illus-lycee" >
+   <?php print $node->field_illus_lycee[0]['view']  ?>
+                </div>
             <?php endif;?>        
             
             
@@ -44,6 +47,12 @@ include($theme_path .'/includes/regions_inc/inc_region_col_1.php');
 
             <div class="content">
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
+                
+                 <?php if ($node->field_video_lycee[0]['view']): ?>
+            <div id="video_lycee">
+                    <?php  print $node->field_video_lycee[0]['view']  ?>
+            </div>
+            <?php endif;?>
                 
                           <?php 
   //$theme_path = drupal_get_path('theme', 'NOM_THEME');
