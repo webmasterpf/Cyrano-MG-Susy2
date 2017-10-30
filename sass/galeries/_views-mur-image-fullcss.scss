@@ -62,6 +62,7 @@ Vocabulaire: Lycée-Entreprise
 Journée Interprofessionnelle	22
 Visite d'entreprise 23
 Documents pratiques	 24
+Développement durable : 27 - ajout Nov2017 -
 */
 
 span{
@@ -101,6 +102,8 @@ span{
     &.vdl-22{background: $gris-anthracite;}
     &.vdl-23{background: $violet;}
     &.vdl-24{background: $rose-fushia;}
+    &.vdl-27{background: $rouge;}
+    
 }
 div.img-vdl{
     &:hover{
@@ -114,6 +117,7 @@ div.img-vdl{
     &.vdl-22{background: $gris-anthracite;}
     &.vdl-23{background: $violet;}
     &.vdl-24{background: $rose-fushia;}
+    &.vdl-27{background: $rouge;}
     }
     img{
         padding: 0;
