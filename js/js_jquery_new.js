@@ -277,6 +277,9 @@ $('#liste-vdl span.titre-vdl > a').css('text-transform','lowercase');
   $('.views_slideshow_cycle_slide:visible').css('position', 'relative', 'important');
   $('.views_slideshow_cycle_slide').not(':visible').css('position', 'absolute', 'important');
 
+//Style pour les iframes contenus dans des § pour le RWD
+$(".page-lycee p:has(iframe)").addClass('external-content');
+
     });
     
 

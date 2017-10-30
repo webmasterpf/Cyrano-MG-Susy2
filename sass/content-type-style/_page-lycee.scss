@@ -189,7 +189,7 @@ aside.diapo_lycee{
     }
     div.content{
         //style pour le dernier élément § de content
-        p:only-of-type,p:last-of-type{
+        p.external-content{
             width: 95%;
         margin: em(15px) auto;
         @include breakpoint ($desktop){
@@ -201,8 +201,8 @@ aside.diapo_lycee{
         }
         }
        //style particulier pour le 1er § qui ne contient pas la iframe 
-       p:first-child {
-            margin: 0 em(15px) em(50px);
+       p,p:first-child {
+            margin: 0 em(15px);
             padding: 0;
         }
          iframe,object{
