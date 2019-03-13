@@ -54,7 +54,18 @@ body .conteneur {
         .HPGauche3{}
     }
     .HPDiapoVerticalDroite{
-        
+        //Contenu mis en avant, liste éléments horizontaux
+        aside.annonces-misenavant{
+            ul{
+                display:flex;
+                li{
+                    max-width: 50%;
+                    margin: span(0.2);
+                    float: left;
+                    list-style: none;
+                }
+            }
+        }
     }
 }
 
@@ -85,7 +96,28 @@ body .conteneur {
         }
     }
 }
-
+.HPDiapoVerticalDroite{
+    //Contenu mis en avant, liste éléments horizontaux
+    aside.annonces-misenavant{
+        ul{
+            
+            li{
+                a{
+                    color: $rose-fushia;
+                    text-decoration: none;
+                    font-weight: bold;
+                    &:hover{
+                          box-shadow:
+    inset 0 -0.075em white,
+    inset 0 -0.1em $rose-fushia,
+    inset 0 -0.15em white,
+    inset 0 -0.175em $rose-fushia;
+                    }
+                }
+            }
+        }
+    }
+}
 /*------------------------------
 Liste Actus pour homepage
 -------------------------------*/
